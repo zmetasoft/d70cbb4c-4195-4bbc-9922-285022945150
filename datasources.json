@@ -1,0 +1,164 @@
+[
+  {
+    "id": "datasource-logistics-core-metrics",
+    "name": "物流运输核心指标数据源",
+    "type": "file",
+    "config": {
+      "dataId": "logistics-core-metrics"
+    },
+    "scope": "local"
+  },
+  {
+    "id": "datasource-logistics-region-status",
+    "name": "物流区域运输状态摘要数据源",
+    "type": "file",
+    "config": {
+      "dataId": "logistics-region-status"
+    },
+    "scope": "local"
+  },
+  {
+    "id": "datasource-logistics-today-transport-status-summary",
+    "name": "今日运输状态摘要数据源",
+    "type": "file",
+    "config": {
+      "dataId": "logistics-today-transport-status-summary"
+    },
+    "scope": "local"
+  },
+  {
+    "id": "datasource-logistics-bottom-metrics",
+    "name": "物流总览底部指标数据源",
+    "type": "file",
+    "config": {
+      "dataId": "logistics-bottom-metrics"
+    },
+    "scope": "local"
+  },
+  {
+    "id": "datasource-logistics-transport-heat",
+    "name": "物流全国运输热力数据源",
+    "type": "file",
+    "config": {
+      "dataId": "logistics-transport-heat"
+    },
+    "scope": "local"
+  },
+  {
+    "id": "datasource-logistics-warehouse-map-points",
+    "name": "全国仓库点位数据源",
+    "type": "file",
+    "config": {
+      "dataId": "logistics-warehouse-map-points"
+    },
+    "scope": "local"
+  },
+  {
+    "id": "datasource-logistics-delivery-map-points",
+    "name": "城市配送点位数据源",
+    "type": "file",
+    "config": {
+      "dataId": "logistics-delivery-map-points"
+    },
+    "scope": "local"
+  },
+  {
+    "id": "datasource-logistics-transport-flylines",
+    "name": "全国运输线路飞线数据源",
+    "type": "file",
+    "config": {
+      "dataId": "logistics-transport-flylines"
+    },
+    "scope": "local"
+  },
+  {
+    "id": "datasource-logistics-order-heatmap",
+    "name": "按订单量展示区域热力数据源",
+    "type": "file",
+    "config": {
+      "dataId": "logistics-order-heatmap"
+    },
+    "scope": "local"
+  },
+  {
+    "id": "datasource-logistics-exception-alert-summary",
+    "name": "异常区域提示摘要数据源",
+    "type": "file",
+    "config": {
+      "dataId": "logistics-exception-alert-summary"
+    },
+    "scope": "local"
+  },
+  {
+    "id": "datasource-logistics-exception-alert-areas",
+    "name": "异常区域提示明细数据源",
+    "type": "file",
+    "config": {
+      "dataId": "logistics-exception-alert-areas"
+    },
+    "scope": "local"
+  },
+  {
+    "id": "datasource-logistics-efficiency-trend",
+    "name": "物流运输效率趋势数据源",
+    "type": "file",
+    "config": {
+      "dataId": "logistics-efficiency-trend"
+    },
+    "scope": "local"
+  },
+  {
+    "id": "datasource-logistics-order-trend",
+    "name": "物流运输订单趋势数据源",
+    "type": "file",
+    "config": {
+      "dataId": "logistics-order-trend"
+    },
+    "scope": "local"
+  },
+  {
+    "id": "datasource-logistics-route-volume",
+    "name": "物流热门线路订单量数据源",
+    "type": "file",
+    "config": {
+      "dataId": "logistics-route-volume"
+    },
+    "scope": "local"
+  },
+  {
+    "id": "datasource-logistics-vehicle-demand",
+    "name": "物流区域车辆供需数据源",
+    "type": "file",
+    "config": {
+      "dataId": "logistics-vehicle-demand"
+    },
+    "scope": "local"
+  },
+  {
+    "id": "datasource-logistics-timeout-orders",
+    "name": "物流即将超时订单数据源",
+    "type": "file",
+    "config": {
+      "dataId": "logistics-timeout-orders"
+    },
+    "scope": "local"
+  },
+  {
+    "id": "datasource-logistics-vehicle-map-points",
+    "name": "物流车辆三维地图点位数据源",
+    "type": "file",
+    "config": {
+      "dataId": "logistics-vehicle-map-points"
+    },
+    "scope": "local"
+  },
+  {
+    "id": "datasource-logistics-vehicle-map-routes",
+    "name": "物流车辆三维地图轨迹数据源",
+    "type": "file",
+    "config": {
+      "dataId": "logistics-vehicle-map-routes"
+    },
+    "scope": "local"
+  }
+]

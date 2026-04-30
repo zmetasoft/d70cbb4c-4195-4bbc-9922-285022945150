@@ -1,0 +1,586 @@
+[
+  {
+    "id": "dataset-logistics-core-metrics",
+    "name": "物流运输核心指标",
+    "type": "file",
+    "datasourceId": "datasource-logistics-core-metrics",
+    "config": {},
+    "fields": [
+      {
+        "name": "指标名称",
+        "type": "string"
+      },
+      {
+        "name": "当前值",
+        "type": "number"
+      },
+      {
+        "name": "单位",
+        "type": "string"
+      },
+      {
+        "name": "趋势方向",
+        "type": "string"
+      },
+      {
+        "name": "趋势值",
+        "type": "string"
+      },
+      {
+        "name": "趋势显示",
+        "type": "string"
+      }
+    ],
+    "scope": "local"
+  },
+  {
+    "id": "dataset-logistics-region-status",
+    "name": "物流区域运输状态摘要",
+    "type": "file",
+    "datasourceId": "datasource-logistics-region-status",
+    "config": {},
+    "fields": [
+      {
+        "name": "区域",
+        "type": "string"
+      },
+      {
+        "name": "订单数",
+        "type": "number"
+      },
+      {
+        "name": "单位",
+        "type": "string"
+      },
+      {
+        "name": "占比",
+        "type": "number"
+      }
+    ],
+    "scope": "local"
+  },
+  {
+    "id": "dataset-logistics-today-transport-status-summary",
+    "name": "今日运输状态摘要",
+    "type": "file",
+    "datasourceId": "datasource-logistics-today-transport-status-summary",
+    "config": {},
+    "fields": [
+      {
+        "name": "排名",
+        "type": "number"
+      },
+      {
+        "name": "区域",
+        "type": "string"
+      },
+      {
+        "name": "风险等级",
+        "type": "string"
+      },
+      {
+        "name": "状态标签",
+        "type": "string"
+      },
+      {
+        "name": "准时率",
+        "type": "number"
+      },
+      {
+        "name": "今日订单",
+        "type": "number"
+      },
+      {
+        "name": "异常订单",
+        "type": "number"
+      },
+      {
+        "name": "在途车辆",
+        "type": "number"
+      }
+    ],
+    "scope": "local"
+  },
+  {
+    "id": "dataset-logistics-bottom-metrics",
+    "name": "物流总览底部指标",
+    "type": "file",
+    "datasourceId": "datasource-logistics-bottom-metrics",
+    "config": {},
+    "fields": [
+      {
+        "name": "指标名称",
+        "type": "string"
+      },
+      {
+        "name": "当前值",
+        "type": "number"
+      },
+      {
+        "name": "单位",
+        "type": "string"
+      }
+    ],
+    "scope": "local"
+  },
+  {
+    "id": "dataset-logistics-transport-heat",
+    "name": "物流全国运输热力",
+    "type": "file",
+    "datasourceId": "datasource-logistics-transport-heat",
+    "config": {},
+    "fields": [
+      {
+        "name": "区域",
+        "type": "string"
+      },
+      {
+        "name": "订单热力",
+        "type": "number"
+      },
+      {
+        "name": "在途车辆",
+        "type": "number"
+      },
+      {
+        "name": "异常区域",
+        "type": "number"
+      }
+    ],
+    "scope": "local"
+  },
+  {
+    "id": "dataset-logistics-warehouse-map-points",
+    "name": "全国仓库点位",
+    "type": "file",
+    "datasourceId": "datasource-logistics-warehouse-map-points",
+    "config": {},
+    "fields": [
+      {
+        "name": "点位名称",
+        "type": "string"
+      },
+      {
+        "name": "城市",
+        "type": "string"
+      },
+      {
+        "name": "经度",
+        "type": "number"
+      },
+      {
+        "name": "纬度",
+        "type": "number"
+      },
+      {
+        "name": "今日吞吐",
+        "type": "number"
+      },
+      {
+        "name": "状态",
+        "type": "string"
+      }
+    ],
+    "scope": "local"
+  },
+  {
+    "id": "dataset-logistics-delivery-map-points",
+    "name": "城市配送点位",
+    "type": "file",
+    "datasourceId": "datasource-logistics-delivery-map-points",
+    "config": {},
+    "fields": [
+      {
+        "name": "点位名称",
+        "type": "string"
+      },
+      {
+        "name": "城市",
+        "type": "string"
+      },
+      {
+        "name": "经度",
+        "type": "number"
+      },
+      {
+        "name": "纬度",
+        "type": "number"
+      },
+      {
+        "name": "配送单量",
+        "type": "number"
+      },
+      {
+        "name": "状态",
+        "type": "string"
+      }
+    ],
+    "scope": "local"
+  },
+  {
+    "id": "dataset-logistics-transport-flylines",
+    "name": "全国运输线路飞线",
+    "type": "file",
+    "datasourceId": "datasource-logistics-transport-flylines",
+    "config": {},
+    "fields": [
+      {
+        "name": "线路名称",
+        "type": "string"
+      },
+      {
+        "name": "起点城市",
+        "type": "string"
+      },
+      {
+        "name": "起点经度",
+        "type": "number"
+      },
+      {
+        "name": "起点纬度",
+        "type": "number"
+      },
+      {
+        "name": "终点城市",
+        "type": "string"
+      },
+      {
+        "name": "终点经度",
+        "type": "number"
+      },
+      {
+        "name": "终点纬度",
+        "type": "number"
+      },
+      {
+        "name": "今日订单量",
+        "type": "number"
+      },
+      {
+        "name": "风险等级",
+        "type": "string"
+      }
+    ],
+    "scope": "local"
+  },
+  {
+    "id": "dataset-logistics-order-heatmap",
+    "name": "按订单量展示区域热力",
+    "type": "file",
+    "datasourceId": "datasource-logistics-order-heatmap",
+    "config": {},
+    "fields": [
+      {
+        "name": "区域",
+        "type": "string"
+      },
+      {
+        "name": "中心城市",
+        "type": "string"
+      },
+      {
+        "name": "经度",
+        "type": "number"
+      },
+      {
+        "name": "纬度",
+        "type": "number"
+      },
+      {
+        "name": "订单量",
+        "type": "number"
+      },
+      {
+        "name": "热力等级",
+        "type": "string"
+      }
+    ],
+    "scope": "local"
+  },
+  {
+    "id": "dataset-logistics-exception-alert-summary",
+    "name": "异常区域提示摘要",
+    "type": "file",
+    "datasourceId": "datasource-logistics-exception-alert-summary",
+    "config": {},
+    "fields": [
+      {
+        "name": "异常订单",
+        "type": "number"
+      },
+      {
+        "name": "异常区域",
+        "type": "number"
+      },
+      {
+        "name": "运输中订单",
+        "type": "number"
+      },
+      {
+        "name": "已签收订单",
+        "type": "number"
+      },
+      {
+        "name": "全国运输热力",
+        "type": "number"
+      }
+    ],
+    "scope": "local"
+  },
+  {
+    "id": "dataset-logistics-exception-alert-areas",
+    "name": "异常区域提示明细",
+    "type": "file",
+    "datasourceId": "datasource-logistics-exception-alert-areas",
+    "config": {},
+    "fields": [
+      {
+        "name": "区域",
+        "type": "string"
+      },
+      {
+        "name": "异常订单",
+        "type": "number"
+      },
+      {
+        "name": "主要原因",
+        "type": "string"
+      },
+      {
+        "name": "处理状态",
+        "type": "string"
+      },
+      {
+        "name": "状态类型",
+        "type": "string"
+      },
+      {
+        "name": "调度说明",
+        "type": "string"
+      }
+    ],
+    "scope": "local"
+  },
+  {
+    "id": "dataset-logistics-efficiency-trend",
+    "name": "物流运输效率趋势",
+    "type": "file",
+    "datasourceId": "datasource-logistics-efficiency-trend",
+    "config": {},
+    "fields": [
+      {
+        "name": "周期",
+        "type": "string"
+      },
+      {
+        "name": "时段",
+        "type": "string"
+      },
+      {
+        "name": "平均运输时长",
+        "type": "number"
+      },
+      {
+        "name": "总里程",
+        "type": "number"
+      },
+      {
+        "name": "准时率",
+        "type": "number"
+      },
+      {
+        "name": "异常订单",
+        "type": "number"
+      }
+    ],
+    "scope": "local"
+  },
+  {
+    "id": "dataset-logistics-order-trend",
+    "name": "物流运输订单趋势",
+    "type": "file",
+    "datasourceId": "datasource-logistics-order-trend",
+    "config": {},
+    "fields": [
+      {
+        "name": "时段",
+        "type": "string"
+      },
+      {
+        "name": "订单量",
+        "type": "number"
+      },
+      {
+        "name": "异常订单",
+        "type": "number"
+      }
+    ],
+    "scope": "local"
+  },
+  {
+    "id": "dataset-logistics-route-volume",
+    "name": "物流热门线路订单量",
+    "type": "file",
+    "datasourceId": "datasource-logistics-route-volume",
+    "config": {},
+    "fields": [
+      {
+        "name": "线路",
+        "type": "string"
+      },
+      {
+        "name": "订单量",
+        "type": "number"
+      },
+      {
+        "name": "延误风险",
+        "type": "number"
+      }
+    ],
+    "scope": "local"
+  },
+  {
+    "id": "dataset-logistics-vehicle-demand",
+    "name": "物流区域车辆供需",
+    "type": "file",
+    "datasourceId": "datasource-logistics-vehicle-demand",
+    "config": {},
+    "fields": [
+      {
+        "name": "区域",
+        "type": "string"
+      },
+      {
+        "name": "车辆供给",
+        "type": "number"
+      },
+      {
+        "name": "订单需求",
+        "type": "number"
+      },
+      {
+        "name": "风险订单",
+        "type": "number"
+      }
+    ],
+    "scope": "local"
+  },
+  {
+    "id": "dataset-logistics-timeout-orders",
+    "name": "物流即将超时订单",
+    "type": "file",
+    "datasourceId": "datasource-logistics-timeout-orders",
+    "config": {},
+    "fields": [
+      {
+        "name": "订单号",
+        "type": "string"
+      },
+      {
+        "name": "业务类型",
+        "type": "string"
+      },
+      {
+        "name": "运输线路",
+        "type": "string"
+      },
+      {
+        "name": "车牌号",
+        "type": "string"
+      },
+      {
+        "name": "司机",
+        "type": "string"
+      },
+      {
+        "name": "预计到达",
+        "type": "string"
+      },
+      {
+        "name": "剩余时限",
+        "type": "number"
+      },
+      {
+        "name": "风险原因",
+        "type": "string"
+      },
+      {
+        "name": "货物类型",
+        "type": "string"
+      },
+      {
+        "name": "处置建议",
+        "type": "string"
+      }
+    ],
+    "scope": "local"
+  },
+  {
+    "id": "dataset-logistics-vehicle-map-points",
+    "name": "物流车辆三维地图点位",
+    "type": "file",
+    "datasourceId": "datasource-logistics-vehicle-map-points",
+    "config": {},
+    "fields": [
+      {
+        "name": "车牌号",
+        "type": "string"
+      },
+      {
+        "name": "城市",
+        "type": "string"
+      },
+      {
+        "name": "经度",
+        "type": "number"
+      },
+      {
+        "name": "纬度",
+        "type": "number"
+      },
+      {
+        "name": "状态",
+        "type": "string"
+      },
+      {
+        "name": "当前订单",
+        "type": "string"
+      }
+    ],
+    "scope": "local"
+  },
+  {
+    "id": "dataset-logistics-vehicle-map-routes",
+    "name": "物流车辆三维地图轨迹",
+    "type": "file",
+    "datasourceId": "datasource-logistics-vehicle-map-routes",
+    "config": {},
+    "fields": [
+      {
+        "name": "订单号",
+        "type": "string"
+      },
+      {
+        "name": "节点",
+        "type": "string"
+      },
+      {
+        "name": "序号",
+        "type": "number"
+      },
+      {
+        "name": "经度",
+        "type": "number"
+      },
+      {
+        "name": "纬度",
+        "type": "number"
+      },
+      {
+        "name": "风险等级",
+        "type": "string"
+      }
+    ],
+    "scope": "local"
+  }
+]

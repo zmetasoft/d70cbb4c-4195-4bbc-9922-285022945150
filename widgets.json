@@ -1,0 +1,2318 @@
+{
+  "version": 1,
+  "widgets": [
+    {
+      "id": "transport-kpi-orders-today",
+      "type": "kpi",
+      "config": {
+        "color": "#ffffff",
+        "fontSize": 24,
+        "fontWeight": 800,
+        "fontStyle": "normal",
+        "textAlign": "left",
+        "verticalAlign": "middle",
+        "effect": "none"
+      },
+      "dataConfig": {
+        "datasetId": "dataset-logistics-core-metrics",
+        "fields": [
+          {
+            "name": "指标名称",
+            "type": "string"
+          },
+          {
+            "name": "当前值",
+            "type": "number",
+            "aggregation": "SUM"
+          }
+        ],
+        "config": {
+          "valueField": "当前值"
+        },
+        "filters": [
+          {
+            "field": "指标名称",
+            "operator": "=",
+            "value": "今日运输订单数"
+          }
+        ],
+        "sorts": []
+      },
+      "layout": {
+        "minHeight": 34
+      }
+    },
+    {
+      "id": "transport-kpi-in-transit",
+      "type": "kpi",
+      "config": {
+        "color": "#ffffff",
+        "fontSize": 24,
+        "fontWeight": 800,
+        "fontStyle": "normal",
+        "textAlign": "left",
+        "verticalAlign": "middle",
+        "effect": "none",
+        "lineHeight": 20
+      },
+      "dataConfig": {
+        "datasetId": "dataset-logistics-core-metrics",
+        "fields": [
+          {
+            "name": "指标名称",
+            "type": "string"
+          },
+          {
+            "name": "当前值",
+            "type": "number",
+            "aggregation": "SUM"
+          }
+        ],
+        "config": {
+          "valueField": "当前值"
+        },
+        "filters": [
+          {
+            "field": "指标名称",
+            "operator": "=",
+            "value": "运输中订单数"
+          }
+        ],
+        "sorts": []
+      },
+      "layout": {
+        "minHeight": 34
+      }
+    },
+    {
+      "id": "transport-kpi-signed-orders",
+      "type": "kpi",
+      "config": {
+        "color": "#ffffff",
+        "fontSize": 24,
+        "fontWeight": 800,
+        "fontStyle": "normal",
+        "textAlign": "left",
+        "verticalAlign": "middle",
+        "effect": "none"
+      },
+      "dataConfig": {
+        "datasetId": "dataset-logistics-core-metrics",
+        "fields": [
+          {
+            "name": "指标名称",
+            "type": "string"
+          },
+          {
+            "name": "当前值",
+            "type": "number",
+            "aggregation": "SUM"
+          }
+        ],
+        "config": {
+          "valueField": "当前值"
+        },
+        "filters": [
+          {
+            "field": "指标名称",
+            "operator": "=",
+            "value": "已签收订单数"
+          }
+        ],
+        "sorts": []
+      },
+      "layout": {
+        "minHeight": 34
+      }
+    },
+    {
+      "id": "transport-kpi-exception-orders",
+      "type": "kpi",
+      "config": {
+        "color": "#ffffff",
+        "fontSize": 24,
+        "fontWeight": 800,
+        "fontStyle": "normal",
+        "textAlign": "left",
+        "verticalAlign": "middle",
+        "effect": "none"
+      },
+      "dataConfig": {
+        "datasetId": "dataset-logistics-core-metrics",
+        "fields": [
+          {
+            "name": "指标名称",
+            "type": "string"
+          },
+          {
+            "name": "当前值",
+            "type": "number",
+            "aggregation": "SUM"
+          }
+        ],
+        "config": {
+          "valueField": "当前值"
+        },
+        "filters": [
+          {
+            "field": "指标名称",
+            "operator": "=",
+            "value": "异常订单数"
+          }
+        ],
+        "sorts": []
+      },
+      "layout": {
+        "minHeight": 34
+      }
+    },
+    {
+      "id": "transport-kpi-trend-orders-today",
+      "type": "kpi",
+      "config": {
+        "color": "#ffb84a",
+        "fontSize": 11,
+        "fontWeight": 800,
+        "fontStyle": "normal",
+        "textAlign": "center",
+        "verticalAlign": "middle",
+        "effect": "none",
+        "lineHeight": 14
+      },
+      "dataConfig": {
+        "datasetId": "dataset-logistics-core-metrics",
+        "fields": [
+          {
+            "name": "指标名称",
+            "type": "string"
+          },
+          {
+            "name": "趋势显示",
+            "type": "string"
+          }
+        ],
+        "config": {
+          "valueField": "趋势显示"
+        },
+        "filters": [
+          {
+            "field": "指标名称",
+            "operator": "=",
+            "value": "今日运输订单数"
+          }
+        ],
+        "sorts": []
+      },
+      "layout": {
+        "minHeight": 14
+      }
+    },
+    {
+      "id": "transport-kpi-trend-in-transit",
+      "type": "kpi",
+      "config": {
+        "color": "#ffb84a",
+        "fontSize": 11,
+        "fontWeight": 800,
+        "fontStyle": "normal",
+        "textAlign": "center",
+        "verticalAlign": "middle",
+        "effect": "none",
+        "lineHeight": 14
+      },
+      "dataConfig": {
+        "datasetId": "dataset-logistics-core-metrics",
+        "fields": [
+          {
+            "name": "指标名称",
+            "type": "string"
+          },
+          {
+            "name": "趋势显示",
+            "type": "string"
+          }
+        ],
+        "config": {
+          "valueField": "趋势显示"
+        },
+        "filters": [
+          {
+            "field": "指标名称",
+            "operator": "=",
+            "value": "运输中订单数"
+          }
+        ],
+        "sorts": []
+      },
+      "layout": {
+        "minHeight": 14
+      }
+    },
+    {
+      "id": "transport-kpi-trend-signed-orders",
+      "type": "kpi",
+      "config": {
+        "color": "#ffb84a",
+        "fontSize": 11,
+        "fontWeight": 800,
+        "fontStyle": "normal",
+        "textAlign": "center",
+        "verticalAlign": "middle",
+        "effect": "none",
+        "lineHeight": 14
+      },
+      "dataConfig": {
+        "datasetId": "dataset-logistics-core-metrics",
+        "fields": [
+          {
+            "name": "指标名称",
+            "type": "string"
+          },
+          {
+            "name": "趋势显示",
+            "type": "string"
+          }
+        ],
+        "config": {
+          "valueField": "趋势显示"
+        },
+        "filters": [
+          {
+            "field": "指标名称",
+            "operator": "=",
+            "value": "已签收订单数"
+          }
+        ],
+        "sorts": []
+      },
+      "layout": {
+        "minHeight": 14
+      }
+    },
+    {
+      "id": "transport-kpi-trend-exception-orders",
+      "type": "kpi",
+      "config": {
+        "color": "#82e1a5",
+        "fontSize": 11,
+        "fontWeight": 800,
+        "fontStyle": "normal",
+        "textAlign": "center",
+        "verticalAlign": "middle",
+        "effect": "none",
+        "lineHeight": 14
+      },
+      "dataConfig": {
+        "datasetId": "dataset-logistics-core-metrics",
+        "fields": [
+          {
+            "name": "指标名称",
+            "type": "string"
+          },
+          {
+            "name": "趋势显示",
+            "type": "string"
+          }
+        ],
+        "config": {
+          "valueField": "趋势显示"
+        },
+        "filters": [
+          {
+            "field": "指标名称",
+            "operator": "=",
+            "value": "异常订单数"
+          }
+        ],
+        "sorts": []
+      },
+      "layout": {
+        "minHeight": 14
+      }
+    },
+    {
+      "id": "transport-region-kpi-east",
+      "type": "kpi",
+      "config": {
+        "color": "#dfe9f4",
+        "fontSize": 13,
+        "fontWeight": 800,
+        "fontStyle": "normal",
+        "textAlign": "left",
+        "verticalAlign": "middle",
+        "effect": "none"
+      },
+      "dataConfig": {
+        "datasetId": "dataset-logistics-region-status",
+        "fields": [
+          {
+            "name": "区域",
+            "type": "string"
+          },
+          {
+            "name": "订单数",
+            "type": "number",
+            "aggregation": "SUM"
+          }
+        ],
+        "config": {
+          "valueField": "订单数"
+        },
+        "filters": [
+          {
+            "field": "区域",
+            "operator": "=",
+            "value": "华东"
+          }
+        ],
+        "sorts": []
+      },
+      "layout": {
+        "minHeight": 20
+      }
+    },
+    {
+      "id": "transport-region-kpi-south",
+      "type": "kpi",
+      "config": {
+        "color": "#dfe9f4",
+        "fontSize": 13,
+        "fontWeight": 800,
+        "fontStyle": "normal",
+        "textAlign": "left",
+        "verticalAlign": "middle",
+        "effect": "none"
+      },
+      "dataConfig": {
+        "datasetId": "dataset-logistics-region-status",
+        "fields": [
+          {
+            "name": "区域",
+            "type": "string"
+          },
+          {
+            "name": "订单数",
+            "type": "number",
+            "aggregation": "SUM"
+          }
+        ],
+        "config": {
+          "valueField": "订单数"
+        },
+        "filters": [
+          {
+            "field": "区域",
+            "operator": "=",
+            "value": "华南"
+          }
+        ],
+        "sorts": []
+      },
+      "layout": {
+        "minHeight": 20
+      }
+    },
+    {
+      "id": "transport-region-kpi-north",
+      "type": "kpi",
+      "config": {
+        "color": "#dfe9f4",
+        "fontSize": 13,
+        "fontWeight": 800,
+        "fontStyle": "normal",
+        "textAlign": "left",
+        "verticalAlign": "middle",
+        "effect": "none"
+      },
+      "dataConfig": {
+        "datasetId": "dataset-logistics-region-status",
+        "fields": [
+          {
+            "name": "区域",
+            "type": "string"
+          },
+          {
+            "name": "订单数",
+            "type": "number",
+            "aggregation": "SUM"
+          }
+        ],
+        "config": {
+          "valueField": "订单数"
+        },
+        "filters": [
+          {
+            "field": "区域",
+            "operator": "=",
+            "value": "华北"
+          }
+        ],
+        "sorts": []
+      },
+      "layout": {
+        "minHeight": 20
+      }
+    },
+    {
+      "id": "transport-region-kpi-southwest",
+      "type": "kpi",
+      "config": {
+        "color": "#dfe9f4",
+        "fontSize": 13,
+        "fontWeight": 800,
+        "fontStyle": "normal",
+        "textAlign": "left",
+        "verticalAlign": "middle",
+        "effect": "none"
+      },
+      "dataConfig": {
+        "datasetId": "dataset-logistics-region-status",
+        "fields": [
+          {
+            "name": "区域",
+            "type": "string"
+          },
+          {
+            "name": "订单数",
+            "type": "number",
+            "aggregation": "SUM"
+          }
+        ],
+        "config": {
+          "valueField": "订单数"
+        },
+        "filters": [
+          {
+            "field": "区域",
+            "operator": "=",
+            "value": "西南"
+          }
+        ],
+        "sorts": []
+      },
+      "layout": {
+        "minHeight": 20
+      }
+    },
+    {
+      "id": "transport-bottom-kpi-active-vehicles",
+      "type": "kpi",
+      "name": "底部指标-在途车辆数",
+      "config": {
+        "color": "#ffffff",
+        "fontSize": 34,
+        "fontWeight": 800,
+        "fontStyle": "normal",
+        "textAlign": "right",
+        "verticalAlign": "middle",
+        "effect": "none"
+      },
+      "dataConfig": {
+        "datasetId": "dataset-logistics-bottom-metrics",
+        "fields": [
+          {
+            "name": "指标名称",
+            "type": "string"
+          },
+          {
+            "name": "当前值",
+            "type": "number",
+            "aggregation": "SUM"
+          }
+        ],
+        "config": {
+          "valueField": "当前值"
+        },
+        "filters": [
+          {
+            "field": "指标名称",
+            "operator": "=",
+            "value": "在途车辆数"
+          }
+        ],
+        "sorts": []
+      },
+      "layout": {
+        "minHeight": 38
+      }
+    },
+    {
+      "id": "transport-bottom-kpi-average-duration",
+      "type": "kpi",
+      "name": "底部指标-平均运输时长",
+      "config": {
+        "color": "#ffffff",
+        "fontSize": 34,
+        "fontWeight": 800,
+        "fontStyle": "normal",
+        "textAlign": "right",
+        "verticalAlign": "middle",
+        "effect": "none"
+      },
+      "dataConfig": {
+        "datasetId": "dataset-logistics-bottom-metrics",
+        "fields": [
+          {
+            "name": "指标名称",
+            "type": "string"
+          },
+          {
+            "name": "当前值",
+            "type": "number",
+            "aggregation": "SUM"
+          }
+        ],
+        "config": {
+          "valueField": "当前值"
+        },
+        "filters": [
+          {
+            "field": "指标名称",
+            "operator": "=",
+            "value": "平均运输时长"
+          }
+        ],
+        "sorts": []
+      },
+      "layout": {
+        "minHeight": 38
+      }
+    },
+    {
+      "id": "transport-bottom-kpi-total-mileage",
+      "type": "kpi",
+      "name": "底部指标-总里程",
+      "config": {
+        "color": "#ffffff",
+        "fontSize": 34,
+        "fontWeight": 800,
+        "fontStyle": "normal",
+        "textAlign": "right",
+        "verticalAlign": "middle",
+        "effect": "none"
+      },
+      "dataConfig": {
+        "datasetId": "dataset-logistics-bottom-metrics",
+        "fields": [
+          {
+            "name": "指标名称",
+            "type": "string"
+          },
+          {
+            "name": "当前值",
+            "type": "number",
+            "aggregation": "SUM"
+          }
+        ],
+        "config": {
+          "valueField": "当前值"
+        },
+        "filters": [
+          {
+            "field": "指标名称",
+            "operator": "=",
+            "value": "总里程"
+          }
+        ],
+        "sorts": []
+      },
+      "layout": {
+        "minHeight": 38
+      }
+    },
+    {
+      "id": "transport-bottom-unit-active-vehicles",
+      "type": "text",
+      "name": "底部指标-在途车辆数单位",
+      "config": {
+        "text": "/ 辆",
+        "color": "#dfe9f4",
+        "fontSize": 14,
+        "fontWeight": 650,
+        "fontStyle": "normal",
+        "textAlign": "left",
+        "verticalAlign": "middle",
+        "lineHeight": 20
+      },
+      "layout": {
+        "minHeight": 20
+      }
+    },
+    {
+      "id": "transport-bottom-label-active-vehicles",
+      "type": "text",
+      "name": "底部指标-在途车辆数名称",
+      "config": {
+        "text": "在途车辆数",
+        "color": "rgba(220,230,240,0.68)",
+        "fontSize": 14,
+        "fontWeight": 500,
+        "fontStyle": "normal",
+        "textAlign": "center",
+        "verticalAlign": "middle",
+        "lineHeight": 20
+      },
+      "layout": {
+        "minHeight": 22
+      }
+    },
+    {
+      "id": "transport-bottom-unit-average-duration",
+      "type": "text",
+      "name": "底部指标-平均运输时长单位",
+      "config": {
+        "text": "/ h",
+        "color": "#dfe9f4",
+        "fontSize": 14,
+        "fontWeight": 650,
+        "fontStyle": "normal",
+        "textAlign": "left",
+        "verticalAlign": "middle",
+        "lineHeight": 20
+      },
+      "layout": {
+        "minHeight": 20
+      }
+    },
+    {
+      "id": "transport-bottom-label-average-duration",
+      "type": "text",
+      "name": "底部指标-平均运输时长名称",
+      "config": {
+        "text": "平均运输时长",
+        "color": "rgba(220,230,240,0.68)",
+        "fontSize": 14,
+        "fontWeight": 500,
+        "fontStyle": "normal",
+        "textAlign": "center",
+        "verticalAlign": "middle",
+        "lineHeight": 20
+      },
+      "layout": {
+        "minHeight": 22
+      }
+    },
+    {
+      "id": "transport-bottom-unit-total-mileage",
+      "type": "text",
+      "name": "底部指标-总里程单位",
+      "config": {
+        "text": "/ 万km",
+        "color": "#dfe9f4",
+        "fontSize": 14,
+        "fontWeight": 650,
+        "fontStyle": "normal",
+        "textAlign": "left",
+        "verticalAlign": "middle",
+        "lineHeight": 20
+      },
+      "layout": {
+        "minHeight": 20
+      }
+    },
+    {
+      "id": "transport-bottom-label-total-mileage",
+      "type": "text",
+      "name": "底部指标-总里程名称",
+      "config": {
+        "text": "总里程",
+        "color": "rgba(220,230,240,0.68)",
+        "fontSize": 14,
+        "fontWeight": 500,
+        "fontStyle": "normal",
+        "textAlign": "center",
+        "verticalAlign": "middle",
+        "lineHeight": 20
+      },
+      "layout": {
+        "minHeight": 22
+      }
+    },
+    {
+      "id": "transport-exception-ring-chart",
+      "type": "custom-chart",
+      "name": "异常区域提示-异常订单圆环",
+      "config": {
+        "renderer": "function",
+        "optionFunction": "const fallbackRows = [{ '异常订单': 126, '异常区域': 7, '运输中订单': 8932, '已签收订单': 17386, '全国运输热力': 1280 }]; const rows = Array.isArray(dataset?.source) && dataset.source.length ? dataset.source : fallbackRows; const row = rows[0] || fallbackRows[0]; const value = Number(row['异常订单'] ?? 0); const total = Math.max(180, value + 54); const rest = Math.max(1, total - value); const option = { backgroundColor: 'transparent', animation: false, series: [{ type: 'pie', radius: ['68%', '84%'], center: ['50%', '52%'], startAngle: 90, clockwise: true, silent: true, label: { show: false }, labelLine: { show: false }, data: [{ value, itemStyle: { color: { type: 'linear', x: 0, y: 0, x2: 1, y2: 1, colorStops: [{ offset: 0, color: '#ff5d16' }, { offset: 1, color: '#ff9f2e' }] }, shadowBlur: 18, shadowColor: 'rgba(255,98,77,0.34)' } }, { value: rest, itemStyle: { color: 'rgba(74,91,112,0.36)' } }] }, { type: 'pie', radius: ['55%', '58%'], center: ['50%', '52%'], silent: true, label: { show: false }, data: [{ value: 1, itemStyle: { color: 'rgba(125,150,180,0.16)' } }] }], graphic: [{ type: 'text', left: 'center', top: '38%', style: { text: '异常订单', fill: 'rgba(220,230,240,0.74)', align: 'center', font: '700 14px Microsoft YaHei, Arial' } }, { type: 'text', left: 'center', top: '52%', style: { text: String(value), fill: '#ffffff', align: 'center', font: '800 34px Bahnschrift, Arial' } }] }; return option;"
+      },
+      "dataConfig": {
+        "datasetId": "dataset-logistics-exception-alert-summary",
+        "fields": [
+          {
+            "name": "异常订单",
+            "type": "number"
+          }
+        ],
+        "config": {},
+        "filters": [],
+        "sorts": []
+      },
+      "layout": {
+        "minHeight": 150
+      }
+    },
+    {
+      "id": "transport-exception-summary-area-kpi",
+      "type": "kpi",
+      "name": "异常区域提示-异常区域",
+      "config": {
+        "color": "#ffffff",
+        "fontSize": 14,
+        "fontWeight": 800,
+        "fontStyle": "normal",
+        "textAlign": "right",
+        "verticalAlign": "middle",
+        "effect": "none"
+      },
+      "dataConfig": {
+        "datasetId": "dataset-logistics-exception-alert-summary",
+        "fields": [
+          {
+            "name": "异常区域",
+            "type": "number"
+          }
+        ],
+        "config": {
+          "valueField": "异常区域"
+        },
+        "filters": [],
+        "sorts": []
+      },
+      "layout": {
+        "minHeight": 18
+      }
+    },
+    {
+      "id": "transport-exception-summary-transit-kpi",
+      "type": "kpi",
+      "name": "异常区域提示-运输中订单",
+      "config": {
+        "color": "#ffffff",
+        "fontSize": 14,
+        "fontWeight": 800,
+        "fontStyle": "normal",
+        "textAlign": "right",
+        "verticalAlign": "middle",
+        "effect": "none"
+      },
+      "dataConfig": {
+        "datasetId": "dataset-logistics-exception-alert-summary",
+        "fields": [
+          {
+            "name": "运输中订单",
+            "type": "number"
+          }
+        ],
+        "config": {
+          "valueField": "运输中订单"
+        },
+        "filters": [],
+        "sorts": []
+      },
+      "layout": {
+        "minHeight": 18
+      }
+    },
+    {
+      "id": "transport-exception-summary-signed-kpi",
+      "type": "kpi",
+      "name": "异常区域提示-已签收订单",
+      "config": {
+        "color": "#ffffff",
+        "fontSize": 14,
+        "fontWeight": 800,
+        "fontStyle": "normal",
+        "textAlign": "right",
+        "verticalAlign": "middle",
+        "effect": "none"
+      },
+      "dataConfig": {
+        "datasetId": "dataset-logistics-exception-alert-summary",
+        "fields": [
+          {
+            "name": "已签收订单",
+            "type": "number"
+          }
+        ],
+        "config": {
+          "valueField": "已签收订单"
+        },
+        "filters": [],
+        "sorts": []
+      },
+      "layout": {
+        "minHeight": 18
+      }
+    },
+    {
+      "id": "transport-exception-summary-heat-kpi",
+      "type": "kpi",
+      "name": "异常区域提示-全国运输热力",
+      "config": {
+        "color": "#ffffff",
+        "fontSize": 14,
+        "fontWeight": 800,
+        "fontStyle": "normal",
+        "textAlign": "right",
+        "verticalAlign": "middle",
+        "effect": "none"
+      },
+      "dataConfig": {
+        "datasetId": "dataset-logistics-exception-alert-summary",
+        "fields": [
+          {
+            "name": "全国运输热力",
+            "type": "number"
+          }
+        ],
+        "config": {
+          "valueField": "全国运输热力"
+        },
+        "filters": [],
+        "sorts": []
+      },
+      "layout": {
+        "minHeight": 18
+      }
+    },
+    {
+      "id": "transport-exception-area-table-chart",
+      "type": "custom-chart",
+      "name": "异常区域提示-明细表",
+      "config": {
+        "renderer": "function",
+        "optionFunction": "const fallbackRows = [{ '区域': '苏州园区', '异常订单': 11, '主要原因': '管制', '处理状态': '跟进中', '状态类型': 'follow' }, { '区域': '武汉中仓', '异常订单': 9, '主要原因': '分拨', '处理状态': '跟进中', '状态类型': 'follow' }, { '区域': '西安北仓', '异常订单': 7, '主要原因': '限流', '处理状态': '预警', '状态类型': 'warn' }, { '区域': '天津港区', '异常订单': 6, '主要原因': '查验', '处理状态': '跟进中', '状态类型': 'follow' }, { '区域': '重庆渝北', '异常订单': 5, '主要原因': '山路', '处理状态': '预警', '状态类型': 'warn' }, { '区域': '南京中转', '异常订单': 5, '主要原因': '装卸', '处理状态': '跟进中', '状态类型': 'follow' }, { '区域': '青岛城配', '异常订单': 4, '主要原因': '雨雪', '处理状态': '预警', '状态类型': 'warn' }, { '区域': '沈阳北仓', '异常订单': 4, '主要原因': '低温', '处理状态': '跟进中', '状态类型': 'follow' }, { '区域': '昆明南仓', '异常订单': 3, '主要原因': '绕行', '处理状态': '跟进中', '状态类型': 'follow' }]; const sourceRows = Array.isArray(dataset?.source) && dataset.source.length ? dataset.source : fallbackRows; const rows = sourceRows.slice(0, 9); const graphics = []; const cols = [6, 164, 232, 294]; const headerY = 2; const rowH = 29; const fmt = (value) => String(value ?? ''); const statusColor = (row) => row['状态类型'] === 'warn' || row['处理状态'] === '预警' ? '#ffad37' : 'rgba(236,244,250,0.76)'; ['区域', '异常', '原因', '状态'].forEach((label, index) => { graphics.push({ type: 'text', left: cols[index], top: headerY, style: { text: label, fill: 'rgba(220,230,240,0.66)', font: '700 12px Microsoft YaHei, Arial' } }); }); rows.forEach((row, index) => { const y = 28 + index * rowH; graphics.push({ type: 'rect', left: 0, top: y - 6, shape: { width: 356, height: 23 }, style: { fill: index % 2 === 0 ? 'rgba(55,70,92,0.17)' : 'rgba(55,70,92,0.06)' } }); graphics.push({ type: 'rect', left: 0, top: y - 6, shape: { width: 2, height: 23 }, style: { fill: row['状态类型'] === 'warn' ? '#ffad37' : 'rgba(110,200,255,0.56)' } }); graphics.push({ type: 'text', left: cols[0], top: y, style: { text: fmt(row['区域']), fill: 'rgba(236,244,250,0.88)', font: '800 12px Microsoft YaHei, Arial' } }); graphics.push({ type: 'text', left: cols[1], top: y, style: { text: fmt(row['异常订单']) + '单', fill: '#ffffff', font: '800 12px Bahnschrift, Arial' } }); graphics.push({ type: 'text', left: cols[2], top: y, style: { text: fmt(row['主要原因']), fill: 'rgba(236,244,250,0.76)', font: '700 12px Microsoft YaHei, Arial' } }); graphics.push({ type: 'text', left: cols[3], top: y, style: { text: fmt(row['处理状态']), fill: statusColor(row), font: '800 12px Microsoft YaHei, Arial' } }); }); const option = { backgroundColor: 'transparent', animation: false, tooltip: { show: false }, xAxis: { show: false }, yAxis: { show: false }, series: [], graphic: graphics }; return option;"
+      },
+      "dataConfig": {
+        "datasetId": "dataset-logistics-exception-alert-areas",
+        "fields": [
+          {
+            "name": "区域",
+            "type": "string"
+          },
+          {
+            "name": "异常订单",
+            "type": "number",
+            "aggregation": "SUM"
+          },
+          {
+            "name": "主要原因",
+            "type": "string"
+          },
+          {
+            "name": "处理状态",
+            "type": "string"
+          },
+          {
+            "name": "状态类型",
+            "type": "string"
+          }
+        ],
+        "filters": [],
+        "sorts": [
+          {
+            "field": "异常订单",
+            "direction": "DESC"
+          }
+        ]
+      },
+      "layout": {
+        "minHeight": 300
+      }
+    },
+    {
+      "id": "transport-china-3d-map",
+      "type": "extruded-map",
+      "name": "运输总览中国三维地图",
+      "config": {
+        "level": "country",
+        "code": "CN",
+        "modelConfig": {
+          "id": "china-default"
+        }
+      },
+      "dataConfig": [
+        {
+          "datasetId": "dataset-logistics-warehouse-map-points",
+          "fields": [
+            {
+              "name": "点位名称",
+              "type": "string"
+            },
+            {
+              "name": "城市",
+              "type": "string"
+            },
+            {
+              "name": "经度",
+              "type": "number"
+            },
+            {
+              "name": "纬度",
+              "type": "number"
+            },
+            {
+              "name": "今日吞吐",
+              "type": "number"
+            },
+            {
+              "name": "状态",
+              "type": "string"
+            }
+          ],
+          "config": {
+            "layerType": "marker",
+            "layerName": "全国仓库点位",
+            "markerModelId": "custom:蓝色标点.glb",
+            "visible": true,
+            "position": {
+              "type": "geographic",
+              "lonField": {
+                "name": "经度"
+              },
+              "latField": {
+                "name": "纬度"
+              }
+            },
+            "heightOffset": 0.08,
+            "style": {
+              "color": "#2F74FF"
+            },
+            "size": {
+              "field": {
+                "name": "今日吞吐"
+              },
+              "scale": 0.18,
+              "randomness": 0.03
+            },
+            "label": {
+              "fields": [
+                {
+                  "name": "点位名称"
+                },
+                {
+                  "name": "状态"
+                }
+              ],
+              "size": 0.82,
+              "offset": 1.32
+            },
+            "animation": {
+              "enabled": true,
+              "appearMs": 260,
+              "disappearMs": 180
+            }
+          },
+          "filters": [],
+          "sorts": []
+        },
+        {
+          "datasetId": "dataset-logistics-delivery-map-points",
+          "fields": [
+            {
+              "name": "点位名称",
+              "type": "string"
+            },
+            {
+              "name": "城市",
+              "type": "string"
+            },
+            {
+              "name": "经度",
+              "type": "number"
+            },
+            {
+              "name": "纬度",
+              "type": "number"
+            },
+            {
+              "name": "配送单量",
+              "type": "number"
+            },
+            {
+              "name": "状态",
+              "type": "string"
+            }
+          ],
+          "config": {
+            "layerType": "marker",
+            "layerName": "城市配送点位",
+            "markerModelId": "custom:小型点位.glb",
+            "visible": true,
+            "position": {
+              "type": "geographic",
+              "lonField": {
+                "name": "经度"
+              },
+              "latField": {
+                "name": "纬度"
+              }
+            },
+            "heightOffset": 0.06,
+            "style": {
+              "color": "#67D7FF"
+            },
+            "size": {
+              "field": {
+                "name": "配送单量"
+              },
+              "scale": 0.13,
+              "randomness": 0.05
+            },
+            "label": {
+              "fields": [
+                {
+                  "name": "城市"
+                },
+                {
+                  "name": "状态"
+                }
+              ],
+              "size": 0.72,
+              "offset": 1.18
+            },
+            "animation": {
+              "enabled": true,
+              "appearMs": 240,
+              "disappearMs": 160
+            }
+          },
+          "filters": [],
+          "sorts": []
+        },
+        {
+          "datasetId": "dataset-logistics-transport-flylines",
+          "fields": [
+            {
+              "name": "线路名称",
+              "type": "string"
+            },
+            {
+              "name": "起点城市",
+              "type": "string"
+            },
+            {
+              "name": "起点经度",
+              "type": "number"
+            },
+            {
+              "name": "起点纬度",
+              "type": "number"
+            },
+            {
+              "name": "终点城市",
+              "type": "string"
+            },
+            {
+              "name": "终点经度",
+              "type": "number"
+            },
+            {
+              "name": "终点纬度",
+              "type": "number"
+            },
+            {
+              "name": "今日订单量",
+              "type": "number"
+            },
+            {
+              "name": "风险等级",
+              "type": "string"
+            }
+          ],
+          "config": {
+            "layerType": "flyline",
+            "layerName": "全国运输线路飞线",
+            "visible": true,
+            "position": {
+              "start": {
+                "type": "geographic",
+                "lonField": {
+                  "name": "起点经度"
+                },
+                "latField": {
+                  "name": "起点纬度"
+                }
+              },
+              "end": {
+                "type": "geographic",
+                "lonField": {
+                  "name": "终点经度"
+                },
+                "latField": {
+                  "name": "终点纬度"
+                }
+              }
+            },
+            "thickness": {
+              "scale": 0.02
+            },
+            "style": {
+              "color": "#E6E5E4",
+              "flowSpeed": 0.72
+            },
+            "label": {
+              "fields": [
+                {
+                  "name": "线路名称"
+                },
+                {
+                  "name": "风险等级"
+                }
+              ]
+            }
+          },
+          "filters": [],
+          "sorts": []
+        },
+        {
+          "datasetId": "dataset-logistics-order-heatmap",
+          "fields": [
+            {
+              "name": "区域",
+              "type": "string"
+            },
+            {
+              "name": "中心城市",
+              "type": "string"
+            },
+            {
+              "name": "经度",
+              "type": "number"
+            },
+            {
+              "name": "纬度",
+              "type": "number"
+            },
+            {
+              "name": "订单量",
+              "type": "number"
+            },
+            {
+              "name": "热力等级",
+              "type": "string"
+            }
+          ],
+          "config": {
+            "layerType": "heatmap",
+            "layerName": "按订单量展示区域热力",
+            "visible": true,
+            "position": {
+              "type": "geographic",
+              "lonField": {
+                "name": "经度"
+              },
+              "latField": {
+                "name": "纬度"
+              }
+            },
+            "weight": {
+              "valueMode": "weighted",
+              "field": {
+                "name": "订单量"
+              }
+            },
+            "style": {
+              "valueMode": "weighted",
+              "radiusScale": 0.2,
+              "intensity": 0.72,
+              "elevationScale": 0.15,
+              "opacity": 0.99,
+              "resolution": "high",
+              "gradient": "linear-gradient(90deg, #2F74FF 0%, #35E5B0 38%, #FFE16B 72%, #FF624D 100%)",
+              "normalizeMode": "percentile",
+              "percentileMin": 4,
+              "percentileMax": 96,
+              "minAlpha": 0.04
+            }
+          },
+          "filters": [],
+          "sorts": []
+        }
+      ],
+      "layout": {
+        "minHeight": 520
+      }
+    },
+    {
+      "id": "warehouse-china-3d-map",
+      "type": "extruded-map",
+      "name": "仓网线路中国三维地图",
+      "config": {
+        "level": "country",
+        "code": "CN",
+        "modelConfig": {
+          "id": "china-default"
+        }
+      },
+      "layout": {
+        "minHeight": 520
+      }
+    },
+    {
+      "id": "vehicle-china-3d-map",
+      "type": "extruded-map",
+      "name": "车辆订单中国三维地图",
+      "config": {
+        "level": "country",
+        "code": "CN",
+        "modelConfig": {
+          "id": "china-default"
+        },
+        "styleConfig": {
+          "styleId": "default",
+          "styleOverride": {}
+        }
+      },
+      "layout": {
+        "minHeight": 520
+      }
+    },
+    {
+      "id": "transport-heat-order-chart",
+      "type": "custom-chart",
+      "name": "全国运输热力-订单热力",
+      "config": {
+        "renderer": "function",
+        "optionFunction": "const fallbackRows = [{ '区域': '华东', order: 98, vehicle: 92, exception: 28 }, { '区域': '华南', order: 91, vehicle: 84, exception: 22 }, { '区域': '华北', order: 86, vehicle: 78, exception: 18 }, { '区域': '华中', order: 82, vehicle: 72, exception: 16 }, { '区域': '西南', order: 74, vehicle: 68, exception: 52 }, { '区域': '西北', order: 58, vehicle: 42, exception: 12 }, { '区域': '东北', order: 62, vehicle: 48, exception: 9 }, { '区域': '干线', order: 94, vehicle: 88, exception: 34 }, { '区域': '城配', order: 88, vehicle: 76, exception: 26 }, { '区域': '冷链', order: 79, vehicle: 54, exception: 18 }, { '区域': '大件', order: 66, vehicle: 36, exception: 14 }, { '区域': '医药', order: 84, vehicle: 44, exception: 11 }]; const rows = Array.isArray(dataset?.source) && dataset.source.length ? dataset.source : fallbackRows; const field = '订单热力'; const values = rows.map((row) => Number(row[field] ?? row['order'] ?? 0)); const labels = rows.map((row) => row['区域']); const option = { backgroundColor: 'transparent', animation: false, grid: { left: 22, right: 10, top: 24, bottom: 28 }, tooltip: { trigger: 'item', confine: true, enterable: false, backgroundColor: 'rgba(5,14,26,0.5)', borderColor: 'rgba(112,169,230,0.34)', borderWidth: 1, padding: [3, 7], extraCssText: 'width:112px!important;max-width:112px!important;height:42px!important;max-height:42px!important;min-height:42px!important;overflow:hidden!important;box-shadow:0 5px 12px rgba(0,0,0,0.24);border-radius:4px;backdrop-filter:blur(2px);', textStyle: { color: 'rgba(238,246,255,0.94)', fontSize: 10, fontWeight: 700 }, formatter: (params) => '<div style=\"width:98px;line-height:1.05\"><div style=\"display:flex;justify-content:space-between;align-items:center;margin-bottom:2px\"><span style=\"color:rgba(177,196,218,.82)\">' + params.name + '</span><b style=\"color:#fff;font-size:11px\">' + params.value + '%</b></div><div style=\"display:flex;justify-content:space-between;align-items:center\"><span style=\"color:#ffad37\">' + field + '</span><span style=\"color:rgba(210,224,238,.76)\">占比</span></div></div>' }, xAxis: { type: 'category', data: labels, axisTick: { show: false }, axisLine: { lineStyle: { color: 'rgba(120,156,196,0.18)' } }, axisLabel: { color: 'rgba(198,210,222,0.58)', fontSize: 10, fontWeight: 700, interval: 0 } }, yAxis: { type: 'value', min: 0, max: 100, splitNumber: 4, axisLabel: { show: false }, axisLine: { show: false }, axisTick: { show: false }, splitLine: { lineStyle: { color: 'rgba(150,178,205,0.08)' } } }, series: [{ name: field, type: 'bar', data: values, barWidth: 6, emphasis: { focus: 'series', itemStyle: { shadowBlur: 18, shadowColor: 'rgba(178,184,255,0.34)' } }, label: { show: true, position: 'top', formatter: '{c}%', color: 'rgba(236,244,250,0.9)', fontSize: 10, fontWeight: 800 }, itemStyle: { borderRadius: [6, 6, 0, 0], color: { type: 'linear', x: 0, y: 0, x2: 0, y2: 1, colorStops: [{ offset: 0, color: 'rgba(209,209,255,0.96)' }, { offset: 0.42, color: 'rgba(174,179,250,0.76)' }, { offset: 1, color: 'rgba(103,126,207,0.14)' }] }, shadowBlur: 14, shadowColor: 'rgba(178,184,255,0.34)' } }] }; return option;"
+      },
+      "dataConfig": {
+        "datasetId": "dataset-logistics-transport-heat",
+        "fields": [
+          {
+            "name": "区域",
+            "type": "string"
+          },
+          {
+            "name": "订单热力",
+            "type": "number",
+            "aggregation": "SUM"
+          }
+        ],
+        "filters": [],
+        "sorts": []
+      },
+      "layout": {
+        "minHeight": 220
+      }
+    },
+    {
+      "id": "transport-heat-vehicle-chart",
+      "type": "custom-chart",
+      "name": "全国运输热力-在途车辆",
+      "config": {
+        "renderer": "function",
+        "optionFunction": "const fallbackRows = [{ '区域': '华东', order: 98, vehicle: 92, exception: 28 }, { '区域': '华南', order: 91, vehicle: 84, exception: 22 }, { '区域': '华北', order: 86, vehicle: 78, exception: 18 }, { '区域': '华中', order: 82, vehicle: 72, exception: 16 }, { '区域': '西南', order: 74, vehicle: 68, exception: 52 }, { '区域': '西北', order: 58, vehicle: 42, exception: 12 }, { '区域': '东北', order: 62, vehicle: 48, exception: 9 }, { '区域': '干线', order: 94, vehicle: 88, exception: 34 }, { '区域': '城配', order: 88, vehicle: 76, exception: 26 }, { '区域': '冷链', order: 79, vehicle: 54, exception: 18 }, { '区域': '大件', order: 66, vehicle: 36, exception: 14 }, { '区域': '医药', order: 84, vehicle: 44, exception: 11 }]; const rows = Array.isArray(dataset?.source) && dataset.source.length ? dataset.source : fallbackRows; const field = '在途车辆'; const values = rows.map((row) => Number(row[field] ?? row['vehicle'] ?? 0)); const labels = rows.map((row) => row['区域']); const option = { backgroundColor: 'transparent', animation: false, grid: { left: 22, right: 10, top: 24, bottom: 28 }, tooltip: { trigger: 'item', confine: true, enterable: false, backgroundColor: 'rgba(5,14,26,0.5)', borderColor: 'rgba(112,169,230,0.34)', borderWidth: 1, padding: [3, 7], extraCssText: 'width:112px!important;max-width:112px!important;height:42px!important;max-height:42px!important;min-height:42px!important;overflow:hidden!important;box-shadow:0 5px 12px rgba(0,0,0,0.24);border-radius:4px;backdrop-filter:blur(2px);', textStyle: { color: 'rgba(238,246,255,0.94)', fontSize: 10, fontWeight: 700 }, formatter: (params) => '<div style=\"width:98px;line-height:1.05\"><div style=\"display:flex;justify-content:space-between;align-items:center;margin-bottom:2px\"><span style=\"color:rgba(177,196,218,.82)\">' + params.name + '</span><b style=\"color:#fff;font-size:11px\">' + params.value + '%</b></div><div style=\"display:flex;justify-content:space-between;align-items:center\"><span style=\"color:#ffad37\">' + field + '</span><span style=\"color:rgba(210,224,238,.76)\">占比</span></div></div>' }, xAxis: { type: 'category', data: labels, axisTick: { show: false }, axisLine: { lineStyle: { color: 'rgba(120,156,196,0.18)' } }, axisLabel: { color: 'rgba(198,210,222,0.58)', fontSize: 10, fontWeight: 700, interval: 0 } }, yAxis: { type: 'value', min: 0, max: 100, splitNumber: 4, axisLabel: { show: false }, axisLine: { show: false }, axisTick: { show: false }, splitLine: { lineStyle: { color: 'rgba(150,178,205,0.08)' } } }, series: [{ name: field, type: 'bar', data: values, barWidth: 6, emphasis: { focus: 'series', itemStyle: { shadowBlur: 18, shadowColor: 'rgba(72,170,255,0.3)' } }, label: { show: true, position: 'top', formatter: '{c}%', color: 'rgba(236,244,250,0.9)', fontSize: 10, fontWeight: 800 }, itemStyle: { borderRadius: [6, 6, 0, 0], color: { type: 'linear', x: 0, y: 0, x2: 0, y2: 1, colorStops: [{ offset: 0, color: 'rgba(108,205,255,0.96)' }, { offset: 0.42, color: 'rgba(94,158,236,0.72)' }, { offset: 1, color: 'rgba(70,104,176,0.13)' }] }, shadowBlur: 14, shadowColor: 'rgba(72,170,255,0.3)' } }] }; return option;"
+      },
+      "dataConfig": {
+        "datasetId": "dataset-logistics-transport-heat",
+        "fields": [
+          {
+            "name": "区域",
+            "type": "string"
+          },
+          {
+            "name": "在途车辆",
+            "type": "number",
+            "aggregation": "SUM"
+          }
+        ],
+        "filters": [],
+        "sorts": []
+      },
+      "layout": {
+        "minHeight": 220
+      }
+    },
+    {
+      "id": "transport-heat-exception-chart",
+      "type": "custom-chart",
+      "name": "全国运输热力-异常区域",
+      "config": {
+        "renderer": "function",
+        "optionFunction": "const fallbackRows = [{ '区域': '华东', order: 98, vehicle: 92, exception: 28 }, { '区域': '华南', order: 91, vehicle: 84, exception: 22 }, { '区域': '华北', order: 86, vehicle: 78, exception: 18 }, { '区域': '华中', order: 82, vehicle: 72, exception: 16 }, { '区域': '西南', order: 74, vehicle: 68, exception: 52 }, { '区域': '西北', order: 58, vehicle: 42, exception: 12 }, { '区域': '东北', order: 62, vehicle: 48, exception: 9 }, { '区域': '干线', order: 94, vehicle: 88, exception: 34 }, { '区域': '城配', order: 88, vehicle: 76, exception: 26 }, { '区域': '冷链', order: 79, vehicle: 54, exception: 18 }, { '区域': '大件', order: 66, vehicle: 36, exception: 14 }, { '区域': '医药', order: 84, vehicle: 44, exception: 11 }]; const rows = Array.isArray(dataset?.source) && dataset.source.length ? dataset.source : fallbackRows; const field = '异常区域'; const values = rows.map((row) => Number(row[field] ?? row['exception'] ?? 0)); const labels = rows.map((row) => row['区域']); const option = { backgroundColor: 'transparent', animation: false, grid: { left: 22, right: 10, top: 24, bottom: 28 }, tooltip: { trigger: 'item', confine: true, enterable: false, backgroundColor: 'rgba(5,14,26,0.5)', borderColor: 'rgba(112,169,230,0.34)', borderWidth: 1, padding: [3, 7], extraCssText: 'width:112px!important;max-width:112px!important;height:42px!important;max-height:42px!important;min-height:42px!important;overflow:hidden!important;box-shadow:0 5px 12px rgba(0,0,0,0.24);border-radius:4px;backdrop-filter:blur(2px);', textStyle: { color: 'rgba(238,246,255,0.94)', fontSize: 10, fontWeight: 700 }, formatter: (params) => '<div style=\"width:98px;line-height:1.05\"><div style=\"display:flex;justify-content:space-between;align-items:center;margin-bottom:2px\"><span style=\"color:rgba(177,196,218,.82)\">' + params.name + '</span><b style=\"color:#fff;font-size:11px\">' + params.value + '%</b></div><div style=\"display:flex;justify-content:space-between;align-items:center\"><span style=\"color:#ffad37\">' + field + '</span><span style=\"color:rgba(210,224,238,.76)\">占比</span></div></div>' }, xAxis: { type: 'category', data: labels, axisTick: { show: false }, axisLine: { lineStyle: { color: 'rgba(120,156,196,0.18)' } }, axisLabel: { color: 'rgba(198,210,222,0.58)', fontSize: 10, fontWeight: 700, interval: 0 } }, yAxis: { type: 'value', min: 0, max: 60, splitNumber: 4, axisLabel: { show: false }, axisLine: { show: false }, axisTick: { show: false }, splitLine: { lineStyle: { color: 'rgba(150,178,205,0.08)' } } }, series: [{ name: field, type: 'bar', data: values, barWidth: 6, emphasis: { focus: 'series', itemStyle: { shadowBlur: 18, shadowColor: 'rgba(255,106,55,0.32)' } }, label: { show: true, position: 'top', formatter: '{c}%', color: 'rgba(236,244,250,0.9)', fontSize: 10, fontWeight: 800 }, itemStyle: { borderRadius: [6, 6, 0, 0], color: { type: 'linear', x: 0, y: 0, x2: 0, y2: 1, colorStops: [{ offset: 0, color: 'rgba(255,159,46,0.96)' }, { offset: 0.42, color: 'rgba(255,96,64,0.72)' }, { offset: 1, color: 'rgba(126,48,44,0.16)' }] }, shadowBlur: 14, shadowColor: 'rgba(255,106,55,0.32)' } }] }; return option;"
+      },
+      "dataConfig": {
+        "datasetId": "dataset-logistics-transport-heat",
+        "fields": [
+          {
+            "name": "区域",
+            "type": "string"
+          },
+          {
+            "name": "异常区域",
+            "type": "number",
+            "aggregation": "SUM"
+          }
+        ],
+        "filters": [],
+        "sorts": []
+      },
+      "layout": {
+        "minHeight": 220
+      }
+    },
+    {
+      "id": "transport-efficiency-today-duration-chart",
+      "type": "custom-chart",
+      "name": "运输效率趋势-今日-平均运输时长",
+      "config": {
+        "renderer": "function",
+        "optionFunction": "const fallbackRows = [{ '周期': '今日', '时段': '00:00', duration: 22.4, mileage: 18.2, ontime: 94.2, exception: 86 }, { '周期': '今日', '时段': '06:00', duration: 20.1, mileage: 36.5, ontime: 95.1, exception: 104 }, { '周期': '今日', '时段': '12:00', duration: 18.6, mileage: 58.7, ontime: 96.8, exception: 126 }, { '周期': '今日', '时段': '18:00', duration: 17.2, mileage: 74.1, ontime: 96.1, exception: 118 }, { '周期': '今日', '时段': '当前', duration: 18.6, mileage: 86.4, ontime: 96.8, exception: 126 }, { '周期': '本周', '时段': '周一', duration: 21.6, mileage: 462.4, ontime: 94.8, exception: 610 }, { '周期': '本周', '时段': '周二', duration: 20.8, mileage: 486.2, ontime: 95.4, exception: 572 }, { '周期': '本周', '时段': '周三', duration: 19.4, mileage: 512.8, ontime: 96.2, exception: 536 }, { '周期': '本周', '时段': '周四', duration: 18.9, mileage: 548.6, ontime: 96.7, exception: 498 }, { '周期': '本周', '时段': '今日', duration: 18.2, mileage: 586.4, ontime: 97.1, exception: 462 }, { '周期': '本月', '时段': '第1周', duration: 22.8, mileage: 1680.5, ontime: 93.8, exception: 2140 }, { '周期': '本月', '时段': '第2周', duration: 21.2, mileage: 1896.3, ontime: 94.9, exception: 1986 }, { '周期': '本月', '时段': '第3周', duration: 19.8, mileage: 2140.8, ontime: 96.1, exception: 1760 }, { '周期': '本月', '时段': '第4周', duration: 18.6, mileage: 2386.4, ontime: 96.8, exception: 1538 }, { '周期': '本月', '时段': '当前', duration: 18.1, mileage: 2568.7, ontime: 97.2, exception: 1426 }, { '周期': '本年', '时段': 'Q1', duration: 24.2, mileage: 18420.6, ontime: 92.6, exception: 8640 }, { '周期': '本年', '时段': 'Q2', duration: 22.1, mileage: 23680.4, ontime: 94.1, exception: 7420 }, { '周期': '本年', '时段': 'Q3', duration: 20.4, mileage: 28640.8, ontime: 95.7, exception: 6280 }, { '周期': '本年', '时段': 'Q4', duration: 18.9, mileage: 32864.2, ontime: 96.8, exception: 5160 }, { '周期': '本年', '时段': '当前', duration: 18.4, mileage: 36420.5, ontime: 97.3, exception: 4820 }]; const period = '今日'; const sourceRows = Array.isArray(dataset?.source) && dataset.source.length ? dataset.source : fallbackRows; const rows = sourceRows.filter((row) => !row['周期'] || row['周期'] === period); const field = '平均运输时长'; const unit = 'h'; const values = rows.map((row) => Number(row[field] ?? row['duration'] ?? 0)); const labels = rows.map((row) => row['时段']); const lastIndex = Math.max(0, values.length - 1); const maxValue = values.length ? Math.max(...values) : 0; const yMax = field === '准时率' ? 100 : Math.max(10, Math.ceil(maxValue * 1.18)); const option = { backgroundColor: 'transparent', animation: false, grid: { left: 26, right: 16, top: 18, bottom: 26 }, tooltip: { trigger: 'axis', confine: true, backgroundColor: 'rgba(5,14,26,0.54)', borderColor: 'rgba(255,159,46,0.32)', borderWidth: 1, padding: [3, 7], extraCssText: 'width:126px!important;max-width:126px!important;height:42px!important;max-height:42px!important;min-height:42px!important;overflow:hidden!important;box-shadow:0 5px 12px rgba(0,0,0,0.24);border-radius:4px;backdrop-filter:blur(2px);', textStyle: { color: 'rgba(238,246,255,0.94)', fontSize: 10, fontWeight: 700 }, axisPointer: { type: 'line', lineStyle: { color: 'rgba(255,159,46,0.42)', width: 1, type: 'dashed' } }, formatter: (params) => { const item = Array.isArray(params) ? params[0] : params; return item ? '<div style=\"line-height:1.05\"><div style=\"display:flex;justify-content:space-between;margin-bottom:2px\"><span style=\"color:rgba(177,196,218,.82)\">' + period + ' · ' + item.name + '</span><b style=\"color:#fff\">' + item.value + unit + '</b></div><div style=\"display:flex;justify-content:space-between\"><span style=\"color:#ffad37\">' + field + '</span><span style=\"color:rgba(210,224,238,.76)\">趋势</span></div></div>' : ''; } }, xAxis: { type: 'category', boundaryGap: false, data: labels, axisTick: { show: false }, axisLine: { lineStyle: { color: 'rgba(100,145,190,0.18)' } }, axisLabel: { color: 'rgba(198,210,222,0.54)', fontSize: 10, fontWeight: 700 } }, yAxis: { type: 'value', min: 0, max: yMax, splitNumber: 4, axisLabel: { show: false }, axisLine: { show: false }, axisTick: { show: false }, splitLine: { lineStyle: { color: 'rgba(150,178,205,0.08)' } } }, series: [{ name: field, type: 'line', smooth: true, data: values, symbol: 'circle', symbolSize: (value, params) => params.dataIndex === lastIndex ? 9 : 7, showSymbol: true, lineStyle: { width: 3, color: '#ff9f2e', shadowBlur: 14, shadowColor: '#ff9f2e' }, itemStyle: { color: '#ff9f2e', borderColor: 'rgba(255,255,255,0.62)', borderWidth: 1 }, emphasis: { scale: 1.25, itemStyle: { shadowBlur: 16, shadowColor: '#ff9f2e' } }, areaStyle: { opacity: 1, color: { type: 'linear', x: 0, y: 0, x2: 0, y2: 1, colorStops: [{ offset: 0, color: 'rgba(255,159,46,0.36)' }, { offset: 0.72, color: 'rgba(255,159,46,0.10)' }, { offset: 1, color: 'rgba(255,159,46,0)' }] } }, markPoint: { symbol: 'circle', symbolSize: 10, data: labels.length ? [{ coord: [labels[lastIndex], values[lastIndex]], itemStyle: { color: '#e04d3f', borderColor: 'rgba(255,255,255,0.66)', borderWidth: 1 } }] : [], label: { show: false } } }] }; return option;"
+      },
+      "dataConfig": {
+        "datasetId": "dataset-logistics-efficiency-trend",
+        "fields": [
+          {
+            "name": "周期",
+            "type": "string"
+          },
+          {
+            "name": "时段",
+            "type": "string"
+          },
+          {
+            "name": "平均运输时长",
+            "type": "number",
+            "aggregation": "SUM"
+          }
+        ],
+        "filters": [
+          {
+            "field": "周期",
+            "operator": "=",
+            "value": "今日"
+          }
+        ],
+        "sorts": []
+      },
+      "layout": {
+        "minHeight": 220
+      }
+    },
+    {
+      "id": "transport-efficiency-today-mileage-chart",
+      "type": "custom-chart",
+      "name": "运输效率趋势-今日-总里程",
+      "config": {
+        "renderer": "function",
+        "optionFunction": "const fallbackRows = [{ '周期': '今日', '时段': '00:00', duration: 22.4, mileage: 18.2, ontime: 94.2, exception: 86 }, { '周期': '今日', '时段': '06:00', duration: 20.1, mileage: 36.5, ontime: 95.1, exception: 104 }, { '周期': '今日', '时段': '12:00', duration: 18.6, mileage: 58.7, ontime: 96.8, exception: 126 }, { '周期': '今日', '时段': '18:00', duration: 17.2, mileage: 74.1, ontime: 96.1, exception: 118 }, { '周期': '今日', '时段': '当前', duration: 18.6, mileage: 86.4, ontime: 96.8, exception: 126 }, { '周期': '本周', '时段': '周一', duration: 21.6, mileage: 462.4, ontime: 94.8, exception: 610 }, { '周期': '本周', '时段': '周二', duration: 20.8, mileage: 486.2, ontime: 95.4, exception: 572 }, { '周期': '本周', '时段': '周三', duration: 19.4, mileage: 512.8, ontime: 96.2, exception: 536 }, { '周期': '本周', '时段': '周四', duration: 18.9, mileage: 548.6, ontime: 96.7, exception: 498 }, { '周期': '本周', '时段': '今日', duration: 18.2, mileage: 586.4, ontime: 97.1, exception: 462 }, { '周期': '本月', '时段': '第1周', duration: 22.8, mileage: 1680.5, ontime: 93.8, exception: 2140 }, { '周期': '本月', '时段': '第2周', duration: 21.2, mileage: 1896.3, ontime: 94.9, exception: 1986 }, { '周期': '本月', '时段': '第3周', duration: 19.8, mileage: 2140.8, ontime: 96.1, exception: 1760 }, { '周期': '本月', '时段': '第4周', duration: 18.6, mileage: 2386.4, ontime: 96.8, exception: 1538 }, { '周期': '本月', '时段': '当前', duration: 18.1, mileage: 2568.7, ontime: 97.2, exception: 1426 }, { '周期': '本年', '时段': 'Q1', duration: 24.2, mileage: 18420.6, ontime: 92.6, exception: 8640 }, { '周期': '本年', '时段': 'Q2', duration: 22.1, mileage: 23680.4, ontime: 94.1, exception: 7420 }, { '周期': '本年', '时段': 'Q3', duration: 20.4, mileage: 28640.8, ontime: 95.7, exception: 6280 }, { '周期': '本年', '时段': 'Q4', duration: 18.9, mileage: 32864.2, ontime: 96.8, exception: 5160 }, { '周期': '本年', '时段': '当前', duration: 18.4, mileage: 36420.5, ontime: 97.3, exception: 4820 }]; const period = '今日'; const sourceRows = Array.isArray(dataset?.source) && dataset.source.length ? dataset.source : fallbackRows; const rows = sourceRows.filter((row) => !row['周期'] || row['周期'] === period); const field = '总里程'; const unit = '万km'; const values = rows.map((row) => Number(row[field] ?? row['mileage'] ?? 0)); const labels = rows.map((row) => row['时段']); const lastIndex = Math.max(0, values.length - 1); const maxValue = values.length ? Math.max(...values) : 0; const yMax = field === '准时率' ? 100 : Math.max(10, Math.ceil(maxValue * 1.18)); const option = { backgroundColor: 'transparent', animation: false, grid: { left: 26, right: 16, top: 18, bottom: 26 }, tooltip: { trigger: 'axis', confine: true, backgroundColor: 'rgba(5,14,26,0.54)', borderColor: 'rgba(255,159,46,0.32)', borderWidth: 1, padding: [3, 7], extraCssText: 'width:126px!important;max-width:126px!important;height:42px!important;max-height:42px!important;min-height:42px!important;overflow:hidden!important;box-shadow:0 5px 12px rgba(0,0,0,0.24);border-radius:4px;backdrop-filter:blur(2px);', textStyle: { color: 'rgba(238,246,255,0.94)', fontSize: 10, fontWeight: 700 }, axisPointer: { type: 'line', lineStyle: { color: 'rgba(255,159,46,0.42)', width: 1, type: 'dashed' } }, formatter: (params) => { const item = Array.isArray(params) ? params[0] : params; return item ? '<div style=\"line-height:1.05\"><div style=\"display:flex;justify-content:space-between;margin-bottom:2px\"><span style=\"color:rgba(177,196,218,.82)\">' + period + ' · ' + item.name + '</span><b style=\"color:#fff\">' + item.value + unit + '</b></div><div style=\"display:flex;justify-content:space-between\"><span style=\"color:#ffad37\">' + field + '</span><span style=\"color:rgba(210,224,238,.76)\">趋势</span></div></div>' : ''; } }, xAxis: { type: 'category', boundaryGap: false, data: labels, axisTick: { show: false }, axisLine: { lineStyle: { color: 'rgba(100,145,190,0.18)' } }, axisLabel: { color: 'rgba(198,210,222,0.54)', fontSize: 10, fontWeight: 700 } }, yAxis: { type: 'value', min: 0, max: yMax, splitNumber: 4, axisLabel: { show: false }, axisLine: { show: false }, axisTick: { show: false }, splitLine: { lineStyle: { color: 'rgba(150,178,205,0.08)' } } }, series: [{ name: field, type: 'line', smooth: true, data: values, symbol: 'circle', symbolSize: (value, params) => params.dataIndex === lastIndex ? 9 : 7, showSymbol: true, lineStyle: { width: 3, color: '#6ec8ff', shadowBlur: 14, shadowColor: '#6ec8ff' }, itemStyle: { color: '#6ec8ff', borderColor: 'rgba(255,255,255,0.62)', borderWidth: 1 }, emphasis: { scale: 1.25, itemStyle: { shadowBlur: 16, shadowColor: '#6ec8ff' } }, areaStyle: { opacity: 1, color: { type: 'linear', x: 0, y: 0, x2: 0, y2: 1, colorStops: [{ offset: 0, color: 'rgba(110,200,255,0.30)' }, { offset: 0.72, color: 'rgba(255,159,46,0.10)' }, { offset: 1, color: 'rgba(255,159,46,0)' }] } }, markPoint: { symbol: 'circle', symbolSize: 10, data: labels.length ? [{ coord: [labels[lastIndex], values[lastIndex]], itemStyle: { color: '#e04d3f', borderColor: 'rgba(255,255,255,0.66)', borderWidth: 1 } }] : [], label: { show: false } } }] }; return option;"
+      },
+      "dataConfig": {
+        "datasetId": "dataset-logistics-efficiency-trend",
+        "fields": [
+          {
+            "name": "周期",
+            "type": "string"
+          },
+          {
+            "name": "时段",
+            "type": "string"
+          },
+          {
+            "name": "总里程",
+            "type": "number",
+            "aggregation": "SUM"
+          }
+        ],
+        "filters": [
+          {
+            "field": "周期",
+            "operator": "=",
+            "value": "今日"
+          }
+        ],
+        "sorts": []
+      },
+      "layout": {
+        "minHeight": 220
+      }
+    },
+    {
+      "id": "transport-efficiency-today-ontime-chart",
+      "type": "custom-chart",
+      "name": "运输效率趋势-今日-准时率",
+      "config": {
+        "renderer": "function",
+        "optionFunction": "const fallbackRows = [{ '周期': '今日', '时段': '00:00', duration: 22.4, mileage: 18.2, ontime: 94.2, exception: 86 }, { '周期': '今日', '时段': '06:00', duration: 20.1, mileage: 36.5, ontime: 95.1, exception: 104 }, { '周期': '今日', '时段': '12:00', duration: 18.6, mileage: 58.7, ontime: 96.8, exception: 126 }, { '周期': '今日', '时段': '18:00', duration: 17.2, mileage: 74.1, ontime: 96.1, exception: 118 }, { '周期': '今日', '时段': '当前', duration: 18.6, mileage: 86.4, ontime: 96.8, exception: 126 }, { '周期': '本周', '时段': '周一', duration: 21.6, mileage: 462.4, ontime: 94.8, exception: 610 }, { '周期': '本周', '时段': '周二', duration: 20.8, mileage: 486.2, ontime: 95.4, exception: 572 }, { '周期': '本周', '时段': '周三', duration: 19.4, mileage: 512.8, ontime: 96.2, exception: 536 }, { '周期': '本周', '时段': '周四', duration: 18.9, mileage: 548.6, ontime: 96.7, exception: 498 }, { '周期': '本周', '时段': '今日', duration: 18.2, mileage: 586.4, ontime: 97.1, exception: 462 }, { '周期': '本月', '时段': '第1周', duration: 22.8, mileage: 1680.5, ontime: 93.8, exception: 2140 }, { '周期': '本月', '时段': '第2周', duration: 21.2, mileage: 1896.3, ontime: 94.9, exception: 1986 }, { '周期': '本月', '时段': '第3周', duration: 19.8, mileage: 2140.8, ontime: 96.1, exception: 1760 }, { '周期': '本月', '时段': '第4周', duration: 18.6, mileage: 2386.4, ontime: 96.8, exception: 1538 }, { '周期': '本月', '时段': '当前', duration: 18.1, mileage: 2568.7, ontime: 97.2, exception: 1426 }, { '周期': '本年', '时段': 'Q1', duration: 24.2, mileage: 18420.6, ontime: 92.6, exception: 8640 }, { '周期': '本年', '时段': 'Q2', duration: 22.1, mileage: 23680.4, ontime: 94.1, exception: 7420 }, { '周期': '本年', '时段': 'Q3', duration: 20.4, mileage: 28640.8, ontime: 95.7, exception: 6280 }, { '周期': '本年', '时段': 'Q4', duration: 18.9, mileage: 32864.2, ontime: 96.8, exception: 5160 }, { '周期': '本年', '时段': '当前', duration: 18.4, mileage: 36420.5, ontime: 97.3, exception: 4820 }]; const period = '今日'; const sourceRows = Array.isArray(dataset?.source) && dataset.source.length ? dataset.source : fallbackRows; const rows = sourceRows.filter((row) => !row['周期'] || row['周期'] === period); const field = '准时率'; const unit = '%'; const values = rows.map((row) => Number(row[field] ?? row['ontime'] ?? 0)); const labels = rows.map((row) => row['时段']); const lastIndex = Math.max(0, values.length - 1); const maxValue = values.length ? Math.max(...values) : 0; const yMax = field === '准时率' ? 100 : Math.max(10, Math.ceil(maxValue * 1.18)); const option = { backgroundColor: 'transparent', animation: false, grid: { left: 26, right: 16, top: 18, bottom: 26 }, tooltip: { trigger: 'axis', confine: true, backgroundColor: 'rgba(5,14,26,0.54)', borderColor: 'rgba(255,159,46,0.32)', borderWidth: 1, padding: [3, 7], extraCssText: 'width:126px!important;max-width:126px!important;height:42px!important;max-height:42px!important;min-height:42px!important;overflow:hidden!important;box-shadow:0 5px 12px rgba(0,0,0,0.24);border-radius:4px;backdrop-filter:blur(2px);', textStyle: { color: 'rgba(238,246,255,0.94)', fontSize: 10, fontWeight: 700 }, axisPointer: { type: 'line', lineStyle: { color: 'rgba(255,159,46,0.42)', width: 1, type: 'dashed' } }, formatter: (params) => { const item = Array.isArray(params) ? params[0] : params; return item ? '<div style=\"line-height:1.05\"><div style=\"display:flex;justify-content:space-between;margin-bottom:2px\"><span style=\"color:rgba(177,196,218,.82)\">' + period + ' · ' + item.name + '</span><b style=\"color:#fff\">' + item.value + unit + '</b></div><div style=\"display:flex;justify-content:space-between\"><span style=\"color:#ffad37\">' + field + '</span><span style=\"color:rgba(210,224,238,.76)\">趋势</span></div></div>' : ''; } }, xAxis: { type: 'category', boundaryGap: false, data: labels, axisTick: { show: false }, axisLine: { lineStyle: { color: 'rgba(100,145,190,0.18)' } }, axisLabel: { color: 'rgba(198,210,222,0.54)', fontSize: 10, fontWeight: 700 } }, yAxis: { type: 'value', min: 0, max: yMax, splitNumber: 4, axisLabel: { show: false }, axisLine: { show: false }, axisTick: { show: false }, splitLine: { lineStyle: { color: 'rgba(150,178,205,0.08)' } } }, series: [{ name: field, type: 'line', smooth: true, data: values, symbol: 'circle', symbolSize: (value, params) => params.dataIndex === lastIndex ? 9 : 7, showSymbol: true, lineStyle: { width: 3, color: '#7be0a5', shadowBlur: 14, shadowColor: '#7be0a5' }, itemStyle: { color: '#7be0a5', borderColor: 'rgba(255,255,255,0.62)', borderWidth: 1 }, emphasis: { scale: 1.25, itemStyle: { shadowBlur: 16, shadowColor: '#7be0a5' } }, areaStyle: { opacity: 1, color: { type: 'linear', x: 0, y: 0, x2: 0, y2: 1, colorStops: [{ offset: 0, color: 'rgba(123,224,165,0.28)' }, { offset: 0.72, color: 'rgba(255,159,46,0.10)' }, { offset: 1, color: 'rgba(255,159,46,0)' }] } }, markPoint: { symbol: 'circle', symbolSize: 10, data: labels.length ? [{ coord: [labels[lastIndex], values[lastIndex]], itemStyle: { color: '#e04d3f', borderColor: 'rgba(255,255,255,0.66)', borderWidth: 1 } }] : [], label: { show: false } } }] }; return option;"
+      },
+      "dataConfig": {
+        "datasetId": "dataset-logistics-efficiency-trend",
+        "fields": [
+          {
+            "name": "周期",
+            "type": "string"
+          },
+          {
+            "name": "时段",
+            "type": "string"
+          },
+          {
+            "name": "准时率",
+            "type": "number",
+            "aggregation": "SUM"
+          }
+        ],
+        "filters": [
+          {
+            "field": "周期",
+            "operator": "=",
+            "value": "今日"
+          }
+        ],
+        "sorts": []
+      },
+      "layout": {
+        "minHeight": 220
+      }
+    },
+    {
+      "id": "transport-efficiency-today-exception-chart",
+      "type": "custom-chart",
+      "name": "运输效率趋势-今日-异常订单",
+      "config": {
+        "renderer": "function",
+        "optionFunction": "const fallbackRows = [{ '周期': '今日', '时段': '00:00', duration: 22.4, mileage: 18.2, ontime: 94.2, exception: 86 }, { '周期': '今日', '时段': '06:00', duration: 20.1, mileage: 36.5, ontime: 95.1, exception: 104 }, { '周期': '今日', '时段': '12:00', duration: 18.6, mileage: 58.7, ontime: 96.8, exception: 126 }, { '周期': '今日', '时段': '18:00', duration: 17.2, mileage: 74.1, ontime: 96.1, exception: 118 }, { '周期': '今日', '时段': '当前', duration: 18.6, mileage: 86.4, ontime: 96.8, exception: 126 }, { '周期': '本周', '时段': '周一', duration: 21.6, mileage: 462.4, ontime: 94.8, exception: 610 }, { '周期': '本周', '时段': '周二', duration: 20.8, mileage: 486.2, ontime: 95.4, exception: 572 }, { '周期': '本周', '时段': '周三', duration: 19.4, mileage: 512.8, ontime: 96.2, exception: 536 }, { '周期': '本周', '时段': '周四', duration: 18.9, mileage: 548.6, ontime: 96.7, exception: 498 }, { '周期': '本周', '时段': '今日', duration: 18.2, mileage: 586.4, ontime: 97.1, exception: 462 }, { '周期': '本月', '时段': '第1周', duration: 22.8, mileage: 1680.5, ontime: 93.8, exception: 2140 }, { '周期': '本月', '时段': '第2周', duration: 21.2, mileage: 1896.3, ontime: 94.9, exception: 1986 }, { '周期': '本月', '时段': '第3周', duration: 19.8, mileage: 2140.8, ontime: 96.1, exception: 1760 }, { '周期': '本月', '时段': '第4周', duration: 18.6, mileage: 2386.4, ontime: 96.8, exception: 1538 }, { '周期': '本月', '时段': '当前', duration: 18.1, mileage: 2568.7, ontime: 97.2, exception: 1426 }, { '周期': '本年', '时段': 'Q1', duration: 24.2, mileage: 18420.6, ontime: 92.6, exception: 8640 }, { '周期': '本年', '时段': 'Q2', duration: 22.1, mileage: 23680.4, ontime: 94.1, exception: 7420 }, { '周期': '本年', '时段': 'Q3', duration: 20.4, mileage: 28640.8, ontime: 95.7, exception: 6280 }, { '周期': '本年', '时段': 'Q4', duration: 18.9, mileage: 32864.2, ontime: 96.8, exception: 5160 }, { '周期': '本年', '时段': '当前', duration: 18.4, mileage: 36420.5, ontime: 97.3, exception: 4820 }]; const period = '今日'; const sourceRows = Array.isArray(dataset?.source) && dataset.source.length ? dataset.source : fallbackRows; const rows = sourceRows.filter((row) => !row['周期'] || row['周期'] === period); const field = '异常订单'; const unit = '单'; const values = rows.map((row) => Number(row[field] ?? row['exception'] ?? 0)); const labels = rows.map((row) => row['时段']); const lastIndex = Math.max(0, values.length - 1); const maxValue = values.length ? Math.max(...values) : 0; const yMax = field === '准时率' ? 100 : Math.max(10, Math.ceil(maxValue * 1.18)); const option = { backgroundColor: 'transparent', animation: false, grid: { left: 26, right: 16, top: 18, bottom: 26 }, tooltip: { trigger: 'axis', confine: true, backgroundColor: 'rgba(5,14,26,0.54)', borderColor: 'rgba(255,159,46,0.32)', borderWidth: 1, padding: [3, 7], extraCssText: 'width:126px!important;max-width:126px!important;height:42px!important;max-height:42px!important;min-height:42px!important;overflow:hidden!important;box-shadow:0 5px 12px rgba(0,0,0,0.24);border-radius:4px;backdrop-filter:blur(2px);', textStyle: { color: 'rgba(238,246,255,0.94)', fontSize: 10, fontWeight: 700 }, axisPointer: { type: 'line', lineStyle: { color: 'rgba(255,159,46,0.42)', width: 1, type: 'dashed' } }, formatter: (params) => { const item = Array.isArray(params) ? params[0] : params; return item ? '<div style=\"line-height:1.05\"><div style=\"display:flex;justify-content:space-between;margin-bottom:2px\"><span style=\"color:rgba(177,196,218,.82)\">' + period + ' · ' + item.name + '</span><b style=\"color:#fff\">' + item.value + unit + '</b></div><div style=\"display:flex;justify-content:space-between\"><span style=\"color:#ffad37\">' + field + '</span><span style=\"color:rgba(210,224,238,.76)\">趋势</span></div></div>' : ''; } }, xAxis: { type: 'category', boundaryGap: false, data: labels, axisTick: { show: false }, axisLine: { lineStyle: { color: 'rgba(100,145,190,0.18)' } }, axisLabel: { color: 'rgba(198,210,222,0.54)', fontSize: 10, fontWeight: 700 } }, yAxis: { type: 'value', min: 0, max: yMax, splitNumber: 4, axisLabel: { show: false }, axisLine: { show: false }, axisTick: { show: false }, splitLine: { lineStyle: { color: 'rgba(150,178,205,0.08)' } } }, series: [{ name: field, type: 'line', smooth: true, data: values, symbol: 'circle', symbolSize: (value, params) => params.dataIndex === lastIndex ? 9 : 7, showSymbol: true, lineStyle: { width: 3, color: '#ff624d', shadowBlur: 14, shadowColor: '#ff624d' }, itemStyle: { color: '#ff9f2e', borderColor: 'rgba(255,255,255,0.62)', borderWidth: 1 }, emphasis: { scale: 1.25, itemStyle: { shadowBlur: 16, shadowColor: '#ff624d' } }, areaStyle: { opacity: 1, color: { type: 'linear', x: 0, y: 0, x2: 0, y2: 1, colorStops: [{ offset: 0, color: 'rgba(255,98,77,0.30)' }, { offset: 0.72, color: 'rgba(255,159,46,0.10)' }, { offset: 1, color: 'rgba(255,159,46,0)' }] } }, markPoint: { symbol: 'circle', symbolSize: 10, data: labels.length ? [{ coord: [labels[lastIndex], values[lastIndex]], itemStyle: { color: '#e04d3f', borderColor: 'rgba(255,255,255,0.66)', borderWidth: 1 } }] : [], label: { show: false } } }] }; return option;"
+      },
+      "dataConfig": {
+        "datasetId": "dataset-logistics-efficiency-trend",
+        "fields": [
+          {
+            "name": "周期",
+            "type": "string"
+          },
+          {
+            "name": "时段",
+            "type": "string"
+          },
+          {
+            "name": "异常订单",
+            "type": "number",
+            "aggregation": "SUM"
+          }
+        ],
+        "filters": [
+          {
+            "field": "周期",
+            "operator": "=",
+            "value": "今日"
+          }
+        ],
+        "sorts": []
+      },
+      "layout": {
+        "minHeight": 220
+      }
+    },
+    {
+      "id": "transport-efficiency-week-duration-chart",
+      "type": "custom-chart",
+      "name": "运输效率趋势-本周-平均运输时长",
+      "config": {
+        "renderer": "function",
+        "optionFunction": "const fallbackRows = [{ '周期': '今日', '时段': '00:00', duration: 22.4, mileage: 18.2, ontime: 94.2, exception: 86 }, { '周期': '今日', '时段': '06:00', duration: 20.1, mileage: 36.5, ontime: 95.1, exception: 104 }, { '周期': '今日', '时段': '12:00', duration: 18.6, mileage: 58.7, ontime: 96.8, exception: 126 }, { '周期': '今日', '时段': '18:00', duration: 17.2, mileage: 74.1, ontime: 96.1, exception: 118 }, { '周期': '今日', '时段': '当前', duration: 18.6, mileage: 86.4, ontime: 96.8, exception: 126 }, { '周期': '本周', '时段': '周一', duration: 21.6, mileage: 462.4, ontime: 94.8, exception: 610 }, { '周期': '本周', '时段': '周二', duration: 20.8, mileage: 486.2, ontime: 95.4, exception: 572 }, { '周期': '本周', '时段': '周三', duration: 19.4, mileage: 512.8, ontime: 96.2, exception: 536 }, { '周期': '本周', '时段': '周四', duration: 18.9, mileage: 548.6, ontime: 96.7, exception: 498 }, { '周期': '本周', '时段': '今日', duration: 18.2, mileage: 586.4, ontime: 97.1, exception: 462 }, { '周期': '本月', '时段': '第1周', duration: 22.8, mileage: 1680.5, ontime: 93.8, exception: 2140 }, { '周期': '本月', '时段': '第2周', duration: 21.2, mileage: 1896.3, ontime: 94.9, exception: 1986 }, { '周期': '本月', '时段': '第3周', duration: 19.8, mileage: 2140.8, ontime: 96.1, exception: 1760 }, { '周期': '本月', '时段': '第4周', duration: 18.6, mileage: 2386.4, ontime: 96.8, exception: 1538 }, { '周期': '本月', '时段': '当前', duration: 18.1, mileage: 2568.7, ontime: 97.2, exception: 1426 }, { '周期': '本年', '时段': 'Q1', duration: 24.2, mileage: 18420.6, ontime: 92.6, exception: 8640 }, { '周期': '本年', '时段': 'Q2', duration: 22.1, mileage: 23680.4, ontime: 94.1, exception: 7420 }, { '周期': '本年', '时段': 'Q3', duration: 20.4, mileage: 28640.8, ontime: 95.7, exception: 6280 }, { '周期': '本年', '时段': 'Q4', duration: 18.9, mileage: 32864.2, ontime: 96.8, exception: 5160 }, { '周期': '本年', '时段': '当前', duration: 18.4, mileage: 36420.5, ontime: 97.3, exception: 4820 }]; const period = '本周'; const sourceRows = Array.isArray(dataset?.source) && dataset.source.length ? dataset.source : fallbackRows; const rows = sourceRows.filter((row) => !row['周期'] || row['周期'] === period); const field = '平均运输时长'; const unit = 'h'; const values = rows.map((row) => Number(row[field] ?? row['duration'] ?? 0)); const labels = rows.map((row) => row['时段']); const lastIndex = Math.max(0, values.length - 1); const maxValue = values.length ? Math.max(...values) : 0; const yMax = field === '准时率' ? 100 : Math.max(10, Math.ceil(maxValue * 1.18)); const option = { backgroundColor: 'transparent', animation: false, grid: { left: 26, right: 16, top: 18, bottom: 26 }, tooltip: { trigger: 'axis', confine: true, backgroundColor: 'rgba(5,14,26,0.54)', borderColor: 'rgba(255,159,46,0.32)', borderWidth: 1, padding: [3, 7], extraCssText: 'width:126px!important;max-width:126px!important;height:42px!important;max-height:42px!important;min-height:42px!important;overflow:hidden!important;box-shadow:0 5px 12px rgba(0,0,0,0.24);border-radius:4px;backdrop-filter:blur(2px);', textStyle: { color: 'rgba(238,246,255,0.94)', fontSize: 10, fontWeight: 700 }, axisPointer: { type: 'line', lineStyle: { color: 'rgba(255,159,46,0.42)', width: 1, type: 'dashed' } }, formatter: (params) => { const item = Array.isArray(params) ? params[0] : params; return item ? '<div style=\"line-height:1.05\"><div style=\"display:flex;justify-content:space-between;margin-bottom:2px\"><span style=\"color:rgba(177,196,218,.82)\">' + period + ' · ' + item.name + '</span><b style=\"color:#fff\">' + item.value + unit + '</b></div><div style=\"display:flex;justify-content:space-between\"><span style=\"color:#ffad37\">' + field + '</span><span style=\"color:rgba(210,224,238,.76)\">趋势</span></div></div>' : ''; } }, xAxis: { type: 'category', boundaryGap: false, data: labels, axisTick: { show: false }, axisLine: { lineStyle: { color: 'rgba(100,145,190,0.18)' } }, axisLabel: { color: 'rgba(198,210,222,0.54)', fontSize: 10, fontWeight: 700 } }, yAxis: { type: 'value', min: 0, max: yMax, splitNumber: 4, axisLabel: { show: false }, axisLine: { show: false }, axisTick: { show: false }, splitLine: { lineStyle: { color: 'rgba(150,178,205,0.08)' } } }, series: [{ name: field, type: 'line', smooth: true, data: values, symbol: 'circle', symbolSize: (value, params) => params.dataIndex === lastIndex ? 9 : 7, showSymbol: true, lineStyle: { width: 3, color: '#ff9f2e', shadowBlur: 14, shadowColor: '#ff9f2e' }, itemStyle: { color: '#ff9f2e', borderColor: 'rgba(255,255,255,0.62)', borderWidth: 1 }, emphasis: { scale: 1.25, itemStyle: { shadowBlur: 16, shadowColor: '#ff9f2e' } }, areaStyle: { opacity: 1, color: { type: 'linear', x: 0, y: 0, x2: 0, y2: 1, colorStops: [{ offset: 0, color: 'rgba(255,159,46,0.36)' }, { offset: 0.72, color: 'rgba(255,159,46,0.10)' }, { offset: 1, color: 'rgba(255,159,46,0)' }] } }, markPoint: { symbol: 'circle', symbolSize: 10, data: labels.length ? [{ coord: [labels[lastIndex], values[lastIndex]], itemStyle: { color: '#e04d3f', borderColor: 'rgba(255,255,255,0.66)', borderWidth: 1 } }] : [], label: { show: false } } }] }; return option;"
+      },
+      "dataConfig": {
+        "datasetId": "dataset-logistics-efficiency-trend",
+        "fields": [
+          {
+            "name": "周期",
+            "type": "string"
+          },
+          {
+            "name": "时段",
+            "type": "string"
+          },
+          {
+            "name": "平均运输时长",
+            "type": "number",
+            "aggregation": "SUM"
+          }
+        ],
+        "filters": [
+          {
+            "field": "周期",
+            "operator": "=",
+            "value": "本周"
+          }
+        ],
+        "sorts": []
+      },
+      "layout": {
+        "minHeight": 220
+      }
+    },
+    {
+      "id": "transport-efficiency-week-mileage-chart",
+      "type": "custom-chart",
+      "name": "运输效率趋势-本周-总里程",
+      "config": {
+        "renderer": "function",
+        "optionFunction": "const fallbackRows = [{ '周期': '今日', '时段': '00:00', duration: 22.4, mileage: 18.2, ontime: 94.2, exception: 86 }, { '周期': '今日', '时段': '06:00', duration: 20.1, mileage: 36.5, ontime: 95.1, exception: 104 }, { '周期': '今日', '时段': '12:00', duration: 18.6, mileage: 58.7, ontime: 96.8, exception: 126 }, { '周期': '今日', '时段': '18:00', duration: 17.2, mileage: 74.1, ontime: 96.1, exception: 118 }, { '周期': '今日', '时段': '当前', duration: 18.6, mileage: 86.4, ontime: 96.8, exception: 126 }, { '周期': '本周', '时段': '周一', duration: 21.6, mileage: 462.4, ontime: 94.8, exception: 610 }, { '周期': '本周', '时段': '周二', duration: 20.8, mileage: 486.2, ontime: 95.4, exception: 572 }, { '周期': '本周', '时段': '周三', duration: 19.4, mileage: 512.8, ontime: 96.2, exception: 536 }, { '周期': '本周', '时段': '周四', duration: 18.9, mileage: 548.6, ontime: 96.7, exception: 498 }, { '周期': '本周', '时段': '今日', duration: 18.2, mileage: 586.4, ontime: 97.1, exception: 462 }, { '周期': '本月', '时段': '第1周', duration: 22.8, mileage: 1680.5, ontime: 93.8, exception: 2140 }, { '周期': '本月', '时段': '第2周', duration: 21.2, mileage: 1896.3, ontime: 94.9, exception: 1986 }, { '周期': '本月', '时段': '第3周', duration: 19.8, mileage: 2140.8, ontime: 96.1, exception: 1760 }, { '周期': '本月', '时段': '第4周', duration: 18.6, mileage: 2386.4, ontime: 96.8, exception: 1538 }, { '周期': '本月', '时段': '当前', duration: 18.1, mileage: 2568.7, ontime: 97.2, exception: 1426 }, { '周期': '本年', '时段': 'Q1', duration: 24.2, mileage: 18420.6, ontime: 92.6, exception: 8640 }, { '周期': '本年', '时段': 'Q2', duration: 22.1, mileage: 23680.4, ontime: 94.1, exception: 7420 }, { '周期': '本年', '时段': 'Q3', duration: 20.4, mileage: 28640.8, ontime: 95.7, exception: 6280 }, { '周期': '本年', '时段': 'Q4', duration: 18.9, mileage: 32864.2, ontime: 96.8, exception: 5160 }, { '周期': '本年', '时段': '当前', duration: 18.4, mileage: 36420.5, ontime: 97.3, exception: 4820 }]; const period = '本周'; const sourceRows = Array.isArray(dataset?.source) && dataset.source.length ? dataset.source : fallbackRows; const rows = sourceRows.filter((row) => !row['周期'] || row['周期'] === period); const field = '总里程'; const unit = '万km'; const values = rows.map((row) => Number(row[field] ?? row['mileage'] ?? 0)); const labels = rows.map((row) => row['时段']); const lastIndex = Math.max(0, values.length - 1); const maxValue = values.length ? Math.max(...values) : 0; const yMax = field === '准时率' ? 100 : Math.max(10, Math.ceil(maxValue * 1.18)); const option = { backgroundColor: 'transparent', animation: false, grid: { left: 26, right: 16, top: 18, bottom: 26 }, tooltip: { trigger: 'axis', confine: true, backgroundColor: 'rgba(5,14,26,0.54)', borderColor: 'rgba(255,159,46,0.32)', borderWidth: 1, padding: [3, 7], extraCssText: 'width:126px!important;max-width:126px!important;height:42px!important;max-height:42px!important;min-height:42px!important;overflow:hidden!important;box-shadow:0 5px 12px rgba(0,0,0,0.24);border-radius:4px;backdrop-filter:blur(2px);', textStyle: { color: 'rgba(238,246,255,0.94)', fontSize: 10, fontWeight: 700 }, axisPointer: { type: 'line', lineStyle: { color: 'rgba(255,159,46,0.42)', width: 1, type: 'dashed' } }, formatter: (params) => { const item = Array.isArray(params) ? params[0] : params; return item ? '<div style=\"line-height:1.05\"><div style=\"display:flex;justify-content:space-between;margin-bottom:2px\"><span style=\"color:rgba(177,196,218,.82)\">' + period + ' · ' + item.name + '</span><b style=\"color:#fff\">' + item.value + unit + '</b></div><div style=\"display:flex;justify-content:space-between\"><span style=\"color:#ffad37\">' + field + '</span><span style=\"color:rgba(210,224,238,.76)\">趋势</span></div></div>' : ''; } }, xAxis: { type: 'category', boundaryGap: false, data: labels, axisTick: { show: false }, axisLine: { lineStyle: { color: 'rgba(100,145,190,0.18)' } }, axisLabel: { color: 'rgba(198,210,222,0.54)', fontSize: 10, fontWeight: 700 } }, yAxis: { type: 'value', min: 0, max: yMax, splitNumber: 4, axisLabel: { show: false }, axisLine: { show: false }, axisTick: { show: false }, splitLine: { lineStyle: { color: 'rgba(150,178,205,0.08)' } } }, series: [{ name: field, type: 'line', smooth: true, data: values, symbol: 'circle', symbolSize: (value, params) => params.dataIndex === lastIndex ? 9 : 7, showSymbol: true, lineStyle: { width: 3, color: '#6ec8ff', shadowBlur: 14, shadowColor: '#6ec8ff' }, itemStyle: { color: '#6ec8ff', borderColor: 'rgba(255,255,255,0.62)', borderWidth: 1 }, emphasis: { scale: 1.25, itemStyle: { shadowBlur: 16, shadowColor: '#6ec8ff' } }, areaStyle: { opacity: 1, color: { type: 'linear', x: 0, y: 0, x2: 0, y2: 1, colorStops: [{ offset: 0, color: 'rgba(110,200,255,0.30)' }, { offset: 0.72, color: 'rgba(255,159,46,0.10)' }, { offset: 1, color: 'rgba(255,159,46,0)' }] } }, markPoint: { symbol: 'circle', symbolSize: 10, data: labels.length ? [{ coord: [labels[lastIndex], values[lastIndex]], itemStyle: { color: '#e04d3f', borderColor: 'rgba(255,255,255,0.66)', borderWidth: 1 } }] : [], label: { show: false } } }] }; return option;"
+      },
+      "dataConfig": {
+        "datasetId": "dataset-logistics-efficiency-trend",
+        "fields": [
+          {
+            "name": "周期",
+            "type": "string"
+          },
+          {
+            "name": "时段",
+            "type": "string"
+          },
+          {
+            "name": "总里程",
+            "type": "number",
+            "aggregation": "SUM"
+          }
+        ],
+        "filters": [
+          {
+            "field": "周期",
+            "operator": "=",
+            "value": "本周"
+          }
+        ],
+        "sorts": []
+      },
+      "layout": {
+        "minHeight": 220
+      }
+    },
+    {
+      "id": "transport-efficiency-week-ontime-chart",
+      "type": "custom-chart",
+      "name": "运输效率趋势-本周-准时率",
+      "config": {
+        "renderer": "function",
+        "optionFunction": "const fallbackRows = [{ '周期': '今日', '时段': '00:00', duration: 22.4, mileage: 18.2, ontime: 94.2, exception: 86 }, { '周期': '今日', '时段': '06:00', duration: 20.1, mileage: 36.5, ontime: 95.1, exception: 104 }, { '周期': '今日', '时段': '12:00', duration: 18.6, mileage: 58.7, ontime: 96.8, exception: 126 }, { '周期': '今日', '时段': '18:00', duration: 17.2, mileage: 74.1, ontime: 96.1, exception: 118 }, { '周期': '今日', '时段': '当前', duration: 18.6, mileage: 86.4, ontime: 96.8, exception: 126 }, { '周期': '本周', '时段': '周一', duration: 21.6, mileage: 462.4, ontime: 94.8, exception: 610 }, { '周期': '本周', '时段': '周二', duration: 20.8, mileage: 486.2, ontime: 95.4, exception: 572 }, { '周期': '本周', '时段': '周三', duration: 19.4, mileage: 512.8, ontime: 96.2, exception: 536 }, { '周期': '本周', '时段': '周四', duration: 18.9, mileage: 548.6, ontime: 96.7, exception: 498 }, { '周期': '本周', '时段': '今日', duration: 18.2, mileage: 586.4, ontime: 97.1, exception: 462 }, { '周期': '本月', '时段': '第1周', duration: 22.8, mileage: 1680.5, ontime: 93.8, exception: 2140 }, { '周期': '本月', '时段': '第2周', duration: 21.2, mileage: 1896.3, ontime: 94.9, exception: 1986 }, { '周期': '本月', '时段': '第3周', duration: 19.8, mileage: 2140.8, ontime: 96.1, exception: 1760 }, { '周期': '本月', '时段': '第4周', duration: 18.6, mileage: 2386.4, ontime: 96.8, exception: 1538 }, { '周期': '本月', '时段': '当前', duration: 18.1, mileage: 2568.7, ontime: 97.2, exception: 1426 }, { '周期': '本年', '时段': 'Q1', duration: 24.2, mileage: 18420.6, ontime: 92.6, exception: 8640 }, { '周期': '本年', '时段': 'Q2', duration: 22.1, mileage: 23680.4, ontime: 94.1, exception: 7420 }, { '周期': '本年', '时段': 'Q3', duration: 20.4, mileage: 28640.8, ontime: 95.7, exception: 6280 }, { '周期': '本年', '时段': 'Q4', duration: 18.9, mileage: 32864.2, ontime: 96.8, exception: 5160 }, { '周期': '本年', '时段': '当前', duration: 18.4, mileage: 36420.5, ontime: 97.3, exception: 4820 }]; const period = '本周'; const sourceRows = Array.isArray(dataset?.source) && dataset.source.length ? dataset.source : fallbackRows; const rows = sourceRows.filter((row) => !row['周期'] || row['周期'] === period); const field = '准时率'; const unit = '%'; const values = rows.map((row) => Number(row[field] ?? row['ontime'] ?? 0)); const labels = rows.map((row) => row['时段']); const lastIndex = Math.max(0, values.length - 1); const maxValue = values.length ? Math.max(...values) : 0; const yMax = field === '准时率' ? 100 : Math.max(10, Math.ceil(maxValue * 1.18)); const option = { backgroundColor: 'transparent', animation: false, grid: { left: 26, right: 16, top: 18, bottom: 26 }, tooltip: { trigger: 'axis', confine: true, backgroundColor: 'rgba(5,14,26,0.54)', borderColor: 'rgba(255,159,46,0.32)', borderWidth: 1, padding: [3, 7], extraCssText: 'width:126px!important;max-width:126px!important;height:42px!important;max-height:42px!important;min-height:42px!important;overflow:hidden!important;box-shadow:0 5px 12px rgba(0,0,0,0.24);border-radius:4px;backdrop-filter:blur(2px);', textStyle: { color: 'rgba(238,246,255,0.94)', fontSize: 10, fontWeight: 700 }, axisPointer: { type: 'line', lineStyle: { color: 'rgba(255,159,46,0.42)', width: 1, type: 'dashed' } }, formatter: (params) => { const item = Array.isArray(params) ? params[0] : params; return item ? '<div style=\"line-height:1.05\"><div style=\"display:flex;justify-content:space-between;margin-bottom:2px\"><span style=\"color:rgba(177,196,218,.82)\">' + period + ' · ' + item.name + '</span><b style=\"color:#fff\">' + item.value + unit + '</b></div><div style=\"display:flex;justify-content:space-between\"><span style=\"color:#ffad37\">' + field + '</span><span style=\"color:rgba(210,224,238,.76)\">趋势</span></div></div>' : ''; } }, xAxis: { type: 'category', boundaryGap: false, data: labels, axisTick: { show: false }, axisLine: { lineStyle: { color: 'rgba(100,145,190,0.18)' } }, axisLabel: { color: 'rgba(198,210,222,0.54)', fontSize: 10, fontWeight: 700 } }, yAxis: { type: 'value', min: 0, max: yMax, splitNumber: 4, axisLabel: { show: false }, axisLine: { show: false }, axisTick: { show: false }, splitLine: { lineStyle: { color: 'rgba(150,178,205,0.08)' } } }, series: [{ name: field, type: 'line', smooth: true, data: values, symbol: 'circle', symbolSize: (value, params) => params.dataIndex === lastIndex ? 9 : 7, showSymbol: true, lineStyle: { width: 3, color: '#7be0a5', shadowBlur: 14, shadowColor: '#7be0a5' }, itemStyle: { color: '#7be0a5', borderColor: 'rgba(255,255,255,0.62)', borderWidth: 1 }, emphasis: { scale: 1.25, itemStyle: { shadowBlur: 16, shadowColor: '#7be0a5' } }, areaStyle: { opacity: 1, color: { type: 'linear', x: 0, y: 0, x2: 0, y2: 1, colorStops: [{ offset: 0, color: 'rgba(123,224,165,0.28)' }, { offset: 0.72, color: 'rgba(255,159,46,0.10)' }, { offset: 1, color: 'rgba(255,159,46,0)' }] } }, markPoint: { symbol: 'circle', symbolSize: 10, data: labels.length ? [{ coord: [labels[lastIndex], values[lastIndex]], itemStyle: { color: '#e04d3f', borderColor: 'rgba(255,255,255,0.66)', borderWidth: 1 } }] : [], label: { show: false } } }] }; return option;"
+      },
+      "dataConfig": {
+        "datasetId": "dataset-logistics-efficiency-trend",
+        "fields": [
+          {
+            "name": "周期",
+            "type": "string"
+          },
+          {
+            "name": "时段",
+            "type": "string"
+          },
+          {
+            "name": "准时率",
+            "type": "number",
+            "aggregation": "SUM"
+          }
+        ],
+        "filters": [
+          {
+            "field": "周期",
+            "operator": "=",
+            "value": "本周"
+          }
+        ],
+        "sorts": []
+      },
+      "layout": {
+        "minHeight": 220
+      }
+    },
+    {
+      "id": "transport-efficiency-week-exception-chart",
+      "type": "custom-chart",
+      "name": "运输效率趋势-本周-异常订单",
+      "config": {
+        "renderer": "function",
+        "optionFunction": "const fallbackRows = [{ '周期': '今日', '时段': '00:00', duration: 22.4, mileage: 18.2, ontime: 94.2, exception: 86 }, { '周期': '今日', '时段': '06:00', duration: 20.1, mileage: 36.5, ontime: 95.1, exception: 104 }, { '周期': '今日', '时段': '12:00', duration: 18.6, mileage: 58.7, ontime: 96.8, exception: 126 }, { '周期': '今日', '时段': '18:00', duration: 17.2, mileage: 74.1, ontime: 96.1, exception: 118 }, { '周期': '今日', '时段': '当前', duration: 18.6, mileage: 86.4, ontime: 96.8, exception: 126 }, { '周期': '本周', '时段': '周一', duration: 21.6, mileage: 462.4, ontime: 94.8, exception: 610 }, { '周期': '本周', '时段': '周二', duration: 20.8, mileage: 486.2, ontime: 95.4, exception: 572 }, { '周期': '本周', '时段': '周三', duration: 19.4, mileage: 512.8, ontime: 96.2, exception: 536 }, { '周期': '本周', '时段': '周四', duration: 18.9, mileage: 548.6, ontime: 96.7, exception: 498 }, { '周期': '本周', '时段': '今日', duration: 18.2, mileage: 586.4, ontime: 97.1, exception: 462 }, { '周期': '本月', '时段': '第1周', duration: 22.8, mileage: 1680.5, ontime: 93.8, exception: 2140 }, { '周期': '本月', '时段': '第2周', duration: 21.2, mileage: 1896.3, ontime: 94.9, exception: 1986 }, { '周期': '本月', '时段': '第3周', duration: 19.8, mileage: 2140.8, ontime: 96.1, exception: 1760 }, { '周期': '本月', '时段': '第4周', duration: 18.6, mileage: 2386.4, ontime: 96.8, exception: 1538 }, { '周期': '本月', '时段': '当前', duration: 18.1, mileage: 2568.7, ontime: 97.2, exception: 1426 }, { '周期': '本年', '时段': 'Q1', duration: 24.2, mileage: 18420.6, ontime: 92.6, exception: 8640 }, { '周期': '本年', '时段': 'Q2', duration: 22.1, mileage: 23680.4, ontime: 94.1, exception: 7420 }, { '周期': '本年', '时段': 'Q3', duration: 20.4, mileage: 28640.8, ontime: 95.7, exception: 6280 }, { '周期': '本年', '时段': 'Q4', duration: 18.9, mileage: 32864.2, ontime: 96.8, exception: 5160 }, { '周期': '本年', '时段': '当前', duration: 18.4, mileage: 36420.5, ontime: 97.3, exception: 4820 }]; const period = '本周'; const sourceRows = Array.isArray(dataset?.source) && dataset.source.length ? dataset.source : fallbackRows; const rows = sourceRows.filter((row) => !row['周期'] || row['周期'] === period); const field = '异常订单'; const unit = '单'; const values = rows.map((row) => Number(row[field] ?? row['exception'] ?? 0)); const labels = rows.map((row) => row['时段']); const lastIndex = Math.max(0, values.length - 1); const maxValue = values.length ? Math.max(...values) : 0; const yMax = field === '准时率' ? 100 : Math.max(10, Math.ceil(maxValue * 1.18)); const option = { backgroundColor: 'transparent', animation: false, grid: { left: 26, right: 16, top: 18, bottom: 26 }, tooltip: { trigger: 'axis', confine: true, backgroundColor: 'rgba(5,14,26,0.54)', borderColor: 'rgba(255,159,46,0.32)', borderWidth: 1, padding: [3, 7], extraCssText: 'width:126px!important;max-width:126px!important;height:42px!important;max-height:42px!important;min-height:42px!important;overflow:hidden!important;box-shadow:0 5px 12px rgba(0,0,0,0.24);border-radius:4px;backdrop-filter:blur(2px);', textStyle: { color: 'rgba(238,246,255,0.94)', fontSize: 10, fontWeight: 700 }, axisPointer: { type: 'line', lineStyle: { color: 'rgba(255,159,46,0.42)', width: 1, type: 'dashed' } }, formatter: (params) => { const item = Array.isArray(params) ? params[0] : params; return item ? '<div style=\"line-height:1.05\"><div style=\"display:flex;justify-content:space-between;margin-bottom:2px\"><span style=\"color:rgba(177,196,218,.82)\">' + period + ' · ' + item.name + '</span><b style=\"color:#fff\">' + item.value + unit + '</b></div><div style=\"display:flex;justify-content:space-between\"><span style=\"color:#ffad37\">' + field + '</span><span style=\"color:rgba(210,224,238,.76)\">趋势</span></div></div>' : ''; } }, xAxis: { type: 'category', boundaryGap: false, data: labels, axisTick: { show: false }, axisLine: { lineStyle: { color: 'rgba(100,145,190,0.18)' } }, axisLabel: { color: 'rgba(198,210,222,0.54)', fontSize: 10, fontWeight: 700 } }, yAxis: { type: 'value', min: 0, max: yMax, splitNumber: 4, axisLabel: { show: false }, axisLine: { show: false }, axisTick: { show: false }, splitLine: { lineStyle: { color: 'rgba(150,178,205,0.08)' } } }, series: [{ name: field, type: 'line', smooth: true, data: values, symbol: 'circle', symbolSize: (value, params) => params.dataIndex === lastIndex ? 9 : 7, showSymbol: true, lineStyle: { width: 3, color: '#ff624d', shadowBlur: 14, shadowColor: '#ff624d' }, itemStyle: { color: '#ff9f2e', borderColor: 'rgba(255,255,255,0.62)', borderWidth: 1 }, emphasis: { scale: 1.25, itemStyle: { shadowBlur: 16, shadowColor: '#ff624d' } }, areaStyle: { opacity: 1, color: { type: 'linear', x: 0, y: 0, x2: 0, y2: 1, colorStops: [{ offset: 0, color: 'rgba(255,98,77,0.30)' }, { offset: 0.72, color: 'rgba(255,159,46,0.10)' }, { offset: 1, color: 'rgba(255,159,46,0)' }] } }, markPoint: { symbol: 'circle', symbolSize: 10, data: labels.length ? [{ coord: [labels[lastIndex], values[lastIndex]], itemStyle: { color: '#e04d3f', borderColor: 'rgba(255,255,255,0.66)', borderWidth: 1 } }] : [], label: { show: false } } }] }; return option;"
+      },
+      "dataConfig": {
+        "datasetId": "dataset-logistics-efficiency-trend",
+        "fields": [
+          {
+            "name": "周期",
+            "type": "string"
+          },
+          {
+            "name": "时段",
+            "type": "string"
+          },
+          {
+            "name": "异常订单",
+            "type": "number",
+            "aggregation": "SUM"
+          }
+        ],
+        "filters": [
+          {
+            "field": "周期",
+            "operator": "=",
+            "value": "本周"
+          }
+        ],
+        "sorts": []
+      },
+      "layout": {
+        "minHeight": 220
+      }
+    },
+    {
+      "id": "transport-efficiency-month-duration-chart",
+      "type": "custom-chart",
+      "name": "运输效率趋势-本月-平均运输时长",
+      "config": {
+        "renderer": "function",
+        "optionFunction": "const fallbackRows = [{ '周期': '今日', '时段': '00:00', duration: 22.4, mileage: 18.2, ontime: 94.2, exception: 86 }, { '周期': '今日', '时段': '06:00', duration: 20.1, mileage: 36.5, ontime: 95.1, exception: 104 }, { '周期': '今日', '时段': '12:00', duration: 18.6, mileage: 58.7, ontime: 96.8, exception: 126 }, { '周期': '今日', '时段': '18:00', duration: 17.2, mileage: 74.1, ontime: 96.1, exception: 118 }, { '周期': '今日', '时段': '当前', duration: 18.6, mileage: 86.4, ontime: 96.8, exception: 126 }, { '周期': '本周', '时段': '周一', duration: 21.6, mileage: 462.4, ontime: 94.8, exception: 610 }, { '周期': '本周', '时段': '周二', duration: 20.8, mileage: 486.2, ontime: 95.4, exception: 572 }, { '周期': '本周', '时段': '周三', duration: 19.4, mileage: 512.8, ontime: 96.2, exception: 536 }, { '周期': '本周', '时段': '周四', duration: 18.9, mileage: 548.6, ontime: 96.7, exception: 498 }, { '周期': '本周', '时段': '今日', duration: 18.2, mileage: 586.4, ontime: 97.1, exception: 462 }, { '周期': '本月', '时段': '第1周', duration: 22.8, mileage: 1680.5, ontime: 93.8, exception: 2140 }, { '周期': '本月', '时段': '第2周', duration: 21.2, mileage: 1896.3, ontime: 94.9, exception: 1986 }, { '周期': '本月', '时段': '第3周', duration: 19.8, mileage: 2140.8, ontime: 96.1, exception: 1760 }, { '周期': '本月', '时段': '第4周', duration: 18.6, mileage: 2386.4, ontime: 96.8, exception: 1538 }, { '周期': '本月', '时段': '当前', duration: 18.1, mileage: 2568.7, ontime: 97.2, exception: 1426 }, { '周期': '本年', '时段': 'Q1', duration: 24.2, mileage: 18420.6, ontime: 92.6, exception: 8640 }, { '周期': '本年', '时段': 'Q2', duration: 22.1, mileage: 23680.4, ontime: 94.1, exception: 7420 }, { '周期': '本年', '时段': 'Q3', duration: 20.4, mileage: 28640.8, ontime: 95.7, exception: 6280 }, { '周期': '本年', '时段': 'Q4', duration: 18.9, mileage: 32864.2, ontime: 96.8, exception: 5160 }, { '周期': '本年', '时段': '当前', duration: 18.4, mileage: 36420.5, ontime: 97.3, exception: 4820 }]; const period = '本月'; const sourceRows = Array.isArray(dataset?.source) && dataset.source.length ? dataset.source : fallbackRows; const rows = sourceRows.filter((row) => !row['周期'] || row['周期'] === period); const field = '平均运输时长'; const unit = 'h'; const values = rows.map((row) => Number(row[field] ?? row['duration'] ?? 0)); const labels = rows.map((row) => row['时段']); const lastIndex = Math.max(0, values.length - 1); const maxValue = values.length ? Math.max(...values) : 0; const yMax = field === '准时率' ? 100 : Math.max(10, Math.ceil(maxValue * 1.18)); const option = { backgroundColor: 'transparent', animation: false, grid: { left: 26, right: 16, top: 18, bottom: 26 }, tooltip: { trigger: 'axis', confine: true, backgroundColor: 'rgba(5,14,26,0.54)', borderColor: 'rgba(255,159,46,0.32)', borderWidth: 1, padding: [3, 7], extraCssText: 'width:126px!important;max-width:126px!important;height:42px!important;max-height:42px!important;min-height:42px!important;overflow:hidden!important;box-shadow:0 5px 12px rgba(0,0,0,0.24);border-radius:4px;backdrop-filter:blur(2px);', textStyle: { color: 'rgba(238,246,255,0.94)', fontSize: 10, fontWeight: 700 }, axisPointer: { type: 'line', lineStyle: { color: 'rgba(255,159,46,0.42)', width: 1, type: 'dashed' } }, formatter: (params) => { const item = Array.isArray(params) ? params[0] : params; return item ? '<div style=\"line-height:1.05\"><div style=\"display:flex;justify-content:space-between;margin-bottom:2px\"><span style=\"color:rgba(177,196,218,.82)\">' + period + ' · ' + item.name + '</span><b style=\"color:#fff\">' + item.value + unit + '</b></div><div style=\"display:flex;justify-content:space-between\"><span style=\"color:#ffad37\">' + field + '</span><span style=\"color:rgba(210,224,238,.76)\">趋势</span></div></div>' : ''; } }, xAxis: { type: 'category', boundaryGap: false, data: labels, axisTick: { show: false }, axisLine: { lineStyle: { color: 'rgba(100,145,190,0.18)' } }, axisLabel: { color: 'rgba(198,210,222,0.54)', fontSize: 10, fontWeight: 700 } }, yAxis: { type: 'value', min: 0, max: yMax, splitNumber: 4, axisLabel: { show: false }, axisLine: { show: false }, axisTick: { show: false }, splitLine: { lineStyle: { color: 'rgba(150,178,205,0.08)' } } }, series: [{ name: field, type: 'line', smooth: true, data: values, symbol: 'circle', symbolSize: (value, params) => params.dataIndex === lastIndex ? 9 : 7, showSymbol: true, lineStyle: { width: 3, color: '#ff9f2e', shadowBlur: 14, shadowColor: '#ff9f2e' }, itemStyle: { color: '#ff9f2e', borderColor: 'rgba(255,255,255,0.62)', borderWidth: 1 }, emphasis: { scale: 1.25, itemStyle: { shadowBlur: 16, shadowColor: '#ff9f2e' } }, areaStyle: { opacity: 1, color: { type: 'linear', x: 0, y: 0, x2: 0, y2: 1, colorStops: [{ offset: 0, color: 'rgba(255,159,46,0.36)' }, { offset: 0.72, color: 'rgba(255,159,46,0.10)' }, { offset: 1, color: 'rgba(255,159,46,0)' }] } }, markPoint: { symbol: 'circle', symbolSize: 10, data: labels.length ? [{ coord: [labels[lastIndex], values[lastIndex]], itemStyle: { color: '#e04d3f', borderColor: 'rgba(255,255,255,0.66)', borderWidth: 1 } }] : [], label: { show: false } } }] }; return option;"
+      },
+      "dataConfig": {
+        "datasetId": "dataset-logistics-efficiency-trend",
+        "fields": [
+          {
+            "name": "周期",
+            "type": "string"
+          },
+          {
+            "name": "时段",
+            "type": "string"
+          },
+          {
+            "name": "平均运输时长",
+            "type": "number",
+            "aggregation": "SUM"
+          }
+        ],
+        "filters": [
+          {
+            "field": "周期",
+            "operator": "=",
+            "value": "本月"
+          }
+        ],
+        "sorts": []
+      },
+      "layout": {
+        "minHeight": 220
+      }
+    },
+    {
+      "id": "transport-efficiency-month-mileage-chart",
+      "type": "custom-chart",
+      "name": "运输效率趋势-本月-总里程",
+      "config": {
+        "renderer": "function",
+        "optionFunction": "const fallbackRows = [{ '周期': '今日', '时段': '00:00', duration: 22.4, mileage: 18.2, ontime: 94.2, exception: 86 }, { '周期': '今日', '时段': '06:00', duration: 20.1, mileage: 36.5, ontime: 95.1, exception: 104 }, { '周期': '今日', '时段': '12:00', duration: 18.6, mileage: 58.7, ontime: 96.8, exception: 126 }, { '周期': '今日', '时段': '18:00', duration: 17.2, mileage: 74.1, ontime: 96.1, exception: 118 }, { '周期': '今日', '时段': '当前', duration: 18.6, mileage: 86.4, ontime: 96.8, exception: 126 }, { '周期': '本周', '时段': '周一', duration: 21.6, mileage: 462.4, ontime: 94.8, exception: 610 }, { '周期': '本周', '时段': '周二', duration: 20.8, mileage: 486.2, ontime: 95.4, exception: 572 }, { '周期': '本周', '时段': '周三', duration: 19.4, mileage: 512.8, ontime: 96.2, exception: 536 }, { '周期': '本周', '时段': '周四', duration: 18.9, mileage: 548.6, ontime: 96.7, exception: 498 }, { '周期': '本周', '时段': '今日', duration: 18.2, mileage: 586.4, ontime: 97.1, exception: 462 }, { '周期': '本月', '时段': '第1周', duration: 22.8, mileage: 1680.5, ontime: 93.8, exception: 2140 }, { '周期': '本月', '时段': '第2周', duration: 21.2, mileage: 1896.3, ontime: 94.9, exception: 1986 }, { '周期': '本月', '时段': '第3周', duration: 19.8, mileage: 2140.8, ontime: 96.1, exception: 1760 }, { '周期': '本月', '时段': '第4周', duration: 18.6, mileage: 2386.4, ontime: 96.8, exception: 1538 }, { '周期': '本月', '时段': '当前', duration: 18.1, mileage: 2568.7, ontime: 97.2, exception: 1426 }, { '周期': '本年', '时段': 'Q1', duration: 24.2, mileage: 18420.6, ontime: 92.6, exception: 8640 }, { '周期': '本年', '时段': 'Q2', duration: 22.1, mileage: 23680.4, ontime: 94.1, exception: 7420 }, { '周期': '本年', '时段': 'Q3', duration: 20.4, mileage: 28640.8, ontime: 95.7, exception: 6280 }, { '周期': '本年', '时段': 'Q4', duration: 18.9, mileage: 32864.2, ontime: 96.8, exception: 5160 }, { '周期': '本年', '时段': '当前', duration: 18.4, mileage: 36420.5, ontime: 97.3, exception: 4820 }]; const period = '本月'; const sourceRows = Array.isArray(dataset?.source) && dataset.source.length ? dataset.source : fallbackRows; const rows = sourceRows.filter((row) => !row['周期'] || row['周期'] === period); const field = '总里程'; const unit = '万km'; const values = rows.map((row) => Number(row[field] ?? row['mileage'] ?? 0)); const labels = rows.map((row) => row['时段']); const lastIndex = Math.max(0, values.length - 1); const maxValue = values.length ? Math.max(...values) : 0; const yMax = field === '准时率' ? 100 : Math.max(10, Math.ceil(maxValue * 1.18)); const option = { backgroundColor: 'transparent', animation: false, grid: { left: 26, right: 16, top: 18, bottom: 26 }, tooltip: { trigger: 'axis', confine: true, backgroundColor: 'rgba(5,14,26,0.54)', borderColor: 'rgba(255,159,46,0.32)', borderWidth: 1, padding: [3, 7], extraCssText: 'width:126px!important;max-width:126px!important;height:42px!important;max-height:42px!important;min-height:42px!important;overflow:hidden!important;box-shadow:0 5px 12px rgba(0,0,0,0.24);border-radius:4px;backdrop-filter:blur(2px);', textStyle: { color: 'rgba(238,246,255,0.94)', fontSize: 10, fontWeight: 700 }, axisPointer: { type: 'line', lineStyle: { color: 'rgba(255,159,46,0.42)', width: 1, type: 'dashed' } }, formatter: (params) => { const item = Array.isArray(params) ? params[0] : params; return item ? '<div style=\"line-height:1.05\"><div style=\"display:flex;justify-content:space-between;margin-bottom:2px\"><span style=\"color:rgba(177,196,218,.82)\">' + period + ' · ' + item.name + '</span><b style=\"color:#fff\">' + item.value + unit + '</b></div><div style=\"display:flex;justify-content:space-between\"><span style=\"color:#ffad37\">' + field + '</span><span style=\"color:rgba(210,224,238,.76)\">趋势</span></div></div>' : ''; } }, xAxis: { type: 'category', boundaryGap: false, data: labels, axisTick: { show: false }, axisLine: { lineStyle: { color: 'rgba(100,145,190,0.18)' } }, axisLabel: { color: 'rgba(198,210,222,0.54)', fontSize: 10, fontWeight: 700 } }, yAxis: { type: 'value', min: 0, max: yMax, splitNumber: 4, axisLabel: { show: false }, axisLine: { show: false }, axisTick: { show: false }, splitLine: { lineStyle: { color: 'rgba(150,178,205,0.08)' } } }, series: [{ name: field, type: 'line', smooth: true, data: values, symbol: 'circle', symbolSize: (value, params) => params.dataIndex === lastIndex ? 9 : 7, showSymbol: true, lineStyle: { width: 3, color: '#6ec8ff', shadowBlur: 14, shadowColor: '#6ec8ff' }, itemStyle: { color: '#6ec8ff', borderColor: 'rgba(255,255,255,0.62)', borderWidth: 1 }, emphasis: { scale: 1.25, itemStyle: { shadowBlur: 16, shadowColor: '#6ec8ff' } }, areaStyle: { opacity: 1, color: { type: 'linear', x: 0, y: 0, x2: 0, y2: 1, colorStops: [{ offset: 0, color: 'rgba(110,200,255,0.30)' }, { offset: 0.72, color: 'rgba(255,159,46,0.10)' }, { offset: 1, color: 'rgba(255,159,46,0)' }] } }, markPoint: { symbol: 'circle', symbolSize: 10, data: labels.length ? [{ coord: [labels[lastIndex], values[lastIndex]], itemStyle: { color: '#e04d3f', borderColor: 'rgba(255,255,255,0.66)', borderWidth: 1 } }] : [], label: { show: false } } }] }; return option;"
+      },
+      "dataConfig": {
+        "datasetId": "dataset-logistics-efficiency-trend",
+        "fields": [
+          {
+            "name": "周期",
+            "type": "string"
+          },
+          {
+            "name": "时段",
+            "type": "string"
+          },
+          {
+            "name": "总里程",
+            "type": "number",
+            "aggregation": "SUM"
+          }
+        ],
+        "filters": [
+          {
+            "field": "周期",
+            "operator": "=",
+            "value": "本月"
+          }
+        ],
+        "sorts": []
+      },
+      "layout": {
+        "minHeight": 220
+      }
+    },
+    {
+      "id": "transport-efficiency-month-ontime-chart",
+      "type": "custom-chart",
+      "name": "运输效率趋势-本月-准时率",
+      "config": {
+        "renderer": "function",
+        "optionFunction": "const fallbackRows = [{ '周期': '今日', '时段': '00:00', duration: 22.4, mileage: 18.2, ontime: 94.2, exception: 86 }, { '周期': '今日', '时段': '06:00', duration: 20.1, mileage: 36.5, ontime: 95.1, exception: 104 }, { '周期': '今日', '时段': '12:00', duration: 18.6, mileage: 58.7, ontime: 96.8, exception: 126 }, { '周期': '今日', '时段': '18:00', duration: 17.2, mileage: 74.1, ontime: 96.1, exception: 118 }, { '周期': '今日', '时段': '当前', duration: 18.6, mileage: 86.4, ontime: 96.8, exception: 126 }, { '周期': '本周', '时段': '周一', duration: 21.6, mileage: 462.4, ontime: 94.8, exception: 610 }, { '周期': '本周', '时段': '周二', duration: 20.8, mileage: 486.2, ontime: 95.4, exception: 572 }, { '周期': '本周', '时段': '周三', duration: 19.4, mileage: 512.8, ontime: 96.2, exception: 536 }, { '周期': '本周', '时段': '周四', duration: 18.9, mileage: 548.6, ontime: 96.7, exception: 498 }, { '周期': '本周', '时段': '今日', duration: 18.2, mileage: 586.4, ontime: 97.1, exception: 462 }, { '周期': '本月', '时段': '第1周', duration: 22.8, mileage: 1680.5, ontime: 93.8, exception: 2140 }, { '周期': '本月', '时段': '第2周', duration: 21.2, mileage: 1896.3, ontime: 94.9, exception: 1986 }, { '周期': '本月', '时段': '第3周', duration: 19.8, mileage: 2140.8, ontime: 96.1, exception: 1760 }, { '周期': '本月', '时段': '第4周', duration: 18.6, mileage: 2386.4, ontime: 96.8, exception: 1538 }, { '周期': '本月', '时段': '当前', duration: 18.1, mileage: 2568.7, ontime: 97.2, exception: 1426 }, { '周期': '本年', '时段': 'Q1', duration: 24.2, mileage: 18420.6, ontime: 92.6, exception: 8640 }, { '周期': '本年', '时段': 'Q2', duration: 22.1, mileage: 23680.4, ontime: 94.1, exception: 7420 }, { '周期': '本年', '时段': 'Q3', duration: 20.4, mileage: 28640.8, ontime: 95.7, exception: 6280 }, { '周期': '本年', '时段': 'Q4', duration: 18.9, mileage: 32864.2, ontime: 96.8, exception: 5160 }, { '周期': '本年', '时段': '当前', duration: 18.4, mileage: 36420.5, ontime: 97.3, exception: 4820 }]; const period = '本月'; const sourceRows = Array.isArray(dataset?.source) && dataset.source.length ? dataset.source : fallbackRows; const rows = sourceRows.filter((row) => !row['周期'] || row['周期'] === period); const field = '准时率'; const unit = '%'; const values = rows.map((row) => Number(row[field] ?? row['ontime'] ?? 0)); const labels = rows.map((row) => row['时段']); const lastIndex = Math.max(0, values.length - 1); const maxValue = values.length ? Math.max(...values) : 0; const yMax = field === '准时率' ? 100 : Math.max(10, Math.ceil(maxValue * 1.18)); const option = { backgroundColor: 'transparent', animation: false, grid: { left: 26, right: 16, top: 18, bottom: 26 }, tooltip: { trigger: 'axis', confine: true, backgroundColor: 'rgba(5,14,26,0.54)', borderColor: 'rgba(255,159,46,0.32)', borderWidth: 1, padding: [3, 7], extraCssText: 'width:126px!important;max-width:126px!important;height:42px!important;max-height:42px!important;min-height:42px!important;overflow:hidden!important;box-shadow:0 5px 12px rgba(0,0,0,0.24);border-radius:4px;backdrop-filter:blur(2px);', textStyle: { color: 'rgba(238,246,255,0.94)', fontSize: 10, fontWeight: 700 }, axisPointer: { type: 'line', lineStyle: { color: 'rgba(255,159,46,0.42)', width: 1, type: 'dashed' } }, formatter: (params) => { const item = Array.isArray(params) ? params[0] : params; return item ? '<div style=\"line-height:1.05\"><div style=\"display:flex;justify-content:space-between;margin-bottom:2px\"><span style=\"color:rgba(177,196,218,.82)\">' + period + ' · ' + item.name + '</span><b style=\"color:#fff\">' + item.value + unit + '</b></div><div style=\"display:flex;justify-content:space-between\"><span style=\"color:#ffad37\">' + field + '</span><span style=\"color:rgba(210,224,238,.76)\">趋势</span></div></div>' : ''; } }, xAxis: { type: 'category', boundaryGap: false, data: labels, axisTick: { show: false }, axisLine: { lineStyle: { color: 'rgba(100,145,190,0.18)' } }, axisLabel: { color: 'rgba(198,210,222,0.54)', fontSize: 10, fontWeight: 700 } }, yAxis: { type: 'value', min: 0, max: yMax, splitNumber: 4, axisLabel: { show: false }, axisLine: { show: false }, axisTick: { show: false }, splitLine: { lineStyle: { color: 'rgba(150,178,205,0.08)' } } }, series: [{ name: field, type: 'line', smooth: true, data: values, symbol: 'circle', symbolSize: (value, params) => params.dataIndex === lastIndex ? 9 : 7, showSymbol: true, lineStyle: { width: 3, color: '#7be0a5', shadowBlur: 14, shadowColor: '#7be0a5' }, itemStyle: { color: '#7be0a5', borderColor: 'rgba(255,255,255,0.62)', borderWidth: 1 }, emphasis: { scale: 1.25, itemStyle: { shadowBlur: 16, shadowColor: '#7be0a5' } }, areaStyle: { opacity: 1, color: { type: 'linear', x: 0, y: 0, x2: 0, y2: 1, colorStops: [{ offset: 0, color: 'rgba(123,224,165,0.28)' }, { offset: 0.72, color: 'rgba(255,159,46,0.10)' }, { offset: 1, color: 'rgba(255,159,46,0)' }] } }, markPoint: { symbol: 'circle', symbolSize: 10, data: labels.length ? [{ coord: [labels[lastIndex], values[lastIndex]], itemStyle: { color: '#e04d3f', borderColor: 'rgba(255,255,255,0.66)', borderWidth: 1 } }] : [], label: { show: false } } }] }; return option;"
+      },
+      "dataConfig": {
+        "datasetId": "dataset-logistics-efficiency-trend",
+        "fields": [
+          {
+            "name": "周期",
+            "type": "string"
+          },
+          {
+            "name": "时段",
+            "type": "string"
+          },
+          {
+            "name": "准时率",
+            "type": "number",
+            "aggregation": "SUM"
+          }
+        ],
+        "filters": [
+          {
+            "field": "周期",
+            "operator": "=",
+            "value": "本月"
+          }
+        ],
+        "sorts": []
+      },
+      "layout": {
+        "minHeight": 220
+      }
+    },
+    {
+      "id": "transport-efficiency-month-exception-chart",
+      "type": "custom-chart",
+      "name": "运输效率趋势-本月-异常订单",
+      "config": {
+        "renderer": "function",
+        "optionFunction": "const fallbackRows = [{ '周期': '今日', '时段': '00:00', duration: 22.4, mileage: 18.2, ontime: 94.2, exception: 86 }, { '周期': '今日', '时段': '06:00', duration: 20.1, mileage: 36.5, ontime: 95.1, exception: 104 }, { '周期': '今日', '时段': '12:00', duration: 18.6, mileage: 58.7, ontime: 96.8, exception: 126 }, { '周期': '今日', '时段': '18:00', duration: 17.2, mileage: 74.1, ontime: 96.1, exception: 118 }, { '周期': '今日', '时段': '当前', duration: 18.6, mileage: 86.4, ontime: 96.8, exception: 126 }, { '周期': '本周', '时段': '周一', duration: 21.6, mileage: 462.4, ontime: 94.8, exception: 610 }, { '周期': '本周', '时段': '周二', duration: 20.8, mileage: 486.2, ontime: 95.4, exception: 572 }, { '周期': '本周', '时段': '周三', duration: 19.4, mileage: 512.8, ontime: 96.2, exception: 536 }, { '周期': '本周', '时段': '周四', duration: 18.9, mileage: 548.6, ontime: 96.7, exception: 498 }, { '周期': '本周', '时段': '今日', duration: 18.2, mileage: 586.4, ontime: 97.1, exception: 462 }, { '周期': '本月', '时段': '第1周', duration: 22.8, mileage: 1680.5, ontime: 93.8, exception: 2140 }, { '周期': '本月', '时段': '第2周', duration: 21.2, mileage: 1896.3, ontime: 94.9, exception: 1986 }, { '周期': '本月', '时段': '第3周', duration: 19.8, mileage: 2140.8, ontime: 96.1, exception: 1760 }, { '周期': '本月', '时段': '第4周', duration: 18.6, mileage: 2386.4, ontime: 96.8, exception: 1538 }, { '周期': '本月', '时段': '当前', duration: 18.1, mileage: 2568.7, ontime: 97.2, exception: 1426 }, { '周期': '本年', '时段': 'Q1', duration: 24.2, mileage: 18420.6, ontime: 92.6, exception: 8640 }, { '周期': '本年', '时段': 'Q2', duration: 22.1, mileage: 23680.4, ontime: 94.1, exception: 7420 }, { '周期': '本年', '时段': 'Q3', duration: 20.4, mileage: 28640.8, ontime: 95.7, exception: 6280 }, { '周期': '本年', '时段': 'Q4', duration: 18.9, mileage: 32864.2, ontime: 96.8, exception: 5160 }, { '周期': '本年', '时段': '当前', duration: 18.4, mileage: 36420.5, ontime: 97.3, exception: 4820 }]; const period = '本月'; const sourceRows = Array.isArray(dataset?.source) && dataset.source.length ? dataset.source : fallbackRows; const rows = sourceRows.filter((row) => !row['周期'] || row['周期'] === period); const field = '异常订单'; const unit = '单'; const values = rows.map((row) => Number(row[field] ?? row['exception'] ?? 0)); const labels = rows.map((row) => row['时段']); const lastIndex = Math.max(0, values.length - 1); const maxValue = values.length ? Math.max(...values) : 0; const yMax = field === '准时率' ? 100 : Math.max(10, Math.ceil(maxValue * 1.18)); const option = { backgroundColor: 'transparent', animation: false, grid: { left: 26, right: 16, top: 18, bottom: 26 }, tooltip: { trigger: 'axis', confine: true, backgroundColor: 'rgba(5,14,26,0.54)', borderColor: 'rgba(255,159,46,0.32)', borderWidth: 1, padding: [3, 7], extraCssText: 'width:126px!important;max-width:126px!important;height:42px!important;max-height:42px!important;min-height:42px!important;overflow:hidden!important;box-shadow:0 5px 12px rgba(0,0,0,0.24);border-radius:4px;backdrop-filter:blur(2px);', textStyle: { color: 'rgba(238,246,255,0.94)', fontSize: 10, fontWeight: 700 }, axisPointer: { type: 'line', lineStyle: { color: 'rgba(255,159,46,0.42)', width: 1, type: 'dashed' } }, formatter: (params) => { const item = Array.isArray(params) ? params[0] : params; return item ? '<div style=\"line-height:1.05\"><div style=\"display:flex;justify-content:space-between;margin-bottom:2px\"><span style=\"color:rgba(177,196,218,.82)\">' + period + ' · ' + item.name + '</span><b style=\"color:#fff\">' + item.value + unit + '</b></div><div style=\"display:flex;justify-content:space-between\"><span style=\"color:#ffad37\">' + field + '</span><span style=\"color:rgba(210,224,238,.76)\">趋势</span></div></div>' : ''; } }, xAxis: { type: 'category', boundaryGap: false, data: labels, axisTick: { show: false }, axisLine: { lineStyle: { color: 'rgba(100,145,190,0.18)' } }, axisLabel: { color: 'rgba(198,210,222,0.54)', fontSize: 10, fontWeight: 700 } }, yAxis: { type: 'value', min: 0, max: yMax, splitNumber: 4, axisLabel: { show: false }, axisLine: { show: false }, axisTick: { show: false }, splitLine: { lineStyle: { color: 'rgba(150,178,205,0.08)' } } }, series: [{ name: field, type: 'line', smooth: true, data: values, symbol: 'circle', symbolSize: (value, params) => params.dataIndex === lastIndex ? 9 : 7, showSymbol: true, lineStyle: { width: 3, color: '#ff624d', shadowBlur: 14, shadowColor: '#ff624d' }, itemStyle: { color: '#ff9f2e', borderColor: 'rgba(255,255,255,0.62)', borderWidth: 1 }, emphasis: { scale: 1.25, itemStyle: { shadowBlur: 16, shadowColor: '#ff624d' } }, areaStyle: { opacity: 1, color: { type: 'linear', x: 0, y: 0, x2: 0, y2: 1, colorStops: [{ offset: 0, color: 'rgba(255,98,77,0.30)' }, { offset: 0.72, color: 'rgba(255,159,46,0.10)' }, { offset: 1, color: 'rgba(255,159,46,0)' }] } }, markPoint: { symbol: 'circle', symbolSize: 10, data: labels.length ? [{ coord: [labels[lastIndex], values[lastIndex]], itemStyle: { color: '#e04d3f', borderColor: 'rgba(255,255,255,0.66)', borderWidth: 1 } }] : [], label: { show: false } } }] }; return option;"
+      },
+      "dataConfig": {
+        "datasetId": "dataset-logistics-efficiency-trend",
+        "fields": [
+          {
+            "name": "周期",
+            "type": "string"
+          },
+          {
+            "name": "时段",
+            "type": "string"
+          },
+          {
+            "name": "异常订单",
+            "type": "number",
+            "aggregation": "SUM"
+          }
+        ],
+        "filters": [
+          {
+            "field": "周期",
+            "operator": "=",
+            "value": "本月"
+          }
+        ],
+        "sorts": []
+      },
+      "layout": {
+        "minHeight": 220
+      }
+    },
+    {
+      "id": "transport-efficiency-year-duration-chart",
+      "type": "custom-chart",
+      "name": "运输效率趋势-本年-平均运输时长",
+      "config": {
+        "renderer": "function",
+        "optionFunction": "const fallbackRows = [{ '周期': '今日', '时段': '00:00', duration: 22.4, mileage: 18.2, ontime: 94.2, exception: 86 }, { '周期': '今日', '时段': '06:00', duration: 20.1, mileage: 36.5, ontime: 95.1, exception: 104 }, { '周期': '今日', '时段': '12:00', duration: 18.6, mileage: 58.7, ontime: 96.8, exception: 126 }, { '周期': '今日', '时段': '18:00', duration: 17.2, mileage: 74.1, ontime: 96.1, exception: 118 }, { '周期': '今日', '时段': '当前', duration: 18.6, mileage: 86.4, ontime: 96.8, exception: 126 }, { '周期': '本周', '时段': '周一', duration: 21.6, mileage: 462.4, ontime: 94.8, exception: 610 }, { '周期': '本周', '时段': '周二', duration: 20.8, mileage: 486.2, ontime: 95.4, exception: 572 }, { '周期': '本周', '时段': '周三', duration: 19.4, mileage: 512.8, ontime: 96.2, exception: 536 }, { '周期': '本周', '时段': '周四', duration: 18.9, mileage: 548.6, ontime: 96.7, exception: 498 }, { '周期': '本周', '时段': '今日', duration: 18.2, mileage: 586.4, ontime: 97.1, exception: 462 }, { '周期': '本月', '时段': '第1周', duration: 22.8, mileage: 1680.5, ontime: 93.8, exception: 2140 }, { '周期': '本月', '时段': '第2周', duration: 21.2, mileage: 1896.3, ontime: 94.9, exception: 1986 }, { '周期': '本月', '时段': '第3周', duration: 19.8, mileage: 2140.8, ontime: 96.1, exception: 1760 }, { '周期': '本月', '时段': '第4周', duration: 18.6, mileage: 2386.4, ontime: 96.8, exception: 1538 }, { '周期': '本月', '时段': '当前', duration: 18.1, mileage: 2568.7, ontime: 97.2, exception: 1426 }, { '周期': '本年', '时段': 'Q1', duration: 24.2, mileage: 18420.6, ontime: 92.6, exception: 8640 }, { '周期': '本年', '时段': 'Q2', duration: 22.1, mileage: 23680.4, ontime: 94.1, exception: 7420 }, { '周期': '本年', '时段': 'Q3', duration: 20.4, mileage: 28640.8, ontime: 95.7, exception: 6280 }, { '周期': '本年', '时段': 'Q4', duration: 18.9, mileage: 32864.2, ontime: 96.8, exception: 5160 }, { '周期': '本年', '时段': '当前', duration: 18.4, mileage: 36420.5, ontime: 97.3, exception: 4820 }]; const period = '本年'; const sourceRows = Array.isArray(dataset?.source) && dataset.source.length ? dataset.source : fallbackRows; const rows = sourceRows.filter((row) => !row['周期'] || row['周期'] === period); const field = '平均运输时长'; const unit = 'h'; const values = rows.map((row) => Number(row[field] ?? row['duration'] ?? 0)); const labels = rows.map((row) => row['时段']); const lastIndex = Math.max(0, values.length - 1); const maxValue = values.length ? Math.max(...values) : 0; const yMax = field === '准时率' ? 100 : Math.max(10, Math.ceil(maxValue * 1.18)); const option = { backgroundColor: 'transparent', animation: false, grid: { left: 26, right: 16, top: 18, bottom: 26 }, tooltip: { trigger: 'axis', confine: true, backgroundColor: 'rgba(5,14,26,0.54)', borderColor: 'rgba(255,159,46,0.32)', borderWidth: 1, padding: [3, 7], extraCssText: 'width:126px!important;max-width:126px!important;height:42px!important;max-height:42px!important;min-height:42px!important;overflow:hidden!important;box-shadow:0 5px 12px rgba(0,0,0,0.24);border-radius:4px;backdrop-filter:blur(2px);', textStyle: { color: 'rgba(238,246,255,0.94)', fontSize: 10, fontWeight: 700 }, axisPointer: { type: 'line', lineStyle: { color: 'rgba(255,159,46,0.42)', width: 1, type: 'dashed' } }, formatter: (params) => { const item = Array.isArray(params) ? params[0] : params; return item ? '<div style=\"line-height:1.05\"><div style=\"display:flex;justify-content:space-between;margin-bottom:2px\"><span style=\"color:rgba(177,196,218,.82)\">' + period + ' · ' + item.name + '</span><b style=\"color:#fff\">' + item.value + unit + '</b></div><div style=\"display:flex;justify-content:space-between\"><span style=\"color:#ffad37\">' + field + '</span><span style=\"color:rgba(210,224,238,.76)\">趋势</span></div></div>' : ''; } }, xAxis: { type: 'category', boundaryGap: false, data: labels, axisTick: { show: false }, axisLine: { lineStyle: { color: 'rgba(100,145,190,0.18)' } }, axisLabel: { color: 'rgba(198,210,222,0.54)', fontSize: 10, fontWeight: 700 } }, yAxis: { type: 'value', min: 0, max: yMax, splitNumber: 4, axisLabel: { show: false }, axisLine: { show: false }, axisTick: { show: false }, splitLine: { lineStyle: { color: 'rgba(150,178,205,0.08)' } } }, series: [{ name: field, type: 'line', smooth: true, data: values, symbol: 'circle', symbolSize: (value, params) => params.dataIndex === lastIndex ? 9 : 7, showSymbol: true, lineStyle: { width: 3, color: '#ff9f2e', shadowBlur: 14, shadowColor: '#ff9f2e' }, itemStyle: { color: '#ff9f2e', borderColor: 'rgba(255,255,255,0.62)', borderWidth: 1 }, emphasis: { scale: 1.25, itemStyle: { shadowBlur: 16, shadowColor: '#ff9f2e' } }, areaStyle: { opacity: 1, color: { type: 'linear', x: 0, y: 0, x2: 0, y2: 1, colorStops: [{ offset: 0, color: 'rgba(255,159,46,0.36)' }, { offset: 0.72, color: 'rgba(255,159,46,0.10)' }, { offset: 1, color: 'rgba(255,159,46,0)' }] } }, markPoint: { symbol: 'circle', symbolSize: 10, data: labels.length ? [{ coord: [labels[lastIndex], values[lastIndex]], itemStyle: { color: '#e04d3f', borderColor: 'rgba(255,255,255,0.66)', borderWidth: 1 } }] : [], label: { show: false } } }] }; return option;"
+      },
+      "dataConfig": {
+        "datasetId": "dataset-logistics-efficiency-trend",
+        "fields": [
+          {
+            "name": "周期",
+            "type": "string"
+          },
+          {
+            "name": "时段",
+            "type": "string"
+          },
+          {
+            "name": "平均运输时长",
+            "type": "number",
+            "aggregation": "SUM"
+          }
+        ],
+        "filters": [
+          {
+            "field": "周期",
+            "operator": "=",
+            "value": "本年"
+          }
+        ],
+        "sorts": []
+      },
+      "layout": {
+        "minHeight": 220
+      }
+    },
+    {
+      "id": "transport-efficiency-year-mileage-chart",
+      "type": "custom-chart",
+      "name": "运输效率趋势-本年-总里程",
+      "config": {
+        "renderer": "function",
+        "optionFunction": "const fallbackRows = [{ '周期': '今日', '时段': '00:00', duration: 22.4, mileage: 18.2, ontime: 94.2, exception: 86 }, { '周期': '今日', '时段': '06:00', duration: 20.1, mileage: 36.5, ontime: 95.1, exception: 104 }, { '周期': '今日', '时段': '12:00', duration: 18.6, mileage: 58.7, ontime: 96.8, exception: 126 }, { '周期': '今日', '时段': '18:00', duration: 17.2, mileage: 74.1, ontime: 96.1, exception: 118 }, { '周期': '今日', '时段': '当前', duration: 18.6, mileage: 86.4, ontime: 96.8, exception: 126 }, { '周期': '本周', '时段': '周一', duration: 21.6, mileage: 462.4, ontime: 94.8, exception: 610 }, { '周期': '本周', '时段': '周二', duration: 20.8, mileage: 486.2, ontime: 95.4, exception: 572 }, { '周期': '本周', '时段': '周三', duration: 19.4, mileage: 512.8, ontime: 96.2, exception: 536 }, { '周期': '本周', '时段': '周四', duration: 18.9, mileage: 548.6, ontime: 96.7, exception: 498 }, { '周期': '本周', '时段': '今日', duration: 18.2, mileage: 586.4, ontime: 97.1, exception: 462 }, { '周期': '本月', '时段': '第1周', duration: 22.8, mileage: 1680.5, ontime: 93.8, exception: 2140 }, { '周期': '本月', '时段': '第2周', duration: 21.2, mileage: 1896.3, ontime: 94.9, exception: 1986 }, { '周期': '本月', '时段': '第3周', duration: 19.8, mileage: 2140.8, ontime: 96.1, exception: 1760 }, { '周期': '本月', '时段': '第4周', duration: 18.6, mileage: 2386.4, ontime: 96.8, exception: 1538 }, { '周期': '本月', '时段': '当前', duration: 18.1, mileage: 2568.7, ontime: 97.2, exception: 1426 }, { '周期': '本年', '时段': 'Q1', duration: 24.2, mileage: 18420.6, ontime: 92.6, exception: 8640 }, { '周期': '本年', '时段': 'Q2', duration: 22.1, mileage: 23680.4, ontime: 94.1, exception: 7420 }, { '周期': '本年', '时段': 'Q3', duration: 20.4, mileage: 28640.8, ontime: 95.7, exception: 6280 }, { '周期': '本年', '时段': 'Q4', duration: 18.9, mileage: 32864.2, ontime: 96.8, exception: 5160 }, { '周期': '本年', '时段': '当前', duration: 18.4, mileage: 36420.5, ontime: 97.3, exception: 4820 }]; const period = '本年'; const sourceRows = Array.isArray(dataset?.source) && dataset.source.length ? dataset.source : fallbackRows; const rows = sourceRows.filter((row) => !row['周期'] || row['周期'] === period); const field = '总里程'; const unit = '万km'; const values = rows.map((row) => Number(row[field] ?? row['mileage'] ?? 0)); const labels = rows.map((row) => row['时段']); const lastIndex = Math.max(0, values.length - 1); const maxValue = values.length ? Math.max(...values) : 0; const yMax = field === '准时率' ? 100 : Math.max(10, Math.ceil(maxValue * 1.18)); const option = { backgroundColor: 'transparent', animation: false, grid: { left: 26, right: 16, top: 18, bottom: 26 }, tooltip: { trigger: 'axis', confine: true, backgroundColor: 'rgba(5,14,26,0.54)', borderColor: 'rgba(255,159,46,0.32)', borderWidth: 1, padding: [3, 7], extraCssText: 'width:126px!important;max-width:126px!important;height:42px!important;max-height:42px!important;min-height:42px!important;overflow:hidden!important;box-shadow:0 5px 12px rgba(0,0,0,0.24);border-radius:4px;backdrop-filter:blur(2px);', textStyle: { color: 'rgba(238,246,255,0.94)', fontSize: 10, fontWeight: 700 }, axisPointer: { type: 'line', lineStyle: { color: 'rgba(255,159,46,0.42)', width: 1, type: 'dashed' } }, formatter: (params) => { const item = Array.isArray(params) ? params[0] : params; return item ? '<div style=\"line-height:1.05\"><div style=\"display:flex;justify-content:space-between;margin-bottom:2px\"><span style=\"color:rgba(177,196,218,.82)\">' + period + ' · ' + item.name + '</span><b style=\"color:#fff\">' + item.value + unit + '</b></div><div style=\"display:flex;justify-content:space-between\"><span style=\"color:#ffad37\">' + field + '</span><span style=\"color:rgba(210,224,238,.76)\">趋势</span></div></div>' : ''; } }, xAxis: { type: 'category', boundaryGap: false, data: labels, axisTick: { show: false }, axisLine: { lineStyle: { color: 'rgba(100,145,190,0.18)' } }, axisLabel: { color: 'rgba(198,210,222,0.54)', fontSize: 10, fontWeight: 700 } }, yAxis: { type: 'value', min: 0, max: yMax, splitNumber: 4, axisLabel: { show: false }, axisLine: { show: false }, axisTick: { show: false }, splitLine: { lineStyle: { color: 'rgba(150,178,205,0.08)' } } }, series: [{ name: field, type: 'line', smooth: true, data: values, symbol: 'circle', symbolSize: (value, params) => params.dataIndex === lastIndex ? 9 : 7, showSymbol: true, lineStyle: { width: 3, color: '#6ec8ff', shadowBlur: 14, shadowColor: '#6ec8ff' }, itemStyle: { color: '#6ec8ff', borderColor: 'rgba(255,255,255,0.62)', borderWidth: 1 }, emphasis: { scale: 1.25, itemStyle: { shadowBlur: 16, shadowColor: '#6ec8ff' } }, areaStyle: { opacity: 1, color: { type: 'linear', x: 0, y: 0, x2: 0, y2: 1, colorStops: [{ offset: 0, color: 'rgba(110,200,255,0.30)' }, { offset: 0.72, color: 'rgba(255,159,46,0.10)' }, { offset: 1, color: 'rgba(255,159,46,0)' }] } }, markPoint: { symbol: 'circle', symbolSize: 10, data: labels.length ? [{ coord: [labels[lastIndex], values[lastIndex]], itemStyle: { color: '#e04d3f', borderColor: 'rgba(255,255,255,0.66)', borderWidth: 1 } }] : [], label: { show: false } } }] }; return option;"
+      },
+      "dataConfig": {
+        "datasetId": "dataset-logistics-efficiency-trend",
+        "fields": [
+          {
+            "name": "周期",
+            "type": "string"
+          },
+          {
+            "name": "时段",
+            "type": "string"
+          },
+          {
+            "name": "总里程",
+            "type": "number",
+            "aggregation": "SUM"
+          }
+        ],
+        "filters": [
+          {
+            "field": "周期",
+            "operator": "=",
+            "value": "本年"
+          }
+        ],
+        "sorts": []
+      },
+      "layout": {
+        "minHeight": 220
+      }
+    },
+    {
+      "id": "transport-efficiency-year-ontime-chart",
+      "type": "custom-chart",
+      "name": "运输效率趋势-本年-准时率",
+      "config": {
+        "renderer": "function",
+        "optionFunction": "const fallbackRows = [{ '周期': '今日', '时段': '00:00', duration: 22.4, mileage: 18.2, ontime: 94.2, exception: 86 }, { '周期': '今日', '时段': '06:00', duration: 20.1, mileage: 36.5, ontime: 95.1, exception: 104 }, { '周期': '今日', '时段': '12:00', duration: 18.6, mileage: 58.7, ontime: 96.8, exception: 126 }, { '周期': '今日', '时段': '18:00', duration: 17.2, mileage: 74.1, ontime: 96.1, exception: 118 }, { '周期': '今日', '时段': '当前', duration: 18.6, mileage: 86.4, ontime: 96.8, exception: 126 }, { '周期': '本周', '时段': '周一', duration: 21.6, mileage: 462.4, ontime: 94.8, exception: 610 }, { '周期': '本周', '时段': '周二', duration: 20.8, mileage: 486.2, ontime: 95.4, exception: 572 }, { '周期': '本周', '时段': '周三', duration: 19.4, mileage: 512.8, ontime: 96.2, exception: 536 }, { '周期': '本周', '时段': '周四', duration: 18.9, mileage: 548.6, ontime: 96.7, exception: 498 }, { '周期': '本周', '时段': '今日', duration: 18.2, mileage: 586.4, ontime: 97.1, exception: 462 }, { '周期': '本月', '时段': '第1周', duration: 22.8, mileage: 1680.5, ontime: 93.8, exception: 2140 }, { '周期': '本月', '时段': '第2周', duration: 21.2, mileage: 1896.3, ontime: 94.9, exception: 1986 }, { '周期': '本月', '时段': '第3周', duration: 19.8, mileage: 2140.8, ontime: 96.1, exception: 1760 }, { '周期': '本月', '时段': '第4周', duration: 18.6, mileage: 2386.4, ontime: 96.8, exception: 1538 }, { '周期': '本月', '时段': '当前', duration: 18.1, mileage: 2568.7, ontime: 97.2, exception: 1426 }, { '周期': '本年', '时段': 'Q1', duration: 24.2, mileage: 18420.6, ontime: 92.6, exception: 8640 }, { '周期': '本年', '时段': 'Q2', duration: 22.1, mileage: 23680.4, ontime: 94.1, exception: 7420 }, { '周期': '本年', '时段': 'Q3', duration: 20.4, mileage: 28640.8, ontime: 95.7, exception: 6280 }, { '周期': '本年', '时段': 'Q4', duration: 18.9, mileage: 32864.2, ontime: 96.8, exception: 5160 }, { '周期': '本年', '时段': '当前', duration: 18.4, mileage: 36420.5, ontime: 97.3, exception: 4820 }]; const period = '本年'; const sourceRows = Array.isArray(dataset?.source) && dataset.source.length ? dataset.source : fallbackRows; const rows = sourceRows.filter((row) => !row['周期'] || row['周期'] === period); const field = '准时率'; const unit = '%'; const values = rows.map((row) => Number(row[field] ?? row['ontime'] ?? 0)); const labels = rows.map((row) => row['时段']); const lastIndex = Math.max(0, values.length - 1); const maxValue = values.length ? Math.max(...values) : 0; const yMax = field === '准时率' ? 100 : Math.max(10, Math.ceil(maxValue * 1.18)); const option = { backgroundColor: 'transparent', animation: false, grid: { left: 26, right: 16, top: 18, bottom: 26 }, tooltip: { trigger: 'axis', confine: true, backgroundColor: 'rgba(5,14,26,0.54)', borderColor: 'rgba(255,159,46,0.32)', borderWidth: 1, padding: [3, 7], extraCssText: 'width:126px!important;max-width:126px!important;height:42px!important;max-height:42px!important;min-height:42px!important;overflow:hidden!important;box-shadow:0 5px 12px rgba(0,0,0,0.24);border-radius:4px;backdrop-filter:blur(2px);', textStyle: { color: 'rgba(238,246,255,0.94)', fontSize: 10, fontWeight: 700 }, axisPointer: { type: 'line', lineStyle: { color: 'rgba(255,159,46,0.42)', width: 1, type: 'dashed' } }, formatter: (params) => { const item = Array.isArray(params) ? params[0] : params; return item ? '<div style=\"line-height:1.05\"><div style=\"display:flex;justify-content:space-between;margin-bottom:2px\"><span style=\"color:rgba(177,196,218,.82)\">' + period + ' · ' + item.name + '</span><b style=\"color:#fff\">' + item.value + unit + '</b></div><div style=\"display:flex;justify-content:space-between\"><span style=\"color:#ffad37\">' + field + '</span><span style=\"color:rgba(210,224,238,.76)\">趋势</span></div></div>' : ''; } }, xAxis: { type: 'category', boundaryGap: false, data: labels, axisTick: { show: false }, axisLine: { lineStyle: { color: 'rgba(100,145,190,0.18)' } }, axisLabel: { color: 'rgba(198,210,222,0.54)', fontSize: 10, fontWeight: 700 } }, yAxis: { type: 'value', min: 0, max: yMax, splitNumber: 4, axisLabel: { show: false }, axisLine: { show: false }, axisTick: { show: false }, splitLine: { lineStyle: { color: 'rgba(150,178,205,0.08)' } } }, series: [{ name: field, type: 'line', smooth: true, data: values, symbol: 'circle', symbolSize: (value, params) => params.dataIndex === lastIndex ? 9 : 7, showSymbol: true, lineStyle: { width: 3, color: '#7be0a5', shadowBlur: 14, shadowColor: '#7be0a5' }, itemStyle: { color: '#7be0a5', borderColor: 'rgba(255,255,255,0.62)', borderWidth: 1 }, emphasis: { scale: 1.25, itemStyle: { shadowBlur: 16, shadowColor: '#7be0a5' } }, areaStyle: { opacity: 1, color: { type: 'linear', x: 0, y: 0, x2: 0, y2: 1, colorStops: [{ offset: 0, color: 'rgba(123,224,165,0.28)' }, { offset: 0.72, color: 'rgba(255,159,46,0.10)' }, { offset: 1, color: 'rgba(255,159,46,0)' }] } }, markPoint: { symbol: 'circle', symbolSize: 10, data: labels.length ? [{ coord: [labels[lastIndex], values[lastIndex]], itemStyle: { color: '#e04d3f', borderColor: 'rgba(255,255,255,0.66)', borderWidth: 1 } }] : [], label: { show: false } } }] }; return option;"
+      },
+      "dataConfig": {
+        "datasetId": "dataset-logistics-efficiency-trend",
+        "fields": [
+          {
+            "name": "周期",
+            "type": "string"
+          },
+          {
+            "name": "时段",
+            "type": "string"
+          },
+          {
+            "name": "准时率",
+            "type": "number",
+            "aggregation": "SUM"
+          }
+        ],
+        "filters": [
+          {
+            "field": "周期",
+            "operator": "=",
+            "value": "本年"
+          }
+        ],
+        "sorts": []
+      },
+      "layout": {
+        "minHeight": 220
+      }
+    },
+    {
+      "id": "transport-efficiency-year-exception-chart",
+      "type": "custom-chart",
+      "name": "运输效率趋势-本年-异常订单",
+      "config": {
+        "renderer": "function",
+        "optionFunction": "const fallbackRows = [{ '周期': '今日', '时段': '00:00', duration: 22.4, mileage: 18.2, ontime: 94.2, exception: 86 }, { '周期': '今日', '时段': '06:00', duration: 20.1, mileage: 36.5, ontime: 95.1, exception: 104 }, { '周期': '今日', '时段': '12:00', duration: 18.6, mileage: 58.7, ontime: 96.8, exception: 126 }, { '周期': '今日', '时段': '18:00', duration: 17.2, mileage: 74.1, ontime: 96.1, exception: 118 }, { '周期': '今日', '时段': '当前', duration: 18.6, mileage: 86.4, ontime: 96.8, exception: 126 }, { '周期': '本周', '时段': '周一', duration: 21.6, mileage: 462.4, ontime: 94.8, exception: 610 }, { '周期': '本周', '时段': '周二', duration: 20.8, mileage: 486.2, ontime: 95.4, exception: 572 }, { '周期': '本周', '时段': '周三', duration: 19.4, mileage: 512.8, ontime: 96.2, exception: 536 }, { '周期': '本周', '时段': '周四', duration: 18.9, mileage: 548.6, ontime: 96.7, exception: 498 }, { '周期': '本周', '时段': '今日', duration: 18.2, mileage: 586.4, ontime: 97.1, exception: 462 }, { '周期': '本月', '时段': '第1周', duration: 22.8, mileage: 1680.5, ontime: 93.8, exception: 2140 }, { '周期': '本月', '时段': '第2周', duration: 21.2, mileage: 1896.3, ontime: 94.9, exception: 1986 }, { '周期': '本月', '时段': '第3周', duration: 19.8, mileage: 2140.8, ontime: 96.1, exception: 1760 }, { '周期': '本月', '时段': '第4周', duration: 18.6, mileage: 2386.4, ontime: 96.8, exception: 1538 }, { '周期': '本月', '时段': '当前', duration: 18.1, mileage: 2568.7, ontime: 97.2, exception: 1426 }, { '周期': '本年', '时段': 'Q1', duration: 24.2, mileage: 18420.6, ontime: 92.6, exception: 8640 }, { '周期': '本年', '时段': 'Q2', duration: 22.1, mileage: 23680.4, ontime: 94.1, exception: 7420 }, { '周期': '本年', '时段': 'Q3', duration: 20.4, mileage: 28640.8, ontime: 95.7, exception: 6280 }, { '周期': '本年', '时段': 'Q4', duration: 18.9, mileage: 32864.2, ontime: 96.8, exception: 5160 }, { '周期': '本年', '时段': '当前', duration: 18.4, mileage: 36420.5, ontime: 97.3, exception: 4820 }]; const period = '本年'; const sourceRows = Array.isArray(dataset?.source) && dataset.source.length ? dataset.source : fallbackRows; const rows = sourceRows.filter((row) => !row['周期'] || row['周期'] === period); const field = '异常订单'; const unit = '单'; const values = rows.map((row) => Number(row[field] ?? row['exception'] ?? 0)); const labels = rows.map((row) => row['时段']); const lastIndex = Math.max(0, values.length - 1); const maxValue = values.length ? Math.max(...values) : 0; const yMax = field === '准时率' ? 100 : Math.max(10, Math.ceil(maxValue * 1.18)); const option = { backgroundColor: 'transparent', animation: false, grid: { left: 26, right: 16, top: 18, bottom: 26 }, tooltip: { trigger: 'axis', confine: true, backgroundColor: 'rgba(5,14,26,0.54)', borderColor: 'rgba(255,159,46,0.32)', borderWidth: 1, padding: [3, 7], extraCssText: 'width:126px!important;max-width:126px!important;height:42px!important;max-height:42px!important;min-height:42px!important;overflow:hidden!important;box-shadow:0 5px 12px rgba(0,0,0,0.24);border-radius:4px;backdrop-filter:blur(2px);', textStyle: { color: 'rgba(238,246,255,0.94)', fontSize: 10, fontWeight: 700 }, axisPointer: { type: 'line', lineStyle: { color: 'rgba(255,159,46,0.42)', width: 1, type: 'dashed' } }, formatter: (params) => { const item = Array.isArray(params) ? params[0] : params; return item ? '<div style=\"line-height:1.05\"><div style=\"display:flex;justify-content:space-between;margin-bottom:2px\"><span style=\"color:rgba(177,196,218,.82)\">' + period + ' · ' + item.name + '</span><b style=\"color:#fff\">' + item.value + unit + '</b></div><div style=\"display:flex;justify-content:space-between\"><span style=\"color:#ffad37\">' + field + '</span><span style=\"color:rgba(210,224,238,.76)\">趋势</span></div></div>' : ''; } }, xAxis: { type: 'category', boundaryGap: false, data: labels, axisTick: { show: false }, axisLine: { lineStyle: { color: 'rgba(100,145,190,0.18)' } }, axisLabel: { color: 'rgba(198,210,222,0.54)', fontSize: 10, fontWeight: 700 } }, yAxis: { type: 'value', min: 0, max: yMax, splitNumber: 4, axisLabel: { show: false }, axisLine: { show: false }, axisTick: { show: false }, splitLine: { lineStyle: { color: 'rgba(150,178,205,0.08)' } } }, series: [{ name: field, type: 'line', smooth: true, data: values, symbol: 'circle', symbolSize: (value, params) => params.dataIndex === lastIndex ? 9 : 7, showSymbol: true, lineStyle: { width: 3, color: '#ff624d', shadowBlur: 14, shadowColor: '#ff624d' }, itemStyle: { color: '#ff9f2e', borderColor: 'rgba(255,255,255,0.62)', borderWidth: 1 }, emphasis: { scale: 1.25, itemStyle: { shadowBlur: 16, shadowColor: '#ff624d' } }, areaStyle: { opacity: 1, color: { type: 'linear', x: 0, y: 0, x2: 0, y2: 1, colorStops: [{ offset: 0, color: 'rgba(255,98,77,0.30)' }, { offset: 0.72, color: 'rgba(255,159,46,0.10)' }, { offset: 1, color: 'rgba(255,159,46,0)' }] } }, markPoint: { symbol: 'circle', symbolSize: 10, data: labels.length ? [{ coord: [labels[lastIndex], values[lastIndex]], itemStyle: { color: '#e04d3f', borderColor: 'rgba(255,255,255,0.66)', borderWidth: 1 } }] : [], label: { show: false } } }] }; return option;"
+      },
+      "dataConfig": {
+        "datasetId": "dataset-logistics-efficiency-trend",
+        "fields": [
+          {
+            "name": "周期",
+            "type": "string"
+          },
+          {
+            "name": "时段",
+            "type": "string"
+          },
+          {
+            "name": "异常订单",
+            "type": "number",
+            "aggregation": "SUM"
+          }
+        ],
+        "filters": [
+          {
+            "field": "周期",
+            "operator": "=",
+            "value": "本年"
+          }
+        ],
+        "sorts": []
+      },
+      "layout": {
+        "minHeight": 220
+      }
+    },
+    {
+      "id": "order-trend-chart",
+      "type": "custom-chart",
+      "config": {
+        "renderer": "function",
+        "optionFunction": "const rows = Array.isArray(dataset?.source) ? dataset.source : []; const option = { backgroundColor: 'transparent', grid: { left: 36, right: 18, top: 24, bottom: 32 }, tooltip: { trigger: 'axis' }, xAxis: { type: 'category', data: rows.map((row) => row['时段']), axisLine: { lineStyle: { color: 'rgba(255,255,255,0.18)' } }, axisTick: { show: false }, axisLabel: { color: 'rgba(220,235,224,0.62)' } }, yAxis: { type: 'value', splitLine: { lineStyle: { color: 'rgba(255,255,255,0.08)' } }, axisLabel: { color: 'rgba(220,235,224,0.62)' } }, series: [{ name: '订单量', type: 'line', smooth: true, data: rows.map((row) => Number(row['订单量'] ?? 0)), symbolSize: 7, lineStyle: { width: 3, color: '#6ec8ff' }, itemStyle: { color: '#6ec8ff' }, areaStyle: { color: { type: 'linear', x: 0, y: 0, x2: 0, y2: 1, colorStops: [{ offset: 0, color: 'rgba(110,200,255,0.32)' }, { offset: 1, color: 'rgba(110,200,255,0.02)' }] } } }, { name: '异常订单', type: 'bar', data: rows.map((row) => Number(row['异常订单'] ?? 0)), barWidth: 10, itemStyle: { color: '#ff624d', borderRadius: [8, 8, 0, 0] } }] }; return option;"
+      },
+      "dataConfig": {
+        "datasetId": "dataset-logistics-order-trend",
+        "fields": [
+          {
+            "name": "时段",
+            "type": "string"
+          },
+          {
+            "name": "订单量",
+            "type": "number",
+            "aggregation": "SUM"
+          },
+          {
+            "name": "异常订单",
+            "type": "number",
+            "aggregation": "SUM"
+          }
+        ],
+        "filters": [],
+        "sorts": []
+      },
+      "layout": {
+        "minHeight": 260
+      }
+    },
+    {
+      "id": "route-volume-chart",
+      "type": "custom-chart",
+      "config": {
+        "renderer": "function",
+        "optionFunction": "const rows = Array.isArray(dataset?.source) ? dataset.source : []; const option = { backgroundColor: 'transparent', tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } }, grid: { left: 82, right: 18, top: 20, bottom: 24 }, xAxis: { type: 'value', splitLine: { lineStyle: { color: 'rgba(255,255,255,0.08)' } }, axisLabel: { color: 'rgba(220,235,224,0.62)' } }, yAxis: { type: 'category', data: rows.map((row) => row['线路']), axisTick: { show: false }, axisLine: { lineStyle: { color: 'rgba(255,255,255,0.16)' } }, axisLabel: { color: 'rgba(237,247,239,0.86)' } }, series: [{ name: '订单量', type: 'bar', data: rows.map((row) => Number(row['订单量'] ?? 0)), barWidth: 14, itemStyle: { color: { type: 'linear', x: 0, y: 0, x2: 1, y2: 0, colorStops: [{ offset: 0, color: 'rgba(140,199,255,0.28)' }, { offset: 1, color: '#6ec8ff' }] }, borderRadius: [0, 8, 8, 0] } }, { name: '延误风险', type: 'scatter', data: rows.map((row, index) => [Number(row['延误风险'] ?? 0), index]), symbolSize: 12, itemStyle: { color: '#ffb84a' } }] }; return option;"
+      },
+      "dataConfig": {
+        "datasetId": "dataset-logistics-route-volume",
+        "fields": [
+          {
+            "name": "线路",
+            "type": "string"
+          },
+          {
+            "name": "订单量",
+            "type": "number",
+            "aggregation": "SUM"
+          },
+          {
+            "name": "延误风险",
+            "type": "number",
+            "aggregation": "SUM"
+          }
+        ],
+        "filters": [],
+        "sorts": []
+      },
+      "layout": {
+        "minHeight": 260
+      }
+    },
+    {
+      "id": "transport-status-summary-chart",
+      "type": "custom-chart",
+      "name": "今日运输状态摘要排行",
+      "config": {
+        "renderer": "function",
+        "optionFunction": "const fallbackRows = [{ '排名': 1, '区域': '华东大区', '风险等级': '低风险', '状态标签': '准时', '准时率': 98.1 }, { '排名': 2, '区域': '华南大区', '风险等级': '中风险', '状态标签': '异常18', '准时率': 94.6 }, { '排名': 3, '区域': '华北大区', '风险等级': '低风险', '状态标签': '在途', '准时率': 96.2 }, { '排名': 4, '区域': '西南大区', '风险等级': '高风险', '状态标签': '积压42', '准时率': 89.8 }, { '排名': 5, '区域': '华中大区', '风险等级': '中风险', '状态标签': '延误12', '准时率': 92.4 }, { '排名': 6, '区域': '西北大区', '风险等级': '低风险', '状态标签': '补车中', '准时率': 91.7 }, { '排名': 7, '区域': '东北大区', '风险等级': '低风险', '状态标签': '准时', '准时率': 95.4 }, { '排名': 8, '区域': '京津冀', '风险等级': '中风险', '状态标签': '拥堵9', '准时率': 93.6 }]; const sourceRows = Array.isArray(dataset?.source) && dataset.source.length ? dataset.source : fallbackRows; const rows = sourceRows.slice(0, 8); const graphics = []; const rowH = 39; const chipW = 64; const chipFont = '900 9px Microsoft YaHei, Arial'; const x = { rank: 0, name: 34, risk: 184, status: 256 }; const statusColor = (status) => status === '准时' || status === '在途' || status === '补车中' ? '#2f9bff' : '#dca43b'; const riskColor = (risk) => risk === '高风险' ? '#ff5d16' : risk === '低风险' ? '#2f9bff' : '#dca43b'; const pad2 = (value) => String(value ?? '').padStart(2, '0'); rows.forEach((row, index) => { const y = index * rowH + 6; const risk = String(row['风险等级'] ?? ''); const status = String(row['状态标签'] ?? ''); const score = Number(row['准时率'] ?? 0).toFixed(1); graphics.push({ type: 'text', left: x.rank, top: y, style: { text: pad2(row['排名']), fill: '#ffad37', font: 'italic 900 17px Bahnschrift, Arial' } }); graphics.push({ type: 'text', left: x.name, top: y + 1, style: { text: String(row['区域'] ?? ''), fill: 'rgba(236,244,250,0.88)', font: '800 13px Microsoft YaHei, Arial', width: 134, overflow: 'truncate' } }); graphics.push({ type: 'rect', left: x.risk, top: y - 2, shape: { width: chipW, height: 20 }, style: { fill: riskColor(risk) } }); graphics.push({ type: 'text', x: x.risk + chipW / 2, y: y + 8, style: { text: risk, fill: 'rgba(22,28,35,0.94)', align: 'center', verticalAlign: 'middle', font: chipFont } }); graphics.push({ type: 'rect', left: x.status, top: y - 2, shape: { width: chipW, height: 20 }, style: { fill: statusColor(status) } }); graphics.push({ type: 'text', x: x.status + chipW / 2, y: y + 8, style: { text: status, fill: 'rgba(22,28,35,0.94)', align: 'center', verticalAlign: 'middle', font: chipFont } }); graphics.push({ type: 'text', right: 12, top: y - 1, style: { text: score, fill: 'rgba(236,244,250,0.92)', align: 'right', font: 'italic 900 19px Bahnschrift, Arial', textShadowBlur: 8, textShadowColor: 'rgba(255,255,255,0.16)' } }); }); const option = { backgroundColor: 'transparent', animation: false, tooltip: { trigger: 'item', confine: true, backgroundColor: 'rgba(5,14,26,0.68)', borderColor: 'rgba(255,159,46,0.28)', textStyle: { color: '#fff', fontSize: 11 }, formatter: (params) => { const row = rows[params.dataIndex] || {}; return row['区域'] ? row['区域'] + '<br/>今日订单：' + (row['今日订单'] ?? '-') + '<br/>异常订单：' + (row['异常订单'] ?? '-') + '<br/>在途车辆：' + (row['在途车辆'] ?? '-') : ''; } }, xAxis: { show: false }, yAxis: { show: false }, series: [{ type: 'scatter', data: rows.map((row, index) => [index, Number(row['准时率'] ?? 0)]), symbolSize: 0 }], graphic: graphics }; return option;"
+      },
+      "dataConfig": {
+        "datasetId": "dataset-logistics-today-transport-status-summary",
+        "fields": [
+          {
+            "name": "排名",
+            "type": "number"
+          },
+          {
+            "name": "区域",
+            "type": "string"
+          },
+          {
+            "name": "风险等级",
+            "type": "string"
+          },
+          {
+            "name": "状态标签",
+            "type": "string"
+          },
+          {
+            "name": "准时率",
+            "type": "number",
+            "aggregation": "SUM"
+          },
+          {
+            "name": "今日订单",
+            "type": "number",
+            "aggregation": "SUM"
+          },
+          {
+            "name": "异常订单",
+            "type": "number",
+            "aggregation": "SUM"
+          },
+          {
+            "name": "在途车辆",
+            "type": "number",
+            "aggregation": "SUM"
+          }
+        ],
+        "filters": [],
+        "sorts": [
+          {
+            "field": "排名",
+            "direction": "ASC"
+          }
+        ]
+      },
+      "layout": {
+        "minHeight": 310
+      }
+    },
+    {
+      "id": "vehicle-demand-chart",
+      "type": "custom-chart",
+      "config": {
+        "renderer": "function",
+        "optionFunction": "const rows = Array.isArray(dataset?.source) ? dataset.source : []; const safeRows = rows.slice(0, 6).map((row) => { const supply = Number(row['车辆供给'] ?? 0); const demand = Number(row['订单需求'] ?? 0); const risk = Number(row['风险订单'] ?? 0); const rate = demand > 0 ? Math.min(1, supply / demand) : 0; return { region: row['区域'], supply, demand, risk, rate, gap: Math.max(0, demand - supply) }; }); const rowH = 23; const trackX = 58; const trackW = 168; const graphics = []; safeRows.forEach((row, index) => { const y = index * rowH + 8; const fillW = Math.max(8, Math.round(trackW * row.rate)); const gapW = row.gap > 0 ? Math.max(8, Math.round(trackW * Math.min(0.22, row.gap / Math.max(row.demand, 1)))) : 0; graphics.push({ type: 'rect', left: 0, top: y - 5, shape: { width: 314, height: 18 }, style: { fill: index % 2 === 0 ? 'rgba(255,255,255,0.025)' : 'rgba(255,255,255,0.012)' } }); graphics.push({ type: 'text', left: 8, top: y - 1, style: { text: row.region, fill: 'rgba(222,232,232,0.72)', font: '700 11px 优设标题黑, YouSheBiaoTiHei, Bahnschrift, Arial' } }); graphics.push({ type: 'rect', left: trackX, top: y + 4, shape: { width: trackW, height: 3 }, style: { fill: 'rgba(255,255,255,0.09)' } }); graphics.push({ type: 'rect', left: trackX, top: y + 4, shape: { width: fillW, height: 3 }, style: { fill: 'rgba(110,200,255,0.66)' } }); if (gapW > 0) { graphics.push({ type: 'rect', left: trackX + Math.min(trackW - gapW, fillW + 4), top: y + 4, shape: { width: gapW, height: 3 }, style: { fill: 'rgba(255,98,77,0.62)' } }); } graphics.push({ type: 'text', right: 42, top: y - 2, style: { text: String(row.supply), fill: 'rgba(245,248,248,0.86)', align: 'right', font: '700 12px 优设标题黑, YouSheBiaoTiHei, Bahnschrift, Arial' } }); graphics.push({ type: 'text', right: 4, top: y - 2, style: { text: String(row.demand), fill: 'rgba(156,170,174,0.76)', align: 'right', font: '700 12px 优设标题黑, YouSheBiaoTiHei, Bahnschrift, Arial' } }); }); const option = { backgroundColor: 'transparent', tooltip: { show: false }, xAxis: { show: false }, yAxis: { show: false }, series: [], graphic: graphics }; return option;"
+      },
+      "dataConfig": {
+        "datasetId": "dataset-logistics-vehicle-demand",
+        "fields": [
+          {
+            "name": "区域",
+            "type": "string"
+          },
+          {
+            "name": "车辆供给",
+            "type": "number",
+            "aggregation": "SUM"
+          },
+          {
+            "name": "订单需求",
+            "type": "number",
+            "aggregation": "SUM"
+          },
+          {
+            "name": "风险订单",
+            "type": "number",
+            "aggregation": "SUM"
+          }
+        ],
+        "filters": [],
+        "sorts": []
+      },
+      "layout": {
+        "minHeight": 260
+      }
+    },
+    {
+      "id": "vehicle-3d-map",
+      "type": "extruded-map",
+      "config": {
+        "level": "world",
+        "code": "WORLD",
+        "modelConfig": {
+          "id": "world-default"
+        },
+        "styleConfig": {
+          "styleId": "default",
+          "styleOverride": {
+            "effects": {
+              "glowLayer": {
+                "level": 0.68
+              },
+              "contrast": {
+                "level": 0.34
+              },
+              "saturation": {
+                "level": -0.42
+              },
+              "depthOfField": {
+                "level": 0.4
+              }
+            },
+            "lights": {
+              "hemisphericLight": {
+                "level": 0.42
+              }
+            },
+            "performance": {
+              "renderQuality": {
+                "level": 0.68
+              }
+            }
+          }
+        }
+      },
+      "dataConfig": [
+        {
+          "datasetId": "dataset-logistics-vehicle-map-routes",
+          "fields": [
+            {
+              "name": "订单号",
+              "type": "string"
+            },
+            {
+              "name": "节点",
+              "type": "string"
+            },
+            {
+              "name": "序号",
+              "type": "number"
+            },
+            {
+              "name": "经度",
+              "type": "number"
+            },
+            {
+              "name": "纬度",
+              "type": "number"
+            },
+            {
+              "name": "风险等级",
+              "type": "string"
+            }
+          ],
+          "config": {
+            "layerType": "connection",
+            "layerName": "订单轨迹线",
+            "visible": true,
+            "position": {
+              "type": "geographic",
+              "lonField": {
+                "name": "经度"
+              },
+              "latField": {
+                "name": "纬度"
+              }
+            },
+            "heightOffset": 0.08,
+            "path": {
+              "groupField": {
+                "name": "订单号"
+              },
+              "orderField": {
+                "name": "序号"
+              },
+              "orderDirection": "asc",
+              "smoothing": {
+                "enabled": true,
+                "curvature": 0.16,
+                "subdivisions": 20
+              }
+            },
+            "style": {
+              "color": "#6EC8FF",
+              "opacity": 0.82,
+              "thicknessScale": 0.018,
+              "effectPreset": "stream",
+              "flowSpeed": 0.72,
+              "glowIntensity": 1.15,
+              "flowDirection": "forward"
+            },
+            "styleRules": [
+              {
+                "field": "风险等级",
+                "value": "高",
+                "style": {
+                  "color": "#FF624D",
+                  "opacity": 0.9,
+                  "glowIntensity": 1.35
+                }
+              }
+            ]
+          },
+          "filters": [],
+          "sorts": []
+        },
+        {
+          "datasetId": "dataset-logistics-vehicle-map-points",
+          "fields": [
+            {
+              "name": "车牌号",
+              "type": "string"
+            },
+            {
+              "name": "城市",
+              "type": "string"
+            },
+            {
+              "name": "经度",
+              "type": "number"
+            },
+            {
+              "name": "纬度",
+              "type": "number"
+            },
+            {
+              "name": "状态",
+              "type": "string"
+            },
+            {
+              "name": "当前订单",
+              "type": "string"
+            }
+          ],
+          "config": {
+            "layerType": "marker",
+            "layerName": "车辆实时点位",
+            "visible": true,
+            "position": {
+              "type": "geographic",
+              "lonField": {
+                "name": "经度"
+              },
+              "latField": {
+                "name": "纬度"
+              }
+            },
+            "heightOffset": 0.12,
+            "size": {
+              "scale": 0.3,
+              "randomness": 0.08
+            },
+            "label": {
+              "fields": [
+                {
+                  "name": "车牌号"
+                },
+                {
+                  "name": "状态"
+                }
+              ]
+            },
+            "animation": {
+              "enabled": true,
+              "appearMs": 260,
+              "disappearMs": 220
+            }
+          },
+          "filters": [],
+          "sorts": []
+        }
+      ],
+      "layout": {
+        "width": 1920,
+        "height": 1080,
+        "minHeight": 1080
+      }
+    }
+  ]
+}
