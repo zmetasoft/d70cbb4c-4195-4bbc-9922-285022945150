@@ -559,11 +559,27 @@ function HeaderSvgFrame() {
 export default function Board() {
   const [activeKey, setActiveKey] =
     useState<(typeof pages)[number]['key']>('overview');
+  const [isMapStageReady, setIsMapStageReady] = useState(false);
   const activePage = useMemo(
     () => pages.find((page) => page.key === activeKey) ?? pages[0],
     [activeKey]
   );
   const data = pageData[activePage.key as keyof typeof pageData];
+
+  useEffect(() => {
+    if (typeof window === 'undefined') {
+      setIsMapStageReady(true);
+      return;
+    }
+
+    const frameId = window.requestAnimationFrame(() => {
+      setIsMapStageReady(true);
+    });
+
+    return () => {
+      window.cancelAnimationFrame(frameId);
+    };
+  }, []);
 
   return (
     <main className="logistics-screen">
@@ -616,7 +632,9 @@ export default function Board() {
           </div>
         </header>
 
-        <PersistentChinaMapStage activeKey={activeKey} />
+        {isMapStageReady ? (
+          <PersistentChinaMapStage activeKey={activeKey} />
+        ) : null}
 
         {activeKey === 'vehicle' ? (
           <VehicleOrderView />
@@ -981,19 +999,33 @@ function withTransportMapFocusCommand(
   };
 }
 
-function postTransportMapWidgetUpdate(widget: TransportMapWidgetDefinition) {
+function postTransportMapWidgetUpdate(
+  widget: TransportMapWidgetDefinition,
+  options: { replay?: boolean } = {}
+) {
   if (typeof window === 'undefined') {
     return;
   }
 
-  window.postMessage(
-    {
-      type: AI_BOARD_WIDGET_UPDATE_EVENT,
-      visdocId: resolvePreviewVisdocId(),
-      widget,
-    },
-    window.location.origin
-  );
+  const postUpdate = () => {
+    window.postMessage(
+      {
+        type: AI_BOARD_WIDGET_UPDATE_EVENT,
+        visdocId: resolvePreviewVisdocId(),
+        widget,
+      },
+      window.location.origin
+    );
+  };
+
+  postUpdate();
+
+  if (options.replay) {
+    window.requestAnimationFrame(postUpdate);
+    [160, 500, 1000].forEach((delay) => {
+      window.setTimeout(postUpdate, delay);
+    });
+  }
 }
 
 const transportKpiCards = [
@@ -1154,7 +1186,8 @@ function OverviewMonitorView() {
       withTransportMapLayerVisibility(
         transportMapWidget,
         transportMapLayerVisibility
-      )
+      ),
+      { replay: true }
     );
   }, [transportMapLayerVisibility, transportMapWidget]);
 
@@ -1885,6 +1918,23 @@ function PersistentChinaMapStage({
     { key: 'warehouse', id: WAREHOUSE_CHINA_MAP_WIDGET_ID },
     { key: 'vehicle', id: VEHICLE_CHINA_MAP_WIDGET_ID },
   ];
+
+  useEffect(() => {
+    if (typeof window === 'undefined') {
+      return;
+    }
+
+    const resize = () => window.dispatchEvent(new Event('resize'));
+    const frameId = window.requestAnimationFrame(resize);
+    const timeoutIds = [120, 360, 800].map((delay) =>
+      window.setTimeout(resize, delay)
+    );
+
+    return () => {
+      window.cancelAnimationFrame(frameId);
+      timeoutIds.forEach((timeoutId) => window.clearTimeout(timeoutId));
+    };
+  }, [activeKey]);
 
   return (
     <div className="persistent-china-map-stage" aria-hidden="true">
