@@ -1108,6 +1108,8 @@ function OverviewMonitorView() {
     useState<Record<TransportMapLayerKey, boolean>>(
       defaultTransportMapLayerVisibility
     );
+  const [isTransportLayerPanelCollapsed, setIsTransportLayerPanelCollapsed] =
+    useState(false);
 
   useEffect(() => {
     let cancelled = false;
@@ -1307,12 +1309,24 @@ function OverviewMonitorView() {
         </OverviewPanel>
       </aside>
 
-      <section className="overview-center">
-        <div className="overview-map-glow">
-          <i className="overview-pin overview-pin-a" />
-          <i className="overview-pin overview-pin-b" />
-          <i className="overview-pin overview-pin-c" />
-          <div className="overview-map-layer-legend" aria-label="地图图层控制">
+      <div
+        className={`overview-map-layer-legend${
+          isTransportLayerPanelCollapsed ? ' is-collapsed' : ''
+        }`}
+        aria-label="地图图层控制"
+      >
+        <button
+          aria-expanded={!isTransportLayerPanelCollapsed}
+          className="overview-map-layer-collapse"
+          type="button"
+          onClick={() =>
+            setIsTransportLayerPanelCollapsed((current) => !current)
+          }
+        >
+          {isTransportLayerPanelCollapsed ? '图层' : '收起'}
+        </button>
+        {!isTransportLayerPanelCollapsed ? (
+          <div className="overview-map-layer-list">
             {transportMapLayerLabels.map((item) => (
               <button
                 aria-pressed={transportMapLayerVisibility[item.key]}
@@ -1325,6 +1339,14 @@ function OverviewMonitorView() {
               </button>
             ))}
           </div>
+        ) : null}
+      </div>
+
+      <section className="overview-center">
+        <div className="overview-map-glow">
+          <i className="overview-pin overview-pin-a" />
+          <i className="overview-pin overview-pin-b" />
+          <i className="overview-pin overview-pin-c" />
           <div className="overview-callout">
             <h3>全国运输态势总览</h3>
             <p>
