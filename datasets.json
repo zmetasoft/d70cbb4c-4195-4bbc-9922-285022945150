@@ -357,6 +357,14 @@
       {
         "name": "调度说明",
         "type": "string"
+      },
+      {
+        "name": "经度",
+        "type": "number"
+      },
+      {
+        "name": "纬度",
+        "type": "number"
       }
     ],
     "scope": "local"

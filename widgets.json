@@ -882,7 +882,7 @@
       "name": "异常区域提示-明细表",
       "config": {
         "renderer": "function",
-        "optionFunction": "const fallbackRows = [{ '区域': '苏州园区', '异常订单': 11, '主要原因': '管制', '处理状态': '跟进中', '状态类型': 'follow' }, { '区域': '武汉中仓', '异常订单': 9, '主要原因': '分拨', '处理状态': '跟进中', '状态类型': 'follow' }, { '区域': '西安北仓', '异常订单': 7, '主要原因': '限流', '处理状态': '预警', '状态类型': 'warn' }, { '区域': '天津港区', '异常订单': 6, '主要原因': '查验', '处理状态': '跟进中', '状态类型': 'follow' }, { '区域': '重庆渝北', '异常订单': 5, '主要原因': '山路', '处理状态': '预警', '状态类型': 'warn' }, { '区域': '南京中转', '异常订单': 5, '主要原因': '装卸', '处理状态': '跟进中', '状态类型': 'follow' }, { '区域': '青岛城配', '异常订单': 4, '主要原因': '雨雪', '处理状态': '预警', '状态类型': 'warn' }, { '区域': '沈阳北仓', '异常订单': 4, '主要原因': '低温', '处理状态': '跟进中', '状态类型': 'follow' }, { '区域': '昆明南仓', '异常订单': 3, '主要原因': '绕行', '处理状态': '跟进中', '状态类型': 'follow' }]; const sourceRows = Array.isArray(dataset?.source) && dataset.source.length ? dataset.source : fallbackRows; const rows = sourceRows.slice(0, 9); const graphics = []; const cols = [6, 164, 232, 294]; const headerY = 2; const rowH = 29; const fmt = (value) => String(value ?? ''); const statusColor = (row) => row['状态类型'] === 'warn' || row['处理状态'] === '预警' ? '#ffad37' : 'rgba(236,244,250,0.76)'; ['区域', '异常', '原因', '状态'].forEach((label, index) => { graphics.push({ type: 'text', left: cols[index], top: headerY, style: { text: label, fill: 'rgba(220,230,240,0.66)', font: '700 12px Microsoft YaHei, Arial' } }); }); rows.forEach((row, index) => { const y = 28 + index * rowH; graphics.push({ type: 'rect', left: 0, top: y - 6, shape: { width: 356, height: 23 }, style: { fill: index % 2 === 0 ? 'rgba(55,70,92,0.17)' : 'rgba(55,70,92,0.06)' } }); graphics.push({ type: 'rect', left: 0, top: y - 6, shape: { width: 2, height: 23 }, style: { fill: row['状态类型'] === 'warn' ? '#ffad37' : 'rgba(110,200,255,0.56)' } }); graphics.push({ type: 'text', left: cols[0], top: y, style: { text: fmt(row['区域']), fill: 'rgba(236,244,250,0.88)', font: '800 12px Microsoft YaHei, Arial' } }); graphics.push({ type: 'text', left: cols[1], top: y, style: { text: fmt(row['异常订单']) + '单', fill: '#ffffff', font: '800 12px Bahnschrift, Arial' } }); graphics.push({ type: 'text', left: cols[2], top: y, style: { text: fmt(row['主要原因']), fill: 'rgba(236,244,250,0.76)', font: '700 12px Microsoft YaHei, Arial' } }); graphics.push({ type: 'text', left: cols[3], top: y, style: { text: fmt(row['处理状态']), fill: statusColor(row), font: '800 12px Microsoft YaHei, Arial' } }); }); const option = { backgroundColor: 'transparent', animation: false, tooltip: { show: false }, xAxis: { show: false }, yAxis: { show: false }, series: [], graphic: graphics }; return option;"
+        "optionFunction": "const fallbackRows = [{ '区域': '苏州园区', '异常订单': 11, '主要原因': '管制', '处理状态': '跟进中', '状态类型': 'follow', '经度': 120.5853, '纬度': 31.2989 }, { '区域': '武汉中仓', '异常订单': 9, '主要原因': '分拨', '处理状态': '跟进中', '状态类型': 'follow', '经度': 114.3055, '纬度': 30.5928 }, { '区域': '西安北仓', '异常订单': 7, '主要原因': '限流', '处理状态': '预警', '状态类型': 'warn', '经度': 108.9398, '纬度': 34.3416 }, { '区域': '天津港区', '异常订单': 6, '主要原因': '查验', '处理状态': '跟进中', '状态类型': 'follow', '经度': 117.2, '纬度': 39.0842 }, { '区域': '重庆渝北', '异常订单': 5, '主要原因': '山路', '处理状态': '预警', '状态类型': 'warn', '经度': 106.63, '纬度': 29.72 }, { '区域': '南京中转', '异常订单': 5, '主要原因': '装卸', '处理状态': '跟进中', '状态类型': 'follow', '经度': 118.7969, '纬度': 32.0603 }, { '区域': '青岛城配', '异常订单': 4, '主要原因': '雨雪', '处理状态': '预警', '状态类型': 'warn', '经度': 120.3826, '纬度': 36.0671 }, { '区域': '沈阳北仓', '异常订单': 4, '主要原因': '低温', '处理状态': '跟进中', '状态类型': 'follow', '经度': 123.4315, '纬度': 41.8057 }, { '区域': '昆明南仓', '异常订单': 3, '主要原因': '绕行', '处理状态': '跟进中', '状态类型': 'follow', '经度': 102.8329, '纬度': 24.8801 }]; const sourceRows = Array.isArray(dataset?.source) && dataset.source.length ? dataset.source : fallbackRows; const rows = sourceRows.slice(0, 9); const graphics = []; const cols = [6, 164, 232, 294]; const headerY = 2; const rowH = 29; const fmt = (value) => String(value ?? ''); const statusColor = (row) => row['状态类型'] === 'warn' || row['处理状态'] === '预警' ? '#ffad37' : 'rgba(236,244,250,0.76)'; const emitFocus = (row) => { const lon = Number(row['经度']); const lat = Number(row['纬度']); if (typeof window !== 'undefined' && Number.isFinite(lon) && Number.isFinite(lat)) { window.dispatchEvent(new CustomEvent('logistics-exception-area:focus', { detail: { area: row['区域'], lon, lat } })); } }; ['区域', '异常', '原因', '状态'].forEach((label, index) => { graphics.push({ type: 'text', left: cols[index], top: headerY, style: { text: label, fill: 'rgba(220,230,240,0.66)', font: '700 12px Microsoft YaHei, Arial' } }); }); rows.forEach((row, index) => { const y = 28 + index * rowH; graphics.push({ type: 'rect', left: 0, top: y - 6, shape: { width: 356, height: 23 }, style: { fill: index % 2 === 0 ? 'rgba(55,70,92,0.17)' : 'rgba(55,70,92,0.06)' } }); graphics.push({ type: 'rect', left: 0, top: y - 6, shape: { width: 2, height: 23 }, style: { fill: row['状态类型'] === 'warn' ? '#ffad37' : 'rgba(110,200,255,0.56)' } }); graphics.push({ type: 'text', left: cols[0], top: y, style: { text: fmt(row['区域']), fill: 'rgba(236,244,250,0.88)', font: '800 12px Microsoft YaHei, Arial' } }); graphics.push({ type: 'text', left: cols[1], top: y, style: { text: fmt(row['异常订单']) + '单', fill: '#ffffff', font: '800 12px Bahnschrift, Arial' } }); graphics.push({ type: 'text', left: cols[2], top: y, style: { text: fmt(row['主要原因']), fill: 'rgba(236,244,250,0.76)', font: '700 12px Microsoft YaHei, Arial' } }); graphics.push({ type: 'text', left: cols[3], top: y, style: { text: fmt(row['处理状态']), fill: statusColor(row), font: '800 12px Microsoft YaHei, Arial' } }); graphics.push({ type: 'rect', left: 0, top: y - 7, cursor: 'pointer', shape: { width: 356, height: 25 }, style: { fill: 'rgba(255,255,255,0)' }, onclick: () => emitFocus(row) }); }); const option = { backgroundColor: 'transparent', animation: false, tooltip: { show: false }, xAxis: { show: false }, yAxis: { show: false }, series: [], graphic: graphics }; return option;"
       },
       "dataConfig": {
         "datasetId": "dataset-logistics-exception-alert-areas",
@@ -907,6 +907,14 @@
           {
             "name": "状态类型",
             "type": "string"
+          },
+          {
+            "name": "经度",
+            "type": "number"
+          },
+          {
+            "name": "纬度",
+            "type": "number"
           }
         ],
         "filters": [],
@@ -930,6 +938,10 @@
         "code": "CN",
         "modelConfig": {
           "id": "china-default"
+        },
+        "styleConfig": {
+          "styleId": "default",
+          "styleOverride": {}
         }
       },
       "dataConfig": [
@@ -964,7 +976,7 @@
           "config": {
             "layerType": "marker",
             "layerName": "全国仓库点位",
-            "markerModelId": "custom:蓝色标点.glb",
+            "markerModelId": "custom:三角指针.glb",
             "visible": true,
             "position": {
               "type": "geographic",
@@ -977,13 +989,13 @@
             },
             "heightOffset": 0.08,
             "style": {
-              "color": "#2F74FF"
+              "color": "#F2800E"
             },
             "size": {
               "field": {
                 "name": "今日吞吐"
               },
-              "scale": 0.18,
+              "scale": 0.26,
               "randomness": 0.03
             },
             "label": {
@@ -995,13 +1007,14 @@
                   "name": "状态"
                 }
               ],
-              "size": 0.82,
+              "size": 0.75,
               "offset": 1.32
             },
             "animation": {
               "enabled": true,
               "appearMs": 260,
-              "disappearMs": 180
+              "disappearMs": 180,
+              "clips": []
             }
           },
           "filters": [],
@@ -1051,13 +1064,13 @@
             },
             "heightOffset": 0.06,
             "style": {
-              "color": "#67D7FF"
+              "color": "#DBA851"
             },
             "size": {
               "field": {
                 "name": "配送单量"
               },
-              "scale": 0.13,
+              "scale": 0.23,
               "randomness": 0.05
             },
             "label": {
@@ -1069,7 +1082,7 @@
                   "name": "状态"
                 }
               ],
-              "size": 0.72,
+              "size": 0.8,
               "offset": 1.18
             },
             "animation": {
@@ -1146,11 +1159,11 @@
               }
             },
             "thickness": {
-              "scale": 0.02
+              "scale": 0.01
             },
             "style": {
-              "color": "#E6E5E4",
-              "flowSpeed": 0.72
+              "color": "#D0FDFD",
+              "flowSpeed": 0.65
             },
             "label": {
               "fields": [
@@ -1215,9 +1228,9 @@
             },
             "style": {
               "valueMode": "weighted",
-              "radiusScale": 0.2,
-              "intensity": 0.72,
-              "elevationScale": 0.15,
+              "radiusScale": 0.17,
+              "intensity": 0.6,
+              "elevationScale": 0.23,
               "opacity": 0.99,
               "resolution": "high",
               "gradient": "linear-gradient(90deg, #2F74FF 0%, #35E5B0 38%, #FFE16B 72%, #FF624D 100%)",
@@ -1229,6 +1242,96 @@
           },
           "filters": [],
           "sorts": []
+        },
+        {
+          "datasetId": "dataset-logistics-exception-alert-areas",
+          "fields": [
+            {
+              "name": "区域",
+              "type": "string"
+            },
+            {
+              "name": "异常订单",
+              "type": "number"
+            },
+            {
+              "name": "主要原因",
+              "type": "string"
+            },
+            {
+              "name": "处理状态",
+              "type": "string"
+            },
+            {
+              "name": "状态类型",
+              "type": "string"
+            },
+            {
+              "name": "经度",
+              "type": "number"
+            },
+            {
+              "name": "纬度",
+              "type": "number"
+            }
+          ],
+          "config": {
+            "layerType": "marker",
+            "layerName": "异常预警点位",
+            "markerModelId": "custom:穹顶.glb",
+            "visible": true,
+            "position": {
+              "type": "geographic",
+              "lonField": {
+                "name": "经度"
+              },
+              "latField": {
+                "name": "纬度"
+              }
+            },
+            "heightOffset": 0.18,
+            "style": {
+              "color": "#BB1515"
+            },
+            "size": {
+              "field": {
+                "name": "异常订单"
+              },
+              "scale": 0.37,
+              "randomness": 0.02
+            },
+            "label": {
+              "fields": [
+                {
+                  "name": "区域"
+                },
+                {
+                  "name": "处理状态"
+                }
+              ],
+              "size": 0.76,
+              "offset": 1.18
+            },
+            "animation": {
+              "enabled": true,
+              "appearMs": 260,
+              "disappearMs": 0,
+              "clips": []
+            }
+          },
+          "filters": [
+            {
+              "field": "状态类型",
+              "operator": "=",
+              "value": "warn"
+            }
+          ],
+          "sorts": [
+            {
+              "field": "异常订单",
+              "direction": "DESC"
+            }
+          ]
         }
       ],
       "layout": {

@@ -10,6 +10,7 @@ const TRANSPORT_CHINA_MAP_WIDGET_ID = 'transport-china-3d-map';
 const WAREHOUSE_CHINA_MAP_WIDGET_ID = 'warehouse-china-3d-map';
 const VEHICLE_CHINA_MAP_WIDGET_ID = 'vehicle-china-3d-map';
 const AI_BOARD_WIDGET_UPDATE_EVENT = 'zmeta-ai-board-widget:update';
+const EXCEPTION_AREA_FOCUS_EVENT = 'logistics-exception-area:focus';
 
 type FileDatasetResponse = {
   fields: string[];
@@ -30,7 +31,12 @@ type TimeoutOrder = {
   suggestion: string;
 };
 
-type TransportMapLayerKey = 'warehouse' | 'delivery' | 'flyline' | 'heatmap';
+type TransportMapLayerKey =
+  | 'warehouse'
+  | 'delivery'
+  | 'flyline'
+  | 'heatmap'
+  | 'warning';
 type OverviewHeatKey = 'order' | 'vehicle' | 'exception';
 
 type TransportMapWidgetDefinition = {
@@ -48,11 +54,18 @@ type TransportMapWidgetDefinition = {
   layout?: Record<string, unknown>;
 };
 
+type ExceptionAreaFocusDetail = {
+  area?: string;
+  lon?: number;
+  lat?: number;
+};
+
 const transportMapLayerDatasetIds: Record<TransportMapLayerKey, string> = {
   warehouse: 'dataset-logistics-warehouse-map-points',
   delivery: 'dataset-logistics-delivery-map-points',
   flyline: 'dataset-logistics-transport-flylines',
   heatmap: 'dataset-logistics-order-heatmap',
+  warning: 'dataset-logistics-exception-alert-areas',
 };
 
 const transportMapLayerLabels: Array<{
@@ -63,6 +76,7 @@ const transportMapLayerLabels: Array<{
   { key: 'delivery', label: '城市配送点位' },
   { key: 'flyline', label: '全国运输线路飞线' },
   { key: 'heatmap', label: '订单区域热力' },
+  { key: 'warning', label: '异常预警点位' },
 ];
 
 const defaultTransportMapLayerVisibility: Record<
@@ -73,6 +87,7 @@ const defaultTransportMapLayerVisibility: Record<
   delivery: true,
   flyline: true,
   heatmap: true,
+  warning: true,
 };
 
 const overviewHeatLayerPresets: Record<
@@ -84,18 +99,21 @@ const overviewHeatLayerPresets: Record<
     delivery: true,
     flyline: false,
     heatmap: true,
+    warning: true,
   },
   vehicle: {
     warehouse: false,
     delivery: true,
     flyline: true,
     heatmap: false,
+    warning: true,
   },
   exception: {
     warehouse: true,
     delivery: false,
     flyline: true,
     heatmap: true,
+    warning: true,
   },
 };
 
@@ -933,6 +951,34 @@ function withTransportMapLayerVisibility(
   };
 }
 
+function withTransportMapFocusCommand(
+  widget: TransportMapWidgetDefinition,
+  detail: Required<Pick<ExceptionAreaFocusDetail, 'lon' | 'lat'>>
+): TransportMapWidgetDefinition {
+  return {
+    ...widget,
+    config: {
+      ...(widget.config ?? {}),
+      runtimeCameraCommand: {
+        type: 'fly-to',
+        commandId: `exception-area-${Date.now()}-${Math.random()
+          .toString(36)
+          .slice(2, 8)}`,
+        issuedAt: Date.now(),
+        lon: detail.lon,
+        lat: detail.lat,
+        targetOffsetLon: 1.6,
+        targetOffsetLat: -0.6,
+        cameraDistance: 1150,
+        pullBackDistance: 2500,
+        durationMs: 1600,
+        pullBackDurationMs: 480,
+        pushInDurationMs: 1120,
+      },
+    },
+  };
+}
+
 function postTransportMapWidgetUpdate(widget: TransportMapWidgetDefinition) {
   if (typeof window === 'undefined') {
     return;
@@ -1106,6 +1152,49 @@ function OverviewMonitorView() {
         transportMapLayerVisibility
       )
     );
+  }, [transportMapLayerVisibility, transportMapWidget]);
+
+  useEffect(() => {
+    if (!transportMapWidget || typeof window === 'undefined') {
+      return;
+    }
+
+    const handleExceptionAreaFocus = (event: Event) => {
+      const detail = (event as CustomEvent<ExceptionAreaFocusDetail>).detail;
+      const lon = Number(detail?.lon);
+      const lat = Number(detail?.lat);
+
+      if (!Number.isFinite(lon) || !Number.isFinite(lat)) {
+        return;
+      }
+
+      const nextVisibility = {
+        ...transportMapLayerVisibility,
+        warning: true,
+        heatmap: true,
+      };
+
+      setActiveHeatKey('exception');
+      setTransportMapLayerVisibility(nextVisibility);
+      postTransportMapWidgetUpdate(
+        withTransportMapFocusCommand(
+          withTransportMapLayerVisibility(transportMapWidget, nextVisibility),
+          { lon, lat }
+        )
+      );
+    };
+
+    window.addEventListener(
+      EXCEPTION_AREA_FOCUS_EVENT,
+      handleExceptionAreaFocus
+    );
+
+    return () => {
+      window.removeEventListener(
+        EXCEPTION_AREA_FOCUS_EVENT,
+        handleExceptionAreaFocus
+      );
+    };
   }, [transportMapLayerVisibility, transportMapWidget]);
 
   const handleHeatTabClick = (key: (typeof overviewHeatTabs)[number][0]) => {
