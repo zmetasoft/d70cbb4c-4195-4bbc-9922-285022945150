@@ -1349,6 +1349,196 @@
           "id": "china-default"
         }
       },
+      "dataConfig": [
+        {
+          "datasetId": "dataset-logistics-warehouse-map-points",
+          "fields": [
+            {
+              "name": "点位名称",
+              "type": "string"
+            },
+            {
+              "name": "经度",
+              "type": "number"
+            },
+            {
+              "name": "纬度",
+              "type": "number"
+            },
+            {
+              "name": "今日吞吐",
+              "type": "number"
+            },
+            {
+              "name": "状态",
+              "type": "string"
+            }
+          ],
+          "config": {
+            "layerType": "pillar",
+            "layerName": "仓库发货立体柱",
+            "visible": true,
+            "position": {
+              "type": "geographic",
+              "lonField": {
+                "name": "经度"
+              },
+              "latField": {
+                "name": "纬度"
+              }
+            },
+            "height": {
+              "field": {
+                "name": "今日吞吐"
+              },
+              "minRatio": 0.12,
+              "scale": 0.1,
+              "radiusScale": 0.03,
+              "heightRandomness": 0.02,
+              "radiusRandomness": 0.01
+            },
+            "style": {
+              "effectPreset": "gradient",
+              "opacity": 0.9,
+              "glowIntensity": 1.18,
+              "flowSpeed": 0.36
+            },
+            "label": {
+              "fields": [
+                {
+                  "name": "点位名称"
+                },
+                {
+                  "name": "状态"
+                }
+              ]
+            }
+          },
+          "filters": [],
+          "sorts": []
+        },
+        {
+          "datasetId": "dataset-logistics-warehouse-map-points",
+          "fields": [
+            {
+              "name": "经度",
+              "type": "number"
+            },
+            {
+              "name": "纬度",
+              "type": "number"
+            },
+            {
+              "name": "今日吞吐",
+              "type": "number"
+            }
+          ],
+          "config": {
+            "layerType": "heatmap",
+            "layerName": "仓库吞吐热力",
+            "visible": true,
+            "position": {
+              "type": "geographic",
+              "lonField": {
+                "name": "经度"
+              },
+              "latField": {
+                "name": "纬度"
+              }
+            },
+            "weight": {
+              "valueMode": "weighted",
+              "field": {
+                "name": "今日吞吐"
+              }
+            },
+            "style": {
+              "valueMode": "weighted",
+              "radiusScale": 0.18,
+              "intensity": 0.74,
+              "elevationScale": 0.18,
+              "opacity": 0.88,
+              "resolution": "high",
+              "gradient": "linear-gradient(90deg, #2F74FF 0%, #35E5B0 42%, #FFE16B 74%, #FF624D 100%)",
+              "normalizeMode": "percentile",
+              "percentileMin": 4,
+              "percentileMax": 96,
+              "minAlpha": 0.04
+            }
+          },
+          "filters": [],
+          "sorts": []
+        },
+        {
+          "datasetId": "dataset-logistics-warehouse-flow-routes",
+          "fields": [
+            {
+              "name": "线路名称",
+              "type": "string"
+            },
+            {
+              "name": "节点",
+              "type": "string"
+            },
+            {
+              "name": "序号",
+              "type": "number"
+            },
+            {
+              "name": "经度",
+              "type": "number"
+            },
+            {
+              "name": "纬度",
+              "type": "number"
+            },
+            {
+              "name": "状态",
+              "type": "string"
+            }
+          ],
+          "config": {
+            "layerType": "connection",
+            "layerName": "仓网节点连线",
+            "visible": true,
+            "position": {
+              "type": "geographic",
+              "lonField": {
+                "name": "经度"
+              },
+              "latField": {
+                "name": "纬度"
+              }
+            },
+            "heightOffset": 0.04,
+            "path": {
+              "groupField": {
+                "name": "线路名称"
+              },
+              "orderField": {
+                "name": "序号"
+              },
+              "orderDirection": "asc",
+              "smoothing": {
+                "enabled": true,
+                "curvature": 0,
+                "subdivisions": 16
+              }
+            },
+            "style": {
+              "color": "#22D3EE",
+              "opacity": 0.2,
+              "thicknessScale": 0.01,
+              "effectPreset": "stream",
+              "flowSpeed": 0.55,
+              "glowIntensity": 1,
+              "flowDirection": "forward"
+            }
+          },
+          "filters": [],
+          "sorts": []
+        }
+      ],
       "layout": {
         "minHeight": 520
       }
@@ -1362,12 +1552,119 @@
         "code": "CN",
         "modelConfig": {
           "id": "china-default"
-        },
-        "styleConfig": {
-          "styleId": "default",
-          "styleOverride": {}
         }
       },
+      "dataConfig": [
+        {
+          "datasetId": "dataset-logistics-vehicle-map-points",
+          "fields": [
+            {
+              "name": "车牌号",
+              "type": "string"
+            },
+            {
+              "name": "经度",
+              "type": "number"
+            },
+            {
+              "name": "纬度",
+              "type": "number"
+            },
+            {
+              "name": "状态",
+              "type": "string"
+            }
+          ],
+          "config": {
+            "layerType": "marker",
+            "layerName": "车辆实时点位",
+            "visible": true,
+            "position": {
+              "type": "geographic",
+              "lonField": {
+                "name": "经度"
+              },
+              "latField": {
+                "name": "纬度"
+              }
+            },
+            "heightOffset": 0.04,
+            "style": {
+              "color": "#3882BA"
+            },
+            "size": {
+              "scale": 0.11,
+              "randomness": 0.05
+            },
+            "label": {
+              "fields": [
+                {
+                  "name": "车牌号"
+                },
+                {
+                  "name": "状态"
+                }
+              ],
+              "size": 0.8,
+              "offset": 1.4
+            },
+            "animation": {
+              "enabled": true,
+              "appearMs": 260,
+              "disappearMs": 180,
+              "clips": []
+            },
+            "markerModelId": "custom:三角指针.glb"
+          },
+          "filters": [],
+          "sorts": []
+        },
+        {
+          "datasetId": "dataset-logistics-vehicle-map-points",
+          "fields": [
+            {
+              "name": "经度",
+              "type": "number"
+            },
+            {
+              "name": "纬度",
+              "type": "number"
+            }
+          ],
+          "config": {
+            "layerType": "heatmap",
+            "layerName": "车辆密度与风险热力",
+            "visible": true,
+            "position": {
+              "type": "geographic",
+              "lonField": {
+                "name": "经度"
+              },
+              "latField": {
+                "name": "纬度"
+              }
+            },
+            "weight": {
+              "valueMode": "density"
+            },
+            "style": {
+              "valueMode": "density",
+              "radiusScale": 0.37,
+              "intensity": 0.68,
+              "elevationScale": 0.16,
+              "opacity": 0.48,
+              "resolution": "high",
+              "gradient": "linear-gradient(90deg, #2F74FF 0%, #35E5B0 40%, #FF9F2E 72%, #FF624D 100%)",
+              "normalizeMode": "percentile",
+              "percentileMin": 3,
+              "percentileMax": 97,
+              "minAlpha": 0.04
+            }
+          },
+          "filters": [],
+          "sorts": []
+        }
+      ],
       "layout": {
         "minHeight": 520
       }

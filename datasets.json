@@ -590,5 +590,39 @@
       }
     ],
     "scope": "local"
+  },
+  {
+    "id": "dataset-logistics-warehouse-flow-routes",
+    "name": "仓网线路路径连接",
+    "type": "file",
+    "datasourceId": "datasource-logistics-warehouse-flow-routes",
+    "config": {},
+    "fields": [
+      {
+        "name": "线路名称",
+        "type": "string"
+      },
+      {
+        "name": "节点",
+        "type": "string"
+      },
+      {
+        "name": "序号",
+        "type": "number"
+      },
+      {
+        "name": "经度",
+        "type": "number"
+      },
+      {
+        "name": "纬度",
+        "type": "number"
+      },
+      {
+        "name": "状态",
+        "type": "string"
+      }
+    ],
+    "scope": "local"
   }
 ]

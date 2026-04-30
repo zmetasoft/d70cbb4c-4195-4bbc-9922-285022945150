@@ -160,5 +160,14 @@
       "dataId": "logistics-vehicle-map-routes"
     },
     "scope": "local"
+  },
+  {
+    "id": "datasource-logistics-warehouse-flow-routes",
+    "name": "仓网线路路径连接数据源",
+    "type": "file",
+    "config": {
+      "dataId": "logistics-warehouse-flow-routes"
+    },
+    "scope": "local"
   }
 ]
