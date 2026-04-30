@@ -1289,15 +1289,15 @@
                 "name": "纬度"
               }
             },
-            "heightOffset": 0.18,
+            "heightOffset": 0.09,
             "style": {
-              "color": "#BB1515"
+              "color": "#EE0404"
             },
             "size": {
               "field": {
                 "name": "异常订单"
               },
-              "scale": 0.37,
+              "scale": 0.22,
               "randomness": 0.02
             },
             "label": {

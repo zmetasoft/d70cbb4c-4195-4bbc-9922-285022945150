@@ -2687,23 +2687,24 @@ button {
 
 .overview-map-layer-legend {
   position: absolute;
-  right: 44px;
-  top: 28px;
+  right: 40px;
+  top: 24px;
   z-index: 5;
   display: grid;
-  gap: 10px;
-  min-width: 206px;
-  padding: 12px 14px;
-  border: 1px solid rgba(120, 174, 236, 0.22);
+  gap: 6px;
+  min-width: 176px;
+  padding: 10px 12px;
+  border: 1px solid rgba(120, 174, 236, 0.14);
+  border-radius: 4px;
   background: linear-gradient(
-      90deg,
-      rgba(11, 24, 43, 0.72),
-      rgba(16, 36, 56, 0.42)
+      135deg,
+      rgba(9, 22, 38, 0.68),
+      rgba(7, 18, 31, 0.34)
     ),
-    rgba(4, 12, 24, 0.38);
-  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.32),
-    inset 0 1px 0 rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(4px);
+    rgba(4, 10, 20, 0.28);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.24),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(8px);
   pointer-events: auto;
 }
 
@@ -2711,34 +2712,39 @@ button {
   position: relative;
   display: block;
   width: 100%;
-  min-height: 22px;
-  padding: 0 0 0 22px;
+  min-height: 20px;
+  padding: 2px 4px 2px 20px;
   border: 0;
+  border-radius: 3px;
   background: transparent;
   cursor: pointer;
   text-align: left;
 }
 
+.overview-map-layer-toggle:hover {
+  background: rgba(110, 200, 255, 0.06);
+}
+
 .overview-map-layer-toggle span {
   position: relative;
   display: block;
-  color: rgba(238, 246, 255, 0.92);
-  font-size: 13px;
-  font-weight: 800;
-  line-height: 1.15;
-  text-shadow: 0 0 12px rgba(80, 162, 255, 0.32);
+  color: rgba(222, 234, 246, 0.86);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.25;
+  text-shadow: 0 0 10px rgba(80, 162, 255, 0.2);
 }
 
 .overview-map-layer-toggle::before {
   position: absolute;
-  left: 1px;
+  left: 4px;
   top: 50%;
-  width: 7px;
-  height: 7px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   background: #2f74ff;
-  box-shadow: 0 0 0 5px rgba(47, 116, 255, 0.16),
-    0 0 16px rgba(47, 116, 255, 0.78);
+  box-shadow: 0 0 0 4px rgba(47, 116, 255, 0.12),
+    0 0 10px rgba(47, 116, 255, 0.52);
   content: '';
   transform: translateY(-50%);
 }
@@ -2759,6 +2765,12 @@ button {
   background: #ff624d;
   box-shadow: 0 0 0 5px rgba(255, 98, 77, 0.14),
     0 0 16px rgba(255, 98, 77, 0.7);
+}
+
+.overview-map-layer-warning::before {
+  background: #ffad37;
+  box-shadow: 0 0 0 4px rgba(255, 173, 55, 0.12),
+    0 0 12px rgba(255, 173, 55, 0.5);
 }
 
 .overview-map-layer-toggle[aria-pressed='false'] {
