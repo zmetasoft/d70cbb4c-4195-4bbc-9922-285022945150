@@ -942,6 +942,20 @@
         "styleConfig": {
           "styleId": "default",
           "styleOverride": {}
+        },
+        "cameraView": {
+          "center": {
+            "lon": 111.2,
+            "lat": 34.4
+          },
+          "cameraDistance": 650,
+          "bearing": 84.87,
+          "pitch": 40,
+          "fov": 0.6981,
+          "minZ": 10,
+          "maxZ": 100000,
+          "lowerRadiusLimit": 10,
+          "upperRadiusLimit": 10000
         }
       },
       "dataConfig": [

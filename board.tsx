@@ -872,8 +872,7 @@ const warehouseCoreDetails: Record<string, WarehouseCoreDetail> = {
     title: '积压订单',
     total: '482',
     unit: '单',
-    summary:
-      '积压订单主要来自月台排队、分拨延迟和干线车辆缺口，需优先处理西南与华中仓。',
+    summary: '积压订单主要来自月台排队、分拨延迟和干线车辆缺口，需优先处理西南与华中仓。',
     items: [
       ['成都西仓', '96单'],
       ['武汉中仓', '84单'],
@@ -1111,6 +1110,8 @@ function OverviewMonitorView() {
     useState<Record<TransportMapLayerKey, boolean>>(
       defaultTransportMapLayerVisibility
     );
+  const [isTransportLayerPanelCollapsed, setIsTransportLayerPanelCollapsed] =
+    useState(false);
 
   useEffect(() => {
     let cancelled = false;
@@ -1214,221 +1215,236 @@ function OverviewMonitorView() {
 
   return (
     <>
-      <section
-        className="overview-monitor transport-overview-monitor"
-        aria-label="运输总览监测平台"
-      >
-        <div className="overview-city-bg" aria-hidden="true">
-          <span className="city-road city-road-a" />
-          <span className="city-road city-road-b" />
-          <span className="city-road city-road-c" />
-          <span className="city-core" />
-        </div>
+    <section
+      className="overview-monitor transport-overview-monitor"
+      aria-label="运输总览监测平台"
+    >
+      <div className="overview-city-bg" aria-hidden="true">
+        <span className="city-road city-road-a" />
+        <span className="city-road city-road-b" />
+        <span className="city-road city-road-c" />
+        <span className="city-core" />
+      </div>
 
-        <aside className="overview-left">
-          <OverviewPanel title="核心数据展示" sub="CORE DATA PRESENTATION">
-            <div className="core-metric-grid transport-core-grid">
-              <div className="transport-kpi-widget-grid">
-                {transportKpiCards.map((card) => (
-                  <article className="transport-kpi-card-shell" key={card.id}>
-                    <span>{card.label}</span>
-                    <div className="transport-kpi-value-line">
-                      <WidgetHost
-                        id={card.id}
-                        className="transport-kpi-widget-host"
-                      />
-                      <small>{card.unit}</small>
-                    </div>
-                    <em
-                      className={
-                        card.trendTone === 'down' ? 'metric-down' : 'metric-up'
-                      }
-                    >
-                      <WidgetHost
-                        id={card.trendId}
-                        className="transport-kpi-trend-widget-host"
-                      />
-                    </em>
-                  </article>
-                ))}
-              </div>
-              <div className="saving-bars transport-region-kpi-list">
-                <b>今日运输状态摘要</b>
-                {transportRegionKpiCards.map((card) => (
-                  <article className="transport-region-kpi-card" key={card.id}>
-                    <span>{card.region}</span>
+      <aside className="overview-left">
+        <OverviewPanel title="核心数据展示" sub="CORE DATA PRESENTATION">
+          <div className="core-metric-grid transport-core-grid">
+            <div className="transport-kpi-widget-grid">
+              {transportKpiCards.map((card) => (
+                <article className="transport-kpi-card-shell" key={card.id}>
+                  <span>{card.label}</span>
+                  <div className="transport-kpi-value-line">
                     <WidgetHost
                       id={card.id}
-                      className="transport-region-kpi-widget-host"
+                      className="transport-kpi-widget-host"
                     />
                     <small>{card.unit}</small>
-                  </article>
-                ))}
-              </div>
-            </div>
-          </OverviewPanel>
-
-          <OverviewPanel title="全国运输热力" sub="NATIONAL TRANSPORT HEAT">
-            <div className="overview-tabs">
-              {overviewHeatTabs.map(([key, label]) => (
-                <button
-                  className={key === activeHeatKey ? 'overview-tab-active' : ''}
-                  key={key}
-                  type="button"
-                  onClick={() => handleHeatTabClick(key)}
-                >
-                  {label}
-                </button>
+                  </div>
+                  <em
+                    className={
+                      card.trendTone === 'down' ? 'metric-down' : 'metric-up'
+                    }
+                  >
+                    <WidgetHost
+                      id={card.trendId}
+                      className="transport-kpi-trend-widget-host"
+                    />
+                  </em>
+                </article>
               ))}
             </div>
-            <WidgetHost
-              id={overviewHeatWidgetIds[activeHeatKey]}
-              key={overviewHeatWidgetIds[activeHeatKey]}
-              className="service-bar-chart overview-heat-widget-host"
-            />
-          </OverviewPanel>
-
-          <OverviewPanel title="运输效率趋势" sub="DURATION AND MILEAGE">
-            <div className="overview-tabs overview-trend-tabs">
-              {overviewTrendTabs.map(([key, label]) => (
-                <button
-                  className={
-                    key === activeTrendKey ? 'overview-tab-active' : ''
-                  }
-                  key={key}
-                  type="button"
-                  onClick={() => setActiveTrendKey(key)}
-                >
-                  {label}
-                </button>
+            <div className="saving-bars transport-region-kpi-list">
+              <b>今日运输状态摘要</b>
+              {transportRegionKpiCards.map((card) => (
+                <article className="transport-region-kpi-card" key={card.id}>
+                  <span>{card.region}</span>
+                  <WidgetHost
+                    id={card.id}
+                    className="transport-region-kpi-widget-host"
+                  />
+                  <small>{card.unit}</small>
+                </article>
               ))}
-            </div>
-            <WidgetHost
-              id={overviewTrendWidgetIds[activeTrendKey]}
-              key={overviewTrendWidgetIds[activeTrendKey]}
-              className="shortage-line-chart overview-trend-widget-host"
-            />
-          </OverviewPanel>
-        </aside>
-
-        <section className="overview-center">
-          <div className="overview-map-glow">
-            <i className="overview-pin overview-pin-a" />
-            <i className="overview-pin overview-pin-b" />
-            <i className="overview-pin overview-pin-c" />
-            <div
-              className="overview-map-layer-legend"
-              aria-label="地图图层控制"
-            >
-              {transportMapLayerLabels.map((item) => (
-                <button
-                  aria-pressed={transportMapLayerVisibility[item.key]}
-                  className={`overview-map-layer-toggle overview-map-layer-${item.key}`}
-                  key={item.key}
-                  type="button"
-                  onClick={() => toggleTransportMapLayer(item.key)}
-                >
-                  <span>{item.label}</span>
-                </button>
-              ))}
-            </div>
-            <div className="overview-callout">
-              <h3>全国运输态势总览</h3>
-              <p>
-                今日订单 <b>28,640</b>　在途车辆 <b>3,482</b>　准时率{' '}
-                <strong>96.8%</strong>
-              </p>
-              <span>全国运输热力 1,280 · 异常区域提示 7 处</span>
             </div>
           </div>
-          <div className="overview-bottom-metrics">
-            {transportBottomKpiCards.map((card) => (
-              <div className="overview-bottom-kpi-card" key={card.id}>
-                <WidgetHost
-                  id={card.id}
-                  className="overview-bottom-kpi-widget-host"
-                />
-                <WidgetHost
-                  id={card.unitId}
-                  className="overview-bottom-unit-text-host"
-                />
-                <WidgetHost
-                  id={card.labelId}
-                  className="overview-bottom-label-text-host"
-                />
+        </OverviewPanel>
+
+        <OverviewPanel title="全国运输热力" sub="NATIONAL TRANSPORT HEAT">
+          <div className="overview-tabs">
+            {overviewHeatTabs.map(([key, label]) => (
+              <button
+                className={key === activeHeatKey ? 'overview-tab-active' : ''}
+                key={key}
+                type="button"
+                onClick={() => handleHeatTabClick(key)}
+              >
+                {label}
+              </button>
+            ))}
+          </div>
+          <WidgetHost
+            id={overviewHeatWidgetIds[activeHeatKey]}
+            key={overviewHeatWidgetIds[activeHeatKey]}
+            className="service-bar-chart overview-heat-widget-host"
+          />
+        </OverviewPanel>
+
+        <OverviewPanel title="运输效率趋势" sub="DURATION AND MILEAGE">
+          <div className="overview-tabs overview-trend-tabs">
+            {overviewTrendTabs.map(([key, label]) => (
+              <button
+                className={key === activeTrendKey ? 'overview-tab-active' : ''}
+                key={key}
+                type="button"
+                onClick={() => setActiveTrendKey(key)}
+              >
+                {label}
+              </button>
+            ))}
+          </div>
+          <WidgetHost
+            id={overviewTrendWidgetIds[activeTrendKey]}
+            key={overviewTrendWidgetIds[activeTrendKey]}
+            className="shortage-line-chart overview-trend-widget-host"
+          />
+        </OverviewPanel>
+      </aside>
+
+      <div
+        className={`overview-map-layer-legend${
+          isTransportLayerPanelCollapsed ? ' is-collapsed' : ''
+        }`}
+        aria-label="地图图层控制"
+      >
+        <button
+          aria-expanded={!isTransportLayerPanelCollapsed}
+          className="overview-map-layer-collapse"
+          type="button"
+          onClick={() =>
+            setIsTransportLayerPanelCollapsed((current) => !current)
+          }
+        >
+          {isTransportLayerPanelCollapsed ? '图层' : '收起'}
+        </button>
+        {!isTransportLayerPanelCollapsed ? (
+          <div className="overview-map-layer-list">
+            {transportMapLayerLabels.map((item) => (
+              <button
+                aria-pressed={transportMapLayerVisibility[item.key]}
+                className={`overview-map-layer-toggle overview-map-layer-${item.key}`}
+                key={item.key}
+                type="button"
+                onClick={() => toggleTransportMapLayer(item.key)}
+              >
+                <span>{item.label}</span>
+              </button>
+            ))}
+          </div>
+        ) : null}
+      </div>
+
+      <section className="overview-center">
+        <div className="overview-map-glow">
+          <i className="overview-pin overview-pin-a" />
+          <i className="overview-pin overview-pin-b" />
+          <i className="overview-pin overview-pin-c" />
+          <div className="overview-callout">
+            <h3>全国运输态势总览</h3>
+            <p>
+              今日订单 <b>28,640</b>　在途车辆 <b>3,482</b>　准时率{' '}
+              <strong>96.8%</strong>
+            </p>
+            <span>全国运输热力 1,280 · 异常区域提示 7 处</span>
+          </div>
+        </div>
+        <div className="overview-bottom-metrics">
+          {transportBottomKpiCards.map((card) => (
+            <div className="overview-bottom-kpi-card" key={card.id}>
+              <WidgetHost
+                id={card.id}
+                className="overview-bottom-kpi-widget-host"
+              />
+              <WidgetHost
+                id={card.unitId}
+                className="overview-bottom-unit-text-host"
+              />
+              <WidgetHost
+                id={card.labelId}
+                className="overview-bottom-label-text-host"
+              />
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <aside className="overview-right">
+        <OverviewPanel title="异常区域提示" sub="EXCEPTION AREA ALERT">
+          <div className="warning-top">
+            <WidgetHost
+              id="transport-exception-ring-chart"
+              className="warning-ring-widget-host"
+            />
+            <div className="warning-types">
+              {transportExceptionSummaryCards.map((card) => (
+                <article className="warning-type-card" key={card.id}>
+                  <span>{card.label}</span>
+                  <div className="warning-type-value">
+                    <WidgetHost
+                      id={card.id}
+                      className="warning-type-widget-host"
+                    />
+                    <small>{card.unit}</small>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+          <WidgetHost
+            id="transport-exception-area-table-chart"
+            className="warning-table-widget-host"
+          />
+        </OverviewPanel>
+
+        <OverviewPanel
+          title="今日运输状态摘要"
+          sub="TRANSPORT STATUS SUMMARY"
+        >
+          <WidgetHost
+            id="transport-status-summary-chart"
+            className="risk-rank-widget-host"
+          />
+        </OverviewPanel>
+      </aside>
+    </section>
+    {selectedOverviewDetail ? (
+      <button
+        aria-label="关闭详情"
+        className="timeout-modal-backdrop"
+        type="button"
+        onClick={() => setSelectedOverviewDetail(null)}
+      >
+        <section
+          aria-label={selectedOverviewDetail.title}
+          className="timeout-modal overview-detail-modal"
+          onClick={(event) => event.stopPropagation()}
+        >
+          <div className="timeout-modal-head">
+            <div>
+              <span>运输总览详情</span>
+              <h3>{selectedOverviewDetail.title}</h3>
+            </div>
+          </div>
+          <div className="timeout-modal-grid overview-detail-grid">
+            {selectedOverviewDetail.items.map(([label, value]) => (
+              <div key={label}>
+                <span>{label}</span>
+                <strong>{value}</strong>
               </div>
             ))}
           </div>
         </section>
-
-        <aside className="overview-right">
-          <OverviewPanel title="异常区域提示" sub="EXCEPTION AREA ALERT">
-            <div className="warning-top">
-              <WidgetHost
-                id="transport-exception-ring-chart"
-                className="warning-ring-widget-host"
-              />
-              <div className="warning-types">
-                {transportExceptionSummaryCards.map((card) => (
-                  <article className="warning-type-card" key={card.id}>
-                    <span>{card.label}</span>
-                    <div className="warning-type-value">
-                      <WidgetHost
-                        id={card.id}
-                        className="warning-type-widget-host"
-                      />
-                      <small>{card.unit}</small>
-                    </div>
-                  </article>
-                ))}
-              </div>
-            </div>
-            <WidgetHost
-              id="transport-exception-area-table-chart"
-              className="warning-table-widget-host"
-            />
-          </OverviewPanel>
-
-          <OverviewPanel
-            title="今日运输状态摘要"
-            sub="TRANSPORT STATUS SUMMARY"
-          >
-            <WidgetHost
-              id="transport-status-summary-chart"
-              className="risk-rank-widget-host"
-            />
-          </OverviewPanel>
-        </aside>
-      </section>
-      {selectedOverviewDetail ? (
-        <button
-          aria-label="关闭详情"
-          className="timeout-modal-backdrop"
-          type="button"
-          onClick={() => setSelectedOverviewDetail(null)}
-        >
-          <section
-            aria-label={selectedOverviewDetail.title}
-            className="timeout-modal overview-detail-modal"
-            onClick={(event) => event.stopPropagation()}
-          >
-            <div className="timeout-modal-head">
-              <div>
-                <span>运输总览详情</span>
-                <h3>{selectedOverviewDetail.title}</h3>
-              </div>
-            </div>
-            <div className="timeout-modal-grid overview-detail-grid">
-              {selectedOverviewDetail.items.map(([label, value]) => (
-                <div key={label}>
-                  <span>{label}</span>
-                  <strong>{value}</strong>
-                </div>
-              ))}
-            </div>
-          </section>
-        </button>
-      ) : null}
+      </button>
+    ) : null}
     </>
   );
 }
@@ -1816,13 +1832,7 @@ function WarehouseMapBackdrop() {
             <stop offset="0.54" stopColor="#169a64" stopOpacity="0.54" />
             <stop offset="1" stopColor="#082d28" stopOpacity="0.78" />
           </linearGradient>
-          <filter
-            id="warehouseMapGlow"
-            x="-20%"
-            y="-20%"
-            width="140%"
-            height="140%"
-          >
+          <filter id="warehouseMapGlow" x="-20%" y="-20%" width="140%" height="140%">
             <feGaussianBlur stdDeviation="7" result="blur" />
             <feMerge>
               <feMergeNode in="blur" />
@@ -1946,10 +1956,10 @@ function parseWarehouseMapGltf(model: any): WarehouseMapShape[] {
       accessorIndex === 5
         ? 'warehouse-map-route'
         : accessorIndex === 6
-        ? 'warehouse-map-risk-route'
-        : accessorIndex === 4
-        ? 'warehouse-map-ground'
-        : 'warehouse-map-region';
+          ? 'warehouse-map-risk-route'
+          : accessorIndex === 4
+            ? 'warehouse-map-ground'
+            : 'warehouse-map-region';
     const paths: WarehouseMapShape[] = [];
 
     for (let index = 0; index < indices.length; index += 3) {
@@ -2288,6 +2298,13 @@ function VehicleDemandRow({
       <em>{demand}</em>
     </div>
   );
+}
+
+function buildScrollableTimeoutOrders(orders: TimeoutOrder[]) {
+  if (orders.length <= 3) {
+    return orders;
+  }
+  return [...orders, ...orders];
 }
 
 function mapTimeoutOrder(row: Record<string, unknown>): TimeoutOrder | null {
